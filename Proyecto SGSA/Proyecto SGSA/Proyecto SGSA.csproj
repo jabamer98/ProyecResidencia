@@ -136,6 +136,9 @@
     <EmbeddedResource Include="BuscarSocioParaModificar.resx">
       <DependentUpon>BuscarSocioParaModificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Expedientes.resx">
+      <DependentUpon>Expedientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuExpedientes.resx">
       <DependentUpon>MenuExpedientes.cs</DependentUpon>
     </EmbeddedResource>
