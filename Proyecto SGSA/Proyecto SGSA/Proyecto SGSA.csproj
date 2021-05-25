@@ -124,6 +124,9 @@
       <DependentUpon>menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Scanner.cs" />
+    <EmbeddedResource Include="Agenda.resx">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AgregarDocPersonales.resx">
       <DependentUpon>AgregarDocPersonales.cs</DependentUpon>
     </EmbeddedResource>

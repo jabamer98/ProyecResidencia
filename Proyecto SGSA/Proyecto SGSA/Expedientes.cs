@@ -16,5 +16,12 @@ namespace Proyecto_SGSA
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menu menu = new menu();
+            menu.Show();
+        }
     }
 }

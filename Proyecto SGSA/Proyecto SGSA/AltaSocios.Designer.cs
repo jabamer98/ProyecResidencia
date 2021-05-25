@@ -68,6 +68,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxPoblacion = new System.Windows.Forms.TextBox();
             this.textBoxColonia = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBA7241DsgsaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -363,7 +364,7 @@
             this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
             this.button2.Location = new System.Drawing.Point(593, 423);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(290, 69);
+            this.button2.Size = new System.Drawing.Size(290, 64);
             this.button2.TabIndex = 22;
             this.button2.Text = "Ingresar Predios";
             this.button2.UseVisualStyleBackColor = false;
@@ -458,13 +459,24 @@
             this.textBoxColonia.Size = new System.Drawing.Size(155, 20);
             this.textBoxColonia.TabIndex = 31;
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(807, 512);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Regresar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // AltaSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1002, 504);
+            this.ClientSize = new System.Drawing.Size(1002, 547);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.textBoxPoblacion);
             this.Controls.Add(this.textBoxColonia);
             this.Controls.Add(this.label17);
@@ -552,5 +564,6 @@
         private System.Windows.Forms.TextBox textBoxColonia;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button button3;
     }
 }

@@ -72,5 +72,12 @@ namespace Proyecto_SGSA
             textBoxdomicilio.Text = Convert.ToString(fila.Cells[3].Value);
             textBoxpredio.Text = Convert.ToString(fila.Cells[5].Value);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menu menu = new menu();
+            menu.Show();
+        }
     }
 }

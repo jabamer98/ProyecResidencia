@@ -171,5 +171,12 @@ namespace Proyecto_SGSA
             docper.textBox3.Text = textBox1CURP.Text;
             docper.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Expedientes expedientes = new Expedientes();
+            expedientes.Show();
+        }
     }
 }
