@@ -72,6 +72,10 @@
             this.textBoxubicpred = new System.Windows.Forms.TextBox();
             this.textBoxpagoanual = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxPoblacion = new System.Windows.Forms.TextBox();
+            this.textBoxColonia = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
@@ -200,7 +204,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 272);
+            this.label4.Location = new System.Drawing.Point(83, 272);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(68, 13);
             this.label4.TabIndex = 51;
@@ -209,7 +213,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(82, 298);
+            this.label5.Location = new System.Drawing.Point(83, 294);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 52;
@@ -263,16 +267,16 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(83, 451);
+            this.label11.Location = new System.Drawing.Point(83, 447);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 58;
-            this.label11.Text = "Domicilio socio:";
+            this.label11.Text = "Domicilio:Calle";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(83, 474);
+            this.label12.Location = new System.Drawing.Point(83, 517);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(98, 13);
             this.label12.TabIndex = 59;
@@ -281,7 +285,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(82, 499);
+            this.label13.Location = new System.Drawing.Point(82, 542);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(101, 13);
             this.label13.TabIndex = 60;
@@ -290,7 +294,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(82, 525);
+            this.label14.Location = new System.Drawing.Point(82, 568);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 13);
             this.label14.TabIndex = 61;
@@ -299,7 +303,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(83, 549);
+            this.label15.Location = new System.Drawing.Point(83, 592);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(96, 13);
             this.label15.TabIndex = 62;
@@ -308,7 +312,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(82, 571);
+            this.label16.Location = new System.Drawing.Point(82, 614);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(146, 13);
             this.label16.TabIndex = 63;
@@ -387,7 +391,7 @@
             // 
             // textBoxconcepto
             // 
-            this.textBoxconcepto.Location = new System.Drawing.Point(200, 467);
+            this.textBoxconcepto.Location = new System.Drawing.Point(200, 510);
             this.textBoxconcepto.Name = "textBoxconcepto";
             this.textBoxconcepto.Size = new System.Drawing.Size(250, 20);
             this.textBoxconcepto.TabIndex = 73;
@@ -395,7 +399,7 @@
             // textBoxpredio
             // 
             this.textBoxpredio.Cursor = System.Windows.Forms.Cursors.No;
-            this.textBoxpredio.Location = new System.Drawing.Point(200, 492);
+            this.textBoxpredio.Location = new System.Drawing.Point(200, 535);
             this.textBoxpredio.Name = "textBoxpredio";
             this.textBoxpredio.ReadOnly = true;
             this.textBoxpredio.Size = new System.Drawing.Size(250, 20);
@@ -408,21 +412,21 @@
             "SOLAR",
             "TERRENO DE SIEMBRA TEMPORAL",
             "TERRENO DE SIEMBRE RIEGO"});
-            this.comboBox1.Location = new System.Drawing.Point(200, 518);
+            this.comboBox1.Location = new System.Drawing.Point(200, 561);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(250, 21);
             this.comboBox1.TabIndex = 75;
             // 
             // textBoxubicpred
             // 
-            this.textBoxubicpred.Location = new System.Drawing.Point(200, 542);
+            this.textBoxubicpred.Location = new System.Drawing.Point(200, 585);
             this.textBoxubicpred.Name = "textBoxubicpred";
             this.textBoxubicpred.Size = new System.Drawing.Size(250, 20);
             this.textBoxubicpred.TabIndex = 76;
             // 
             // textBoxpagoanual
             // 
-            this.textBoxpagoanual.Location = new System.Drawing.Point(234, 568);
+            this.textBoxpagoanual.Location = new System.Drawing.Point(234, 611);
             this.textBoxpagoanual.Name = "textBoxpagoanual";
             this.textBoxpagoanual.Size = new System.Drawing.Size(216, 20);
             this.textBoxpagoanual.TabIndex = 77;
@@ -436,11 +440,51 @@
             this.button1.Text = "Imprimir recibo";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // textBoxPoblacion
+            // 
+            this.textBoxPoblacion.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBoxPoblacion.Location = new System.Drawing.Point(200, 484);
+            this.textBoxPoblacion.Name = "textBoxPoblacion";
+            this.textBoxPoblacion.ReadOnly = true;
+            this.textBoxPoblacion.Size = new System.Drawing.Size(250, 20);
+            this.textBoxPoblacion.TabIndex = 82;
+            // 
+            // textBoxColonia
+            // 
+            this.textBoxColonia.Cursor = System.Windows.Forms.Cursors.No;
+            this.textBoxColonia.Location = new System.Drawing.Point(200, 461);
+            this.textBoxColonia.Name = "textBoxColonia";
+            this.textBoxColonia.ReadOnly = true;
+            this.textBoxColonia.Size = new System.Drawing.Size(161, 20);
+            this.textBoxColonia.TabIndex = 81;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(83, 491);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 13);
+            this.label18.TabIndex = 80;
+            this.label18.Text = "Ciudad o Poblacion";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(83, 468);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(45, 13);
+            this.label19.TabIndex = 79;
+            this.label19.Text = "Colonia:";
+            // 
             // Pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 601);
+            this.ClientSize = new System.Drawing.Size(800, 680);
+            this.Controls.Add(this.textBoxPoblacion);
+            this.Controls.Add(this.textBoxColonia);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxpagoanual);
             this.Controls.Add(this.textBoxubicpred);
@@ -531,5 +575,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombrePredios;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxPoblacion;
+        private System.Windows.Forms.TextBox textBoxColonia;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
     }
 }

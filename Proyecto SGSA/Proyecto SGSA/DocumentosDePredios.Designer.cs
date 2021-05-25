@@ -58,6 +58,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExaminar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBoxPoblacion = new System.Windows.Forms.TextBox();
+            this.textBoxColonia = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dBA7241DsgsaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRegistros)).BeginInit();
@@ -124,7 +128,7 @@
             this.dgvRegistros.AllowUserToAddRows = false;
             this.dgvRegistros.AllowUserToDeleteRows = false;
             this.dgvRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRegistros.Location = new System.Drawing.Point(46, 371);
+            this.dgvRegistros.Location = new System.Drawing.Point(68, 426);
             this.dgvRegistros.Name = "dgvRegistros";
             this.dgvRegistros.ReadOnly = true;
             this.dgvRegistros.Size = new System.Drawing.Size(1040, 150);
@@ -145,7 +149,7 @@
             this.textBox9NamePredios.BackColor = System.Drawing.SystemColors.Window;
             this.textBox9NamePredios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9NamePredios.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9NamePredios.Location = new System.Drawing.Point(240, 320);
+            this.textBox9NamePredios.Location = new System.Drawing.Point(241, 375);
             this.textBox9NamePredios.Name = "textBox9NamePredios";
             this.textBox9NamePredios.Size = new System.Drawing.Size(652, 20);
             this.textBox9NamePredios.TabIndex = 70;
@@ -155,7 +159,7 @@
             this.textBox8Telefono.BackColor = System.Drawing.SystemColors.Window;
             this.textBox8Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox8Telefono.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8Telefono.Location = new System.Drawing.Point(240, 294);
+            this.textBox8Telefono.Location = new System.Drawing.Point(241, 349);
             this.textBox8Telefono.Name = "textBox8Telefono";
             this.textBox8Telefono.Size = new System.Drawing.Size(155, 20);
             this.textBox8Telefono.TabIndex = 69;
@@ -195,7 +199,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label9.Location = new System.Drawing.Point(65, 325);
+            this.label9.Location = new System.Drawing.Point(66, 380);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 15);
             this.label9.TabIndex = 65;
@@ -206,7 +210,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(65, 299);
+            this.label8.Location = new System.Drawing.Point(66, 354);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 15);
             this.label8.TabIndex = 64;
@@ -349,11 +353,53 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_3);
             // 
+            // textBoxPoblacion
+            // 
+            this.textBoxPoblacion.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPoblacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPoblacion.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPoblacion.Location = new System.Drawing.Point(241, 323);
+            this.textBoxPoblacion.Name = "textBoxPoblacion";
+            this.textBoxPoblacion.Size = new System.Drawing.Size(155, 20);
+            this.textBoxPoblacion.TabIndex = 82;
+            // 
+            // textBoxColonia
+            // 
+            this.textBoxColonia.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxColonia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxColonia.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColonia.Location = new System.Drawing.Point(241, 297);
+            this.textBoxColonia.Name = "textBoxColonia";
+            this.textBoxColonia.Size = new System.Drawing.Size(155, 20);
+            this.textBoxColonia.TabIndex = 81;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(66, 332);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(102, 13);
+            this.label17.TabIndex = 80;
+            this.label17.Text = "Ciudad o Poblacion:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(66, 304);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 13);
+            this.label16.TabIndex = 79;
+            this.label16.Text = "Colonia:";
+            // 
             // DocumentosDePredios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1152, 588);
+            this.Controls.Add(this.textBoxPoblacion);
+            this.Controls.Add(this.textBoxColonia);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExaminar);
             this.Controls.Add(this.label12);
@@ -422,5 +468,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExaminar;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBoxPoblacion;
+        private System.Windows.Forms.TextBox textBoxColonia;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }

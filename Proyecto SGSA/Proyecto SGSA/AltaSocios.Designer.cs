@@ -64,6 +64,10 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.textBoxPoblacion = new System.Windows.Forms.TextBox();
+            this.textBoxColonia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBA7241DsgsaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -206,16 +210,16 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label7.Location = new System.Drawing.Point(56, 279);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 15);
+            this.label7.Size = new System.Drawing.Size(90, 15);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Domicilio:";
+            this.label7.Text = "Domicilio:Calle";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label8.Location = new System.Drawing.Point(56, 305);
+            this.label8.Location = new System.Drawing.Point(56, 363);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 15);
             this.label8.TabIndex = 11;
@@ -226,7 +230,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label9.Location = new System.Drawing.Point(56, 331);
+            this.label9.Location = new System.Drawing.Point(56, 389);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(135, 15);
             this.label9.TabIndex = 12;
@@ -248,7 +252,7 @@
             this.textBox6Edad.BackColor = System.Drawing.SystemColors.Window;
             this.textBox6Edad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox6Edad.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox6Edad.Location = new System.Drawing.Point(232, 248);
+            this.textBox6Edad.Location = new System.Drawing.Point(231, 248);
             this.textBox6Edad.Name = "textBox6Edad";
             this.textBox6Edad.Size = new System.Drawing.Size(79, 20);
             this.textBox6Edad.TabIndex = 14;
@@ -269,7 +273,7 @@
             this.textBox8Telefono.BackColor = System.Drawing.SystemColors.Window;
             this.textBox8Telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox8Telefono.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8Telefono.Location = new System.Drawing.Point(231, 300);
+            this.textBox8Telefono.Location = new System.Drawing.Point(231, 358);
             this.textBox8Telefono.Name = "textBox8Telefono";
             this.textBox8Telefono.Size = new System.Drawing.Size(155, 20);
             this.textBox8Telefono.TabIndex = 16;
@@ -280,7 +284,7 @@
             this.textBox9NamePredios.BackColor = System.Drawing.SystemColors.Window;
             this.textBox9NamePredios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9NamePredios.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9NamePredios.Location = new System.Drawing.Point(231, 326);
+            this.textBox9NamePredios.Location = new System.Drawing.Point(231, 384);
             this.textBox9NamePredios.Name = "textBox9NamePredios";
             this.textBox9NamePredios.Size = new System.Drawing.Size(652, 20);
             this.textBox9NamePredios.TabIndex = 17;
@@ -317,7 +321,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(232, 391);
+            this.button1.Location = new System.Drawing.Point(232, 423);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(290, 69);
             this.button1.TabIndex = 20;
@@ -329,7 +333,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox1.Image = global::Proyecto_SGSA.Properties.Resources.guardar0;
-            this.pictureBox1.Location = new System.Drawing.Point(256, 408);
+            this.pictureBox1.Location = new System.Drawing.Point(256, 440);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(33, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -340,7 +344,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
             this.pictureBox2.Image = global::Proyecto_SGSA.Properties.Resources.ingresarpredios;
-            this.pictureBox2.Location = new System.Drawing.Point(617, 408);
+            this.pictureBox2.Location = new System.Drawing.Point(617, 440);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(33, 37);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -357,7 +361,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Location = new System.Drawing.Point(593, 391);
+            this.button2.Location = new System.Drawing.Point(593, 423);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(290, 69);
             this.button2.TabIndex = 22;
@@ -416,6 +420,44 @@
             this.label15.TabIndex = 28;
             this.label15.Text = "0";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(56, 309);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(45, 13);
+            this.label16.TabIndex = 29;
+            this.label16.Text = "Colonia:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(56, 337);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(102, 13);
+            this.label17.TabIndex = 30;
+            this.label17.Text = "Ciudad o Poblacion:";
+            // 
+            // textBoxPoblacion
+            // 
+            this.textBoxPoblacion.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxPoblacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxPoblacion.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxPoblacion.Location = new System.Drawing.Point(231, 328);
+            this.textBoxPoblacion.Name = "textBoxPoblacion";
+            this.textBoxPoblacion.Size = new System.Drawing.Size(155, 20);
+            this.textBoxPoblacion.TabIndex = 32;
+            // 
+            // textBoxColonia
+            // 
+            this.textBoxColonia.BackColor = System.Drawing.SystemColors.Window;
+            this.textBoxColonia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxColonia.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.textBoxColonia.Location = new System.Drawing.Point(231, 302);
+            this.textBoxColonia.Name = "textBoxColonia";
+            this.textBoxColonia.Size = new System.Drawing.Size(155, 20);
+            this.textBoxColonia.TabIndex = 31;
+            // 
             // AltaSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,6 +465,10 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1002, 504);
+            this.Controls.Add(this.textBoxPoblacion);
+            this.Controls.Add(this.textBoxColonia);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.linkLabel1);
@@ -502,5 +548,9 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxPoblacion;
+        private System.Windows.Forms.TextBox textBoxColonia;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }

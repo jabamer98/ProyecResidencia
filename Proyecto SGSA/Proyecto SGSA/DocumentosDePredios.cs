@@ -52,8 +52,10 @@ namespace Proyecto_SGSA
             textBox5FNacimiento.Text = Convert.ToString(fila.Cells[4].Value);
             textBox6Edad.Text = Convert.ToString(fila.Cells[5].Value);
             textBox7Domicilio.Text = Convert.ToString(fila.Cells[6].Value);
-            textBox8Telefono.Text = Convert.ToString(fila.Cells[7].Value);
-            textBox9NamePredios.Text = Convert.ToString(fila.Cells[8].Value);
+            textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
+            textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
+            textBox8Telefono.Text = Convert.ToString(fila.Cells[9].Value);
+            textBox9NamePredios.Text = Convert.ToString(fila.Cells[10].Value);
         }
 
         //Metodo que actualiza los datos del Usuario
@@ -64,7 +66,7 @@ namespace Proyecto_SGSA
             {
                 string fecha = textBox5FNacimiento.Text.Trim();
                 string actualizar = "UPDATE Socios SET APaterno = @apaterno, AMaterno = @amaterno, Nombre = @nombre, FNacimiento = @fnacimiento, " +
-                    "Edad = @edad, Domicilio = @domicilio, Telefono = @telefono, NombrePredios = @nombrepredios WHERE CURP = @curp";
+                    "Edad = @edad, Domicilio = @domicilio, Colonia = @colonia, CiudadOPoblacion = @ciudadopoblacion, Telefono = @telefono, NombrePredios = @nombrepredios WHERE CURP = @curp";
                 con.Open();
                 SqlCommand comando = new SqlCommand(actualizar, con);
 
@@ -75,6 +77,8 @@ namespace Proyecto_SGSA
                 comando.Parameters.AddWithValue("@fnacimiento", Convert.ToDateTime(textBox5FNacimiento.Text));
                 comando.Parameters.AddWithValue("@edad", textBox6Edad.Text);
                 comando.Parameters.AddWithValue("@domicilio", textBox7Domicilio.Text);
+                comando.Parameters.AddWithValue("@colonia", textBoxColonia.Text);
+                comando.Parameters.AddWithValue("@ciudadopoblacion", textBoxPoblacion.Text);
                 comando.Parameters.AddWithValue("@telefono", textBox8Telefono.Text);
                 comando.Parameters.AddWithValue("@nombrepredios", textBox9NamePredios.Text);
                 comando.ExecuteNonQuery();
@@ -145,7 +149,7 @@ namespace Proyecto_SGSA
         //Metodo que abre la carpeta de los documentos del socio seleccionado
         private void btnExaminar_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", @"C:\" + "" + textBox2Paterno.Text + " " + textBox3Materno.Text + " " + textBox4Nombre.Text + " " + textBox1CURP.Text);
+            Process.Start("explorer.exe", @"D:\" + "" + textBox2Paterno.Text + " " + textBox3Materno.Text + " " + textBox4Nombre.Text + " " + textBox1CURP.Text);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

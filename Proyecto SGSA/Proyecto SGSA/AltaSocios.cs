@@ -117,8 +117,8 @@ namespace Proyecto_SGSA
             carpet(this.textBox2Paterno.Text, this.textBox3Materno.Text, this.textBox4Nombre.Text, this.textBox1CURP.Text);
 
             string consultar = bd.selectstring("SELECT * FROM Socios WHERE CURP = '"+ textBox1CURP.Text +"'");
-            string agregar = "INSERT INTO Socios ([CURP], [APaterno], [AMaterno], [Nombre], [FNacimiento], [Edad], [Domicilio], [Telefono], [NombrePredios]) " +
-                                    "VALUES ('" + textBox1CURP.Text + "', '" + textBox2Paterno.Text + "', '" + textBox3Materno.Text + "', '" + textBox4Nombre.Text + "', '" + textBox5FNacimiento.Text + "', '" + textBox6Edad.Text + "', '" + textBox7Domicilio.Text + "', '" + textBox8Telefono.Text + "', '" + textBox9NamePredios.Text + "')";
+            string agregar = "INSERT INTO Socios ([CURP], [APaterno], [AMaterno], [Nombre], [FNacimiento], [Edad], [Domicilio], [Colonia], [CiudadOPoblacion], [Telefono], [NombrePredios]) " +
+                                    "VALUES ('" + textBox1CURP.Text + "', '" + textBox2Paterno.Text + "', '" + textBox3Materno.Text + "', '" + textBox4Nombre.Text + "', '" + textBox5FNacimiento.Text + "', '" + textBox6Edad.Text + "', '" + textBox7Domicilio.Text + "', '" + textBoxColonia.Text + "', '" + textBoxPoblacion.Text + "', '" + textBox8Telefono.Text + "', '" + textBox9NamePredios.Text + "')";
 
 
 
@@ -164,6 +164,16 @@ namespace Proyecto_SGSA
                     valido = false;
                     errorProvider1.SetError(textBox7Domicilio, "ingrese un domicílio");
                 }
+                if (textBoxColonia.Text == "")
+                {
+                    valido = false;
+                    errorProvider1.SetError(textBox7Domicilio, "ingrese una Colonia");
+                }
+                if (textBoxPoblacion.Text == "")
+                {
+                    valido = false;
+                    errorProvider1.SetError(textBox7Domicilio, "ingrese una Poblacion");
+                }
                 if (textBox8Telefono.Text == "")
                 {
                     valido = false;
@@ -187,6 +197,8 @@ namespace Proyecto_SGSA
                 errorProvider1.SetError(textBox5FNacimiento, "");
                 errorProvider1.SetError(textBox6Edad, "");
                 errorProvider1.SetError(textBox7Domicilio, "");
+                errorProvider1.SetError(textBoxColonia, "");
+                errorProvider1.SetError(textBoxPoblacion, "");
                 errorProvider1.SetError(textBox8Telefono, "");
                 errorProvider1.SetError(textBox9NamePredios, "");
             }
