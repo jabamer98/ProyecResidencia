@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2BC65ED4-2B11-464F-9F77-6139B1D870CB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Proyecto_SGSA</RootNamespace>
+    <AssemblyName>Proyecto SGSA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConexcionBD">
+      <HintPath>..\..\..\..\..\..\ConexcionBD.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Agenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Agenda.Designer.cs">
+      <DependentUpon>Agenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarDocPersonales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarDocPersonales.designer.cs">
+      <DependentUpon>AgregarDocPersonales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AltaSocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AltaSocios.Designer.cs">
+      <DependentUpon>AltaSocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentosDePredios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DocumentosDePredios.Designer.cs">
+      <DependentUpon>DocumentosDePredios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarSocioParaModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarSocioParaModificar.Designer.cs">
+      <DependentUpon>BuscarSocioParaModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB_A7241D_sgsaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_A7241D_sgsaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Expedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Expedientes.Designer.cs">
+      <DependentUpon>Expedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuExpedientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuExpedientes.Designer.cs">
+      <DependentUpon>MenuExpedientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menusocios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menusocios.Designer.cs">
+      <DependentUpon>menusocios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pagos.Designer.cs">
+      <DependentUpon>Pagos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menu.Designer.cs">
+      <DependentUpon>menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Scanner.cs" />
+    <EmbeddedResource Include="AgregarDocPersonales.resx">
+      <DependentUpon>AgregarDocPersonales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AltaSocios.resx">
+      <DependentUpon>AltaSocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocumentosDePredios.resx">
+      <DependentUpon>DocumentosDePredios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarSocioParaModificar.resx">
+      <DependentUpon>BuscarSocioParaModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuExpedientes.resx">
+      <DependentUpon>MenuExpedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menusocios.resx">
+      <DependentUpon>menusocios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagos.resx">
+      <DependentUpon>Pagos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="menu.resx">
+      <DependentUpon>menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DB_A7241D_sgsaDataSet.xsc">
+      <DependentUpon>DB_A7241D_sgsaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DB_A7241D_sgsaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DB_A7241D_sgsaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DB_A7241D_sgsaDataSet.xss">
+      <DependentUpon>DB_A7241D_sgsaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conversacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conversacion1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagen de desierto.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ingresarpredios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngkin.com_agenda-png_1601086.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngkin.com_money-icon-png_146828.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unnamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3289557-clan-group-partners-peers-people_107100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipart2112180.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\escaner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scanner-48_46608.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\create_edit_modify_icon_176960.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compose_edit_modify_icon_177770.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WIA">
+      <Guid>{94A0E92D-43C0-494E-AC29-FD45948A5221}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpeta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
