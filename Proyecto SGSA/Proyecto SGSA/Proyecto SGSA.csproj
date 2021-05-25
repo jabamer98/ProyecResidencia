@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ConexcionBD">
-      <HintPath>..\..\..\..\..\..\ConexcionBD.dll</HintPath>
+      <HintPath>E:\laptop 2021\wisi\WindowsFormsApplication6\ConexcionBD.dll</HintPath>
     </Reference>
     <Reference Include="FSharp.Core, Version=4.5.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
