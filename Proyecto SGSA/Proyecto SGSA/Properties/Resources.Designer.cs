@@ -83,6 +83,16 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carpetaprin {
+            get {
+                object obj = ResourceManager.GetObject("carpetaprin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap clipart2112180 {
             get {
                 object obj = ResourceManager.GetObject("clipart2112180", resourceCulture);
@@ -133,9 +143,59 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dineroprinc {
+            get {
+                object obj = ResourceManager.GetObject("dineroprinc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap escaner {
             get {
                 object obj = ResourceManager.GetObject("escaner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondo {
+            get {
+                object obj = ResourceManager.GetObject("fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondonuevo {
+            get {
+                object obj = ResourceManager.GetObject("fondonuevo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoprincipal {
+            get {
+                object obj = ResourceManager.GetObject("fondoprincipal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoprincipal1 {
+            get {
+                object obj = ResourceManager.GetObject("fondoprincipal1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +253,16 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap inventarioprinc {
+            get {
+                object obj = ResourceManager.GetObject("inventarioprinc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngkin_com_agenda_png_1601086 {
             get {
                 object obj = ResourceManager.GetObject("pngkin.com_agenda-png_1601086", resourceCulture);
@@ -216,6 +286,16 @@ namespace Proyecto_SGSA.Properties {
         internal static System.Drawing.Bitmap scanner_48_46608 {
             get {
                 object obj = ResourceManager.GetObject("scanner-48_46608", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap titulo {
+            get {
+                object obj = ResourceManager.GetObject("titulo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

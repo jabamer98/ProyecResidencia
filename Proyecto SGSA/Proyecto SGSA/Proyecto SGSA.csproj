@@ -270,5 +270,29 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carpetaprin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dineroprinc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventarioprinc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondonuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoprincipal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoprincipal1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
