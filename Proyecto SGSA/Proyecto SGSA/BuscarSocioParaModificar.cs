@@ -149,7 +149,7 @@ namespace Proyecto_SGSA
         //Metodo que abre la carpeta de los documentos del socio seleccionado
         private void btnExaminar_Click(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", @"C:\" + "" + textBox2Paterno.Text + " " + textBox3Materno.Text + " " + textBox4Nombre.Text + " " + textBox1CURP.Text);
+            Process.Start("explorer.exe", @"D:\" + "" + textBox2Paterno.Text + " " + textBox3Materno.Text + " " + textBox4Nombre.Text + " " + textBox1CURP.Text);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)

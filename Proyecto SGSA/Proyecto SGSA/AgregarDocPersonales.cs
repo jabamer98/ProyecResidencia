@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WIA;
+using System.Diagnostics;
 
 namespace Proyecto_SGSA
 {
@@ -138,6 +139,12 @@ namespace Proyecto_SGSA
             this.Hide();
             menusocios menusocios = new menusocios();
             menusocios.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", @"D:\" + "" + textBox4.Text + " " + textBox6.Text + " " + textBox5.Text + " " + textBox3.Text);
+
         }
     }
 }
