@@ -128,7 +128,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Proyecto_SGSA.Properties.Resources.titulo;
-            this.pictureBox1.Location = new System.Drawing.Point(249, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(240, 30);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(478, 110);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
