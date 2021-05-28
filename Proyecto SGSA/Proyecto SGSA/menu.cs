@@ -152,5 +152,17 @@ namespace Proyecto_SGSA
         {
 
         }
+
+
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Transparent;
+        }
+
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            button2.BackColor = Color.Aqua;
+        }
     }
 }

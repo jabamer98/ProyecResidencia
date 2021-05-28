@@ -68,17 +68,20 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = global::Proyecto_SGSA.Properties.Resources.dineroprinc;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 111);
             this.button3.Name = "button3";
             this.button3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.button3.Size = new System.Drawing.Size(183, 34);
+            this.button3.Size = new System.Drawing.Size(203, 45);
             this.button3.TabIndex = 12;
             this.button3.Text = "Pagos";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -87,29 +90,35 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 350);
+            this.button2.Location = new System.Drawing.Point(0, 361);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(183, 48);
+            this.button2.Size = new System.Drawing.Size(203, 45);
             this.button2.TabIndex = 11;
             this.button2.Text = "Expedientes";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button2_MouseMove);
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button1.BackgroundImage = global::Proyecto_SGSA.Properties.Resources._3289557_clan_group_partners_peers_people_107100;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 223);
+            this.button1.Location = new System.Drawing.Point(0, 234);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(183, 45);
+            this.button1.Size = new System.Drawing.Size(203, 45);
             this.button1.TabIndex = 10;
             this.button1.Text = "Socios";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -153,7 +162,7 @@
             this.Panellateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.Panellateral.Location = new System.Drawing.Point(0, 0);
             this.Panellateral.Name = "Panellateral";
-            this.Panellateral.Size = new System.Drawing.Size(200, 344);
+            this.Panellateral.Size = new System.Drawing.Size(220, 344);
             this.Panellateral.TabIndex = 18;
             this.Panellateral.Paint += new System.Windows.Forms.PaintEventHandler(this.Panellateral_Paint);
             // 
@@ -162,7 +171,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 29);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(183, 82);
+            this.panel2.Size = new System.Drawing.Size(203, 82);
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -177,7 +186,7 @@
             this.materialFlatButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton1.Name = "materialFlatButton1";
             this.materialFlatButton1.Primary = false;
-            this.materialFlatButton1.Size = new System.Drawing.Size(183, 36);
+            this.materialFlatButton1.Size = new System.Drawing.Size(203, 36);
             this.materialFlatButton1.TabIndex = 19;
             this.materialFlatButton1.Text = "Realizar pago e imprimir";
             this.materialFlatButton1.UseVisualStyleBackColor = true;
@@ -187,9 +196,9 @@
             // 
             this.subpanelbtn3.Controls.Add(this.materialFlatButton1);
             this.subpanelbtn3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subpanelbtn3.Location = new System.Drawing.Point(0, 145);
+            this.subpanelbtn3.Location = new System.Drawing.Point(0, 156);
             this.subpanelbtn3.Name = "subpanelbtn3";
-            this.subpanelbtn3.Size = new System.Drawing.Size(183, 78);
+            this.subpanelbtn3.Size = new System.Drawing.Size(203, 78);
             this.subpanelbtn3.TabIndex = 15;
             // 
             // subpanelbtn1
@@ -197,9 +206,9 @@
             this.subpanelbtn1.Controls.Add(this.materialFlatButton3);
             this.subpanelbtn1.Controls.Add(this.materialFlatButton2);
             this.subpanelbtn1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subpanelbtn1.Location = new System.Drawing.Point(0, 268);
+            this.subpanelbtn1.Location = new System.Drawing.Point(0, 279);
             this.subpanelbtn1.Name = "subpanelbtn1";
-            this.subpanelbtn1.Size = new System.Drawing.Size(183, 82);
+            this.subpanelbtn1.Size = new System.Drawing.Size(203, 82);
             this.subpanelbtn1.TabIndex = 16;
             // 
             // materialFlatButton2
@@ -213,7 +222,7 @@
             this.materialFlatButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton2.Name = "materialFlatButton2";
             this.materialFlatButton2.Primary = false;
-            this.materialFlatButton2.Size = new System.Drawing.Size(183, 36);
+            this.materialFlatButton2.Size = new System.Drawing.Size(203, 36);
             this.materialFlatButton2.TabIndex = 0;
             this.materialFlatButton2.Text = "agregar socio";
             this.materialFlatButton2.UseVisualStyleBackColor = true;
@@ -230,7 +239,7 @@
             this.materialFlatButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton3.Name = "materialFlatButton3";
             this.materialFlatButton3.Primary = false;
-            this.materialFlatButton3.Size = new System.Drawing.Size(183, 36);
+            this.materialFlatButton3.Size = new System.Drawing.Size(203, 36);
             this.materialFlatButton3.TabIndex = 1;
             this.materialFlatButton3.Text = "modificar y eliminar socio";
             this.materialFlatButton3.UseVisualStyleBackColor = true;
@@ -241,9 +250,9 @@
             this.subpanelbtn2.Controls.Add(this.materialFlatButton5);
             this.subpanelbtn2.Controls.Add(this.materialFlatButton4);
             this.subpanelbtn2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subpanelbtn2.Location = new System.Drawing.Point(0, 398);
+            this.subpanelbtn2.Location = new System.Drawing.Point(0, 406);
             this.subpanelbtn2.Name = "subpanelbtn2";
-            this.subpanelbtn2.Size = new System.Drawing.Size(183, 90);
+            this.subpanelbtn2.Size = new System.Drawing.Size(203, 90);
             this.subpanelbtn2.TabIndex = 17;
             // 
             // materialFlatButton4
@@ -257,7 +266,7 @@
             this.materialFlatButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton4.Name = "materialFlatButton4";
             this.materialFlatButton4.Primary = false;
-            this.materialFlatButton4.Size = new System.Drawing.Size(183, 36);
+            this.materialFlatButton4.Size = new System.Drawing.Size(203, 36);
             this.materialFlatButton4.TabIndex = 0;
             this.materialFlatButton4.Text = "documento de predios";
             this.materialFlatButton4.UseVisualStyleBackColor = true;
@@ -274,7 +283,7 @@
             this.materialFlatButton5.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialFlatButton5.Name = "materialFlatButton5";
             this.materialFlatButton5.Primary = false;
-            this.materialFlatButton5.Size = new System.Drawing.Size(183, 36);
+            this.materialFlatButton5.Size = new System.Drawing.Size(203, 36);
             this.materialFlatButton5.TabIndex = 1;
             this.materialFlatButton5.Text = "expedientes";
             this.materialFlatButton5.UseVisualStyleBackColor = true;
@@ -284,11 +293,12 @@
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(0, 488);
+            this.button4.Location = new System.Drawing.Point(0, 496);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(183, 39);
+            this.button4.Size = new System.Drawing.Size(203, 45);
             this.button4.TabIndex = 13;
             this.button4.Text = "Agenda";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -298,9 +308,9 @@
             // subpanelbtn4
             // 
             this.subpanelbtn4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subpanelbtn4.Location = new System.Drawing.Point(0, 527);
+            this.subpanelbtn4.Location = new System.Drawing.Point(0, 541);
             this.subpanelbtn4.Name = "subpanelbtn4";
-            this.subpanelbtn4.Size = new System.Drawing.Size(183, 100);
+            this.subpanelbtn4.Size = new System.Drawing.Size(203, 100);
             this.subpanelbtn4.TabIndex = 18;
             // 
             // menu
