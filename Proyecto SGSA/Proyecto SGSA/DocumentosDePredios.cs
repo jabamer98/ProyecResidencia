@@ -175,8 +175,8 @@ namespace Proyecto_SGSA
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Expedientes expedientes = new Expedientes();
-            expedientes.Show();
+            menu menuprin = new menu();
+            menuprin.Show();
         }
     }
 }

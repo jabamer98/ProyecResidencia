@@ -15,6 +15,7 @@ namespace Proyecto_SGSA
         public menu()
         {
             InitializeComponent();
+            personalizarDiseno();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -24,26 +25,27 @@ namespace Proyecto_SGSA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
+            mostrarSubmenu(subpanelbtn1);
+            /*this.Hide();
             menusocios menusocio = new menusocios();
-            menusocio.Show();
+            menusocio.Show();*/
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-
+            mostrarSubmenu(subpanelbtn2);
+            /*this.Hide();
             MenuExpedientes expedientes = new MenuExpedientes();
-            expedientes.Show();
+            expedientes.Show();*/
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            mostrarSubmenu(subpanelbtn3);
 
+            /*this.Hide();
             Pagos pagos = new Pagos();
-            pagos.Show();
+            pagos.Show();*/
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -52,6 +54,103 @@ namespace Proyecto_SGSA
 
             Agenda agenda = new Agenda();
             agenda.Show();
+        }
+
+        private void menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Panellateral_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void personalizarDiseno()
+            /*en esta parte del codigo creamos un metodo para hacer que los subpanes entren por defecto
+             minimizados*/
+        {
+            subpanelbtn1.Visible = false;
+            subpanelbtn2.Visible = false;
+            subpanelbtn3.Visible = false;
+            subpanelbtn4.Visible = false;
+        }
+        private void ocultarSubmenu()
+        {
+            /*en esta parte del codigo creamos un metodo para que al momento que damos clic en un subboton el
+             submenu se contrae y todo se minimiza*/
+            if (subpanelbtn1.Visible == true)
+                subpanelbtn1.Visible = false;
+            if (subpanelbtn2.Visible == true)
+                subpanelbtn2.Visible = false;
+            if (subpanelbtn3.Visible == true)
+                subpanelbtn3.Visible = false;
+            if (subpanelbtn4.Visible == true)
+                subpanelbtn4.Visible = false;
+        }
+
+        private void mostrarSubmenu(Panel Submenu)
+        {
+            /*en esta parte del codigo creamos un metodo para que cuando damos clic en el boton principal
+             de cada panel, esos por defecto al inicio aparecen ocultos, entonces al dar clic se despliega
+             todo el submenu de ese boton*/
+            if (Submenu.Visible == false)
+            {
+                ocultarSubmenu();
+                Submenu.Visible = true;
+            }
+            else
+                Submenu.Visible = false;
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Pagos pagos = new Pagos();
+            ocultarSubmenu();
+            pagos.Show();
+        }
+
+        private void materialFlatButton2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AltaSocios altasocios = new AltaSocios();
+            ocultarSubmenu();
+            altasocios.Show();
+        }
+
+        private void materialFlatButton3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            BuscarSocioParaModificar modificasocio = new BuscarSocioParaModificar();
+            ocultarSubmenu();
+            modificasocio.Show();
+        }
+
+        private void materialFlatButton4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DocumentosDePredios docpredios = new DocumentosDePredios();
+            ocultarSubmenu();
+            docpredios.Show();
+        }
+
+        private void materialFlatButton5_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Expedientes expedientes = new Expedientes();
+            ocultarSubmenu();
+            expedientes.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
