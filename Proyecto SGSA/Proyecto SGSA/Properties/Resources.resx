@@ -133,6 +133,9 @@
   <data name="imagen de desierto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\imagen de desierto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sociosch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sociosch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="clipart2112180" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clipart2112180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,6 +147,9 @@
   </data>
   <data name="fondoprincipal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondoprincipal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dineroch1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dineroch1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventarioprinc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventarioprinc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,6 +168,12 @@
   </data>
   <data name="compose_edit_modify_icon_177770" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\compose_edit_modify_icon_177770.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondoprincipal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondoprincipal1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agendach" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agendach.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="carpetaprin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carpetaprin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +205,14 @@
   <data name="usuario (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dineroch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dineroch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ingresarpredios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ingresarpredios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expedientesch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expedientesch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="dineroprinc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dineroprinc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,7 +220,7 @@
   <data name="carpeta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\carpeta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondoprincipal1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondoprincipal1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logocactusrpueba" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logocactusrpueba.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

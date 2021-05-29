@@ -298,5 +298,23 @@
   <ItemGroup>
     <None Include="Resources\fondoprincipal1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sociosch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dineroch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dineroch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expedientesch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agendach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logocactusrpueba.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

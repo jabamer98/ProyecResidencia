@@ -8,14 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
 namespace Proyecto_SGSA
 {
-    public partial class menu : Form
+    public partial class menu : MaterialForm
     {
         public menu()
         {
             InitializeComponent();
             personalizarDiseno();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -196,5 +207,7 @@ namespace Proyecto_SGSA
         {
             button4.BackColor = Color.SteelBlue;
         }
+
+ 
     }
 }
