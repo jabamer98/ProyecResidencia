@@ -9,15 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Proyecto_SGSA
 {
-    public partial class Pagos : Form
+    public partial class Pagos : MaterialForm
     {
         public Pagos()
         {
             InitializeComponent();
+            personalizarDiseño();
             autocompletar();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
         BaseDeDatos bd = new BaseDeDatos();
@@ -38,6 +50,7 @@ namespace Proyecto_SGSA
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
+            mostrarPaneldata(paneldata);
             string buscarporCurp = "SELECT * FROM Socios WHERE CURP = '" + txtBuscar.Text + "'";
             dgvpagos.DataSource = bdt.SelectDataTable(buscarporCurp);
         }
@@ -78,6 +91,46 @@ namespace Proyecto_SGSA
             this.Hide();
             menu menu = new menu();
             menu.Show();
+        }
+
+        private void txtBuscar_Enter(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "Por CURP")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscar_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Por CURP";
+                txtBuscar.ForeColor = Color.Silver;
+            }
+        }
+
+        private void materialFlatButton1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            menu menu = new menu();
+            menu.Show();
+        }
+
+        private void personalizarDiseño()
+        {
+            paneldata.Visible = false;
+        }
+
+        private void mostrarPaneldata(Panel Submenu)
+        {
+            if (Submenu.Visible == false)
+            {
+                Submenu.Visible = true;
+            }
+            else
+                Submenu.Visible = false;
         }
     }
 }
