@@ -198,5 +198,10 @@ namespace Proyecto_SGSA
              menu menuprin = new menu ();
             menuprin.Show();
         }
+
+        private void dgvRegistros_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -71,6 +71,7 @@
     <Compile Include="AltaSocios.Designer.cs">
       <DependentUpon>AltaSocios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Conversion.cs" />
     <Compile Include="DocumentosDePredios.cs">
       <SubType>Form</SubType>
     </Compile>

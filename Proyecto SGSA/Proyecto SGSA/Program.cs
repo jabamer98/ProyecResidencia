@@ -18,9 +18,9 @@ namespace Proyecto_SGSA
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Login());
             //Application.Run(new MenuP());
-            Application.Run(new menu());
+            //Application.Run(new menu());
             //Application.Run(new AltaSocios());
-            //Application.Run(new Pagos());
+            Application.Run(new Pagos());
             //Application.Run(new BuscarSocioParaModificar());
             //Application.Run(new Documentos_Personales());
             //Application.Run(new DocumentosDePredios());

@@ -137,6 +137,7 @@
             this.dgvRegistros.Size = new System.Drawing.Size(1040, 150);
             this.dgvRegistros.TabIndex = 50;
             this.dgvRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistro_CellContentClick);
+            this.dgvRegistros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRegistros_CellContentClick);
             // 
             // btnModificar
             // 
