@@ -3,42 +3,56 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Printing;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Proyecto_SGSA
 {
-    public partial class Pagos : Form
+    public partial class Pagos : MaterialForm
     {
-        Conversion c = new Conversion();
-
         public Pagos()
         {
             InitializeComponent();
+            personalizarDiseño();
             autocompletar();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
         BaseDeDatos bd = new BaseDeDatos();
 
+   
+        
 
         private void Pagos_Load(object sender, EventArgs e)
         {
-            dgvPagoss.DataSource = bd.SelectDataTable("select * from Socios");
-        }
+            // TODO: esta línea de código carga datos en la tabla 'dB_A7241D_sgsaDataSet.Socios' Puede moverla o quitarla según sea necesario.
+            dgvpagos.DataSource = bd.SelectDataTable("select * from Socios");
+           // this.sociosTableAdapter.Fill(this.dB_A7241D_sgsaDataSet.Socios);
+            
 
+        }
         //metodo que hace la busqueda por CURP
         BaseDeDatos bdt = new BaseDeDatos();
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            string buscarPorCURP = "SELECT * FROM Socios WHERE CURP = '" + txtBuscar.Text + "'";
-            dgvPagoss.DataSource = bdt.SelectDataTable(buscarPorCURP);
+            mostrarPaneldata(paneldata);
+            string buscarporCurp = "SELECT * FROM Socios WHERE CURP = '" + txtBuscar.Text + "'";
+            dgvpagos.DataSource = bdt.SelectDataTable(buscarporCurp);
         }
 
 
@@ -63,18 +77,13 @@ namespace Proyecto_SGSA
 
         }
 
-        private void dgvPagoss_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvpagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow fila = dgvPagoss.Rows[e.RowIndex];
-            textBoxNombreS.Text = Convert.ToString(fila.Cells[3].Value);
-            textBoxApellidoPS.Text = Convert.ToString(fila.Cells[1].Value);
-            textBoxApellidoMS.Text = Convert.ToString(fila.Cells[2].Value);
-            textBoxDomicilio.Text = Convert.ToString(fila.Cells[6].Value);
-            textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
-            textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
-            textBoxTelefono.Text = Convert.ToString(fila.Cells[9].Value);
-            textBoxNamePredio.Text = Convert.ToString(fila.Cells[10].Value);
-
+            DataGridViewRow fila = dgvpagos.Rows[e.RowIndex];
+            textBoxnombresoc.Text = Convert.ToString(fila.Cells[2].Value);
+            textBoxtel.Text = Convert.ToString(fila.Cells[4].Value);
+            textBoxdomicilio.Text = Convert.ToString(fila.Cells[3].Value);
+            textBoxpredio.Text = Convert.ToString(fila.Cells[5].Value);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,22 +93,44 @@ namespace Proyecto_SGSA
             menu.Show();
         }
 
-        private void textBoxnombresoc_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_Enter(object sender, EventArgs e)
         {
-
+            if (txtBuscar.Text == "Por CURP")
+            {
+                txtBuscar.Text = "";
+                txtBuscar.ForeColor = Color.Black;
+            }
         }
 
-        private void textBoxtel_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_Leave(object sender, EventArgs e)
         {
-
+            if (txtBuscar.Text == "")
+            {
+                txtBuscar.Text = "Por CURP";
+                txtBuscar.ForeColor = Color.Silver;
+            }
         }
 
-        //Metodo que llama a clase conversion y convierte de numeros a letras, se pone .ToLower para poner en minusculas
-        private void buttonConvLetra_Click(object sender, EventArgs e)
+        private void materialFlatButton1_Click(object sender, EventArgs e)
         {
-            textBoxCantidadLetra.Text = c.enletras(textBoxCantidadNumero.Text);
+            this.Hide();
+            menu menu = new menu();
+            menu.Show();
         }
 
-        
+        private void personalizarDiseño()
+        {
+            paneldata.Visible = false;
+        }
+
+        private void mostrarPaneldata(Panel Submenu)
+        {
+            if (Submenu.Visible == false)
+            {
+                Submenu.Visible = true;
+            }
+            else
+                Submenu.Visible = false;
+        }
     }
 }

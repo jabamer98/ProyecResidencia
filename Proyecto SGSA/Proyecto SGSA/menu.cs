@@ -19,6 +19,8 @@ namespace Proyecto_SGSA
             InitializeComponent();
             personalizarDiseno();
 
+            /*con esta parte de codigo mandamos a inicializar el form con el tema de materialskin
+             ademas de que podemos modificar algunos aspectos como los botones y algunos controles con el mismo tema*/
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -188,12 +190,17 @@ namespace Proyecto_SGSA
             button3.BackColor = Color.SteelBlue;
         }
 
+
         private void button1_MouseMove(object sender, MouseEventArgs e)
+            /*COn este metodo podemos modificar el estado del boton cuando le pasamos el cursor encima
+             colocando un color diferente que lo haga resaltar*/
         {
             button1.BackColor = Color.LightSkyBlue;
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)
+            /*COn este metodo podemos modificar el estado del boton cuando quitamos el cursor encima del mismo
+             haciendo que regrese a su estado original neutro*/
         {
             button1.BackColor = Color.SteelBlue;
         }
