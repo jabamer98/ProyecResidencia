@@ -8,14 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MaterialSkin;
+using MaterialSkin.Controls;
 namespace Proyecto_SGSA
 {
-    public partial class menu : Form
+    public partial class menu : MaterialForm
     {
         public menu()
         {
             InitializeComponent();
             personalizarDiseno();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -155,14 +166,48 @@ namespace Proyecto_SGSA
 
 
 
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            button2.BackColor = Color.Transparent;
-        }
+ 
 
         private void button2_MouseMove(object sender, MouseEventArgs e)
         {
-            button2.BackColor = Color.Aqua;
+            button2.BackColor = Color.LightSkyBlue;
         }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.SteelBlue;
+        }
+
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            button3.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.SteelBlue;
+        }
+
+        private void button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            button1.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.SteelBlue;
+        }
+
+        private void button4_MouseMove(object sender, MouseEventArgs e)
+        {
+            button4.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            button4.BackColor = Color.SteelBlue;
+        }
+
+ 
     }
 }

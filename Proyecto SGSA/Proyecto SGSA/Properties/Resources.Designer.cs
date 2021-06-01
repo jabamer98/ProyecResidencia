@@ -73,6 +73,16 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agendach {
+            get {
+                object obj = ResourceManager.GetObject("agendach", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carpeta {
             get {
                 object obj = ResourceManager.GetObject("carpeta", resourceCulture);
@@ -143,6 +153,26 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dineroch {
+            get {
+                object obj = ResourceManager.GetObject("dineroch", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dineroch1 {
+            get {
+                object obj = ResourceManager.GetObject("dineroch1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dineroprinc {
             get {
                 object obj = ResourceManager.GetObject("dineroprinc", resourceCulture);
@@ -156,6 +186,16 @@ namespace Proyecto_SGSA.Properties {
         internal static System.Drawing.Bitmap escaner {
             get {
                 object obj = ResourceManager.GetObject("escaner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap expedientesch {
+            get {
+                object obj = ResourceManager.GetObject("expedientesch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +303,16 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logocactusrpueba {
+            get {
+                object obj = ResourceManager.GetObject("logocactusrpueba", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngkin_com_agenda_png_1601086 {
             get {
                 object obj = ResourceManager.GetObject("pngkin.com_agenda-png_1601086", resourceCulture);
@@ -286,6 +336,16 @@ namespace Proyecto_SGSA.Properties {
         internal static System.Drawing.Bitmap scanner_48_46608 {
             get {
                 object obj = ResourceManager.GetObject("scanner-48_46608", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sociosch {
+            get {
+                object obj = ResourceManager.GetObject("sociosch", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
