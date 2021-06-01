@@ -16,6 +16,7 @@ namespace Proyecto_SGSA
 {
     public partial class Pagos : MaterialForm
     {
+        Conversion c = new Conversion();
         public Pagos()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace Proyecto_SGSA
         private void Pagos_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dB_A7241D_sgsaDataSet.Socios' Puede moverla o quitarla según sea necesario.
-            dgvpagos.DataSource = bd.SelectDataTable("select * from Socios");
+            dgvPagos.DataSource = bd.SelectDataTable("select * from Socios");
            // this.sociosTableAdapter.Fill(this.dB_A7241D_sgsaDataSet.Socios);
             
 
@@ -51,8 +52,8 @@ namespace Proyecto_SGSA
         private void btnbuscar_Click(object sender, EventArgs e)
         {
             mostrarPaneldata(paneldata);
-            string buscarporCurp = "SELECT * FROM Socios WHERE CURP = '" + txtBuscar.Text + "'";
-            dgvpagos.DataSource = bdt.SelectDataTable(buscarporCurp);
+            string buscarPorCURP = "SELECT * FROM Socios WHERE CURP = '" + txtBuscar.Text + "'";
+            dgvPagos.DataSource = bdt.SelectDataTable(buscarPorCURP);
         }
 
 
@@ -77,13 +78,17 @@ namespace Proyecto_SGSA
 
         }
 
-        private void dgvpagos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPagos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow fila = dgvpagos.Rows[e.RowIndex];
-            textBoxnombresoc.Text = Convert.ToString(fila.Cells[2].Value);
-            textBoxtel.Text = Convert.ToString(fila.Cells[4].Value);
-            textBoxdomicilio.Text = Convert.ToString(fila.Cells[3].Value);
-            textBoxpredio.Text = Convert.ToString(fila.Cells[5].Value);
+            DataGridViewRow fila = dgvPagos.Rows[e.RowIndex];
+            textBoxNombreS.Text = Convert.ToString(fila.Cells[3].Value);
+            textBoxApellidoPS.Text = Convert.ToString(fila.Cells[1].Value);
+            textBoxApellidoMS.Text = Convert.ToString(fila.Cells[2].Value);
+            textBoxDomicilio.Text = Convert.ToString(fila.Cells[6].Value);
+            textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
+            textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
+            textBoxTelefono.Text = Convert.ToString(fila.Cells[9].Value);
+            textBoxNamePredio.Text = Convert.ToString(fila.Cells[10].Value);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -132,5 +137,13 @@ namespace Proyecto_SGSA
             else
                 Submenu.Visible = false;
         }
+
+        //Metodo que llama a clase conversion y convierte de numeros a letras, se pone .ToLower para poner en minusculas
+        private void buttonConvLetra_Click(object sender, EventArgs e)
+        {
+            textBoxCantidadLetra.Text = c.enletras(textBoxCantidadNumero.Text);
+        }
+
+        
     }
 }
