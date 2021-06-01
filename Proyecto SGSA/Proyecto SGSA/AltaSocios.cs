@@ -9,14 +9,25 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 namespace Proyecto_SGSA
 {
-    public partial class AltaSocios : Form
+    public partial class AltaSocios : MaterialForm
     {
         public AltaSocios()
         {
             InitializeComponent();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
         //en este metodo solo agrege un link por medio de codigo para que se pueda hacer la consulta de la curp a traves de internet
         private void AltaSocios_Load(object sender, EventArgs e)
@@ -341,6 +352,40 @@ namespace Proyecto_SGSA
             this.Hide();
             menu menuprin = new menu();
             menuprin.Show();
+        }
+
+        private void textBox5FNacimiento_Enter(object sender, EventArgs e)
+        {
+            /*CON este metodo hacemos que en la propiedad del textbox del focus enter nos aparezca un texto
+             predeterminado por nosotros y en la parte de abajo podemos ver el texto que querramos que desaparezca
+             con el if y en la parte del forecolor indicamos que lo que escribamos despues se coloque en color negro*/
+            if(textBox5FNacimiento.Text == "Año-Mes-Día")
+            {
+                textBox5FNacimiento.Text = "";
+                textBox5FNacimiento.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox5FNacimiento_Leave(object sender, EventArgs e)
+        {
+            /*Con este metodo hacemos lo contrario de la propiedad focus enter en este caso si no escribimos nada
+             en el textbox lo que hara en la condicion if es que volvera a colocar el texto predeterminado nuevamente
+             en este caso en el forecolor nos indica que estara en color silver*/
+            if (textBox5FNacimiento.Text == "")
+            {
+                textBox5FNacimiento.Text = "Año-Mes-Día";
+                textBox5FNacimiento.ForeColor = Color.Silver;
+            }
+        }
+
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            button3.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.SteelBlue;
         }
     }
 }
