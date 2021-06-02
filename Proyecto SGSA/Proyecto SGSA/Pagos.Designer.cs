@@ -554,7 +554,7 @@
             // 
             // buttonConvLetra
             // 
-            this.buttonConvLetra.Location = new System.Drawing.Point(485, 293);
+            this.buttonConvLetra.Location = new System.Drawing.Point(485, 291);
             this.buttonConvLetra.Name = "buttonConvLetra";
             this.buttonConvLetra.Size = new System.Drawing.Size(116, 23);
             this.buttonConvLetra.TabIndex = 86;
