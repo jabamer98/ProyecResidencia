@@ -24,7 +24,7 @@ namespace Proyecto_SGSA
             //Application.Run(new Pagos());
             Application.Run(new BuscarSocioParaModificar());
             //Application.Run(new Documentos_Personales());
-            //Application.Run(new DocumentosDePredios());
+            Application.Run(new DocumentosDePredios());
             //Application.Run(new AgregarDocPersonales());
             //cambiar alta socios para que inicie con Form1 desde el login
         }

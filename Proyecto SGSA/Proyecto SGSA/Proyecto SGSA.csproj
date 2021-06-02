@@ -332,5 +332,19 @@
   <ItemGroup>
     <None Include="Resources\casa.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ClassBT\ClassBT.csproj">
+      <Project>{c83ae761-0bb8-417f-8bbb-d6d891987494}</Project>
+      <Name>ClassBT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassDato\ClassDato.csproj">
+      <Project>{73e60485-6ad6-4ff2-9d88-ce7cbefa7d6f}</Project>
+      <Name>ClassDato</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ClassFunciones\ClassFunciones.csproj">
+      <Project>{3766c009-41d2-4383-8231-0adab7c0576c}</Project>
+      <Name>ClassFunciones</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Proyecto SGSA", "Proyecto SGSA\Proyecto SGSA.csproj", "{2BC65ED4-2B11-464F-9F77-6139B1D870CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassFunciones", "..\..\..\Descargas\pjtFacturaBaseDeDatosPDFy mas\pjtFacturaBaseDeDatos\ClassFunciones\ClassFunciones.csproj", "{3766C009-41D2-4383-8231-0ADAB7C0576C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassBT", "ClassBT\ClassBT.csproj", "{C83AE761-0BB8-417F-8BBB-D6D891987494}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassBT", "..\..\..\Descargas\pjtFacturaBaseDeDatosPDFy mas\pjtFacturaBaseDeDatos\ClassBT\ClassBT.csproj", "{C83AE761-0BB8-417F-8BBB-D6D891987494}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDato", "ClassDato\ClassDato.csproj", "{73E60485-6AD6-4FF2-9D88-CE7CBEFA7D6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassDato", "..\..\..\Descargas\pjtFacturaBaseDeDatosPDFy mas\pjtFacturaBaseDeDatos\ClassDato\ClassDato.csproj", "{73E60485-6AD6-4FF2-9D88-CE7CBEFA7D6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassFunciones", "ClassFunciones\ClassFunciones.csproj", "{3766C009-41D2-4383-8231-0ADAB7C0576C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{2BC65ED4-2B11-464F-9F77-6139B1D870CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BC65ED4-2B11-464F-9F77-6139B1D870CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BC65ED4-2B11-464F-9F77-6139B1D870CB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C83AE761-0BB8-417F-8BBB-D6D891987494}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C83AE761-0BB8-417F-8BBB-D6D891987494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C83AE761-0BB8-417F-8BBB-D6D891987494}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{73E60485-6AD6-4FF2-9D88-CE7CBEFA7D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E60485-6AD6-4FF2-9D88-CE7CBEFA7D6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E60485-6AD6-4FF2-9D88-CE7CBEFA7D6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3766C009-41D2-4383-8231-0ADAB7C0576C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
