@@ -475,21 +475,25 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 136);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(180, 100);
+            this.panel3.Size = new System.Drawing.Size(180, 66);
             this.panel3.TabIndex = 2;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.SteelBlue;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
             this.button2.Image = global::Proyecto_SGSA.Properties.Resources.casa;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(50, 9);
+            this.button2.Location = new System.Drawing.Point(0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 75);
+            this.button2.Size = new System.Drawing.Size(180, 66);
             this.button2.TabIndex = 83;
             this.button2.Text = "Regresar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button2_MouseMove);
             // 
             // panel2
             // 

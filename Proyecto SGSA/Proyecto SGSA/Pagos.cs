@@ -375,6 +375,14 @@ namespace Proyecto_SGSA
             lblCantidadLetra.Text = c.enletras(textBoxCantidadNumero.Text);
         }
 
-        
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            button2.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.SteelBlue;
+        }
     }
 }
