@@ -9,16 +9,27 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using MaterialSkin;
+using MaterialSkin.Controls;
 
 
 
 namespace Proyecto_SGSA
 {
-    public partial class DocumentosDePredios : Form
+    public partial class DocumentosDePredios : MaterialForm
     {
         public DocumentosDePredios()
         {
             InitializeComponent();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
             autocompletar();
         }
 
@@ -177,6 +188,16 @@ namespace Proyecto_SGSA
             this.Hide();
             menu menuprin = new menu();
             menuprin.Show();
+        }
+
+        private void button2_MouseMove(object sender, MouseEventArgs e)
+        {
+            button2.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.SteelBlue;
         }
     }
 }

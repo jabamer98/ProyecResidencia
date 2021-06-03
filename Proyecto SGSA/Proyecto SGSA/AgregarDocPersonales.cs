@@ -10,14 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WIA;
 using System.Diagnostics;
+using MaterialSkin;
+using MaterialSkin.Controls;
+
 
 namespace Proyecto_SGSA
 {
-    public partial class AgregarDocPersonales : Form
+    public partial class AgregarDocPersonales : MaterialForm
     {
         public AgregarDocPersonales()
         {
             InitializeComponent();
+
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.LightBlue200,
+                TextShade.WHITE);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -137,14 +149,24 @@ namespace Proyecto_SGSA
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            menusocios menusocios = new menusocios();
-            menusocios.Show();
+            menu menuprin = new menu();
+            menuprin.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Process.Start("explorer.exe", @"D:\" + "" + textBox4.Text + " " + textBox6.Text + " " + textBox5.Text + " " + textBox3.Text);
 
+        }
+
+        private void button3_MouseMove(object sender, MouseEventArgs e)
+        {
+            button3.BackColor = Color.LightSkyBlue;
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            button3.BackColor = Color.SteelBlue;
         }
     }
 }
