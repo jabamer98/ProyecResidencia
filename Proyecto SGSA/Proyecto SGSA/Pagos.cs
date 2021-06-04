@@ -67,6 +67,7 @@ namespace Proyecto_SGSA
             ///
             InstalledPrintersCombo();
             lblFecha.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
+            
          ///
 
             // TODO: esta línea de código carga datos en la tabla 'dB_A7241D_sgsaDataSet.Socios' Puede moverla o quitarla según sea necesario.
@@ -133,6 +134,8 @@ namespace Proyecto_SGSA
         {
             AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
             SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM Socios", con);
+            SqlDataAdapter adaptadorr = new SqlDataAdapter("SELECT * FROM Pagos", con);
+            
             adaptador.Fill(datos);
             for (int i = 0; i < datos.Rows.Count; i++)
             {
@@ -240,22 +243,24 @@ namespace Proyecto_SGSA
                     ClassBT.clsPagos.Costo = float.Parse(lblCostoApagar.Text);
 
                     ClassFunciones.clsFunciones.EjecutaQuery("RV");
+                    /*
+                    DataTable datos = new DataTable();
+                    datos = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
 
-                    DataTable d = new DataTable();
-                    d = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
+                    ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(datos.Rows[1][1].ToString());
 
-                    ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(d.Rows[0][0].ToString());
+                    */
+                    // for (int i = 0; i < Conteo; i++)
+                    //{
 
-
-                    for (int i = 0; i < Conteo; i++)
-                    {
-                        ClassBT.clsDetallesPago.CURPfk = float.Parse(dgvPagos.Rows[i].Cells[0].Value.ToString()); ;
-                        ClassBT.clsDetallesPago.CantidadAños = int.Parse(dgvPagos.Rows[i].Cells[3].Value.ToString());
-                        ClassBT.clsDetallesPago.CostoDetalle = int.Parse(dgvPagos.Rows[i].Cells[2].Value.ToString());
+                    string curp = textBoxCURP.Text;
+                    ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = curp;
+                        ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
+                        ClassBT.clsDetallesPago.Costo = float.Parse(lblCostoApagar.Text);
 
                         ClassFunciones.clsFunciones.EjecutaQuery("RDV");//registra el detalle de la venta 
 
-                    }
+                    //}
                 }
                 catch (Exception a)
                 {
@@ -293,7 +298,7 @@ namespace Proyecto_SGSA
                          int.Parse(r.Cells[3].Value.ToString()), 
                          double.Parse(r.Cells[2].Value.ToString())); //imprime una linea de descripcion
                  }*/
-                 
+
 
                 Ticket1.RellenarDatos("Recibí del Socio: ", (textBoxNombreS.Text +" "+ textBoxApellidoPS.Text +" "+ textBoxApellidoMS.Text)); // imprime linea con Subtotal
                 Ticket1.RellenarDatos("CURP: ", textBoxCURP.Text);
@@ -347,13 +352,19 @@ namespace Proyecto_SGSA
 
 
 
-
+                //METODO QUE LIMPIA LOS REGISTROS DESPUES DE IMPRIMIR O GUARDAR EL RECIBO Y SOLO DEJA EL DATAGRIDVIEW CON LA PERSONA QUE SE BUSCÓ
                 Fila = 0;
-                while (dgvPagos.RowCount > 0)//limpia el dgv
-                { dgvPagos.Rows.Remove(dgvPagos.CurrentRow); }
+                while (dgvPagos.RowCount > 1)//limpia el dgv
+                {
+                    dgvPagos.Rows.Remove(dgvPagos.CurrentRow);
+                }
                 //LBLIDnuevaFACTURA.Text = ClaseFunciones.ClsFunciones.IDNUEVAFACTURA().ToString();
                 //Checar si Txt Buscar se le queda la curp al hacer clic en la curp del datagridview
-                txtBuscar.Text = lblNombre.Text = txtPagoAnual.Text = textBoxCantidadNumero.Text = "";
+                txtBuscar.Text = lblCantidadLetra.Text = textBoxNombreS.Text = textBoxApellidoPS.Text = textBoxApellidoMS.Text= textBoxCURP.Text
+                = textBoxcuepre1.Text = textBoxsocioavec.Text = textBoxcuepre2.Text = textBoxDomicilio.Text = textBoxColonia.Text = textBoxTelefono.Text
+                = textBoxPoblacion.Text = textBoxconcepto.Text = textBoxNamePredio.Text = comboBox1.Text = textBoxubicpred.Text = textBoxColoniaPredio.Text
+                = txtPagoAnual.Text = txtPagoAnual.Text = textBoxCantidadNumero.Text = "";
+
                 lblCostoApagar.Text = lbldevolucion.Text = textBoxCantidadNumero.Text = "0";
                 txtBuscar.Focus();
                 MessageBox.Show("    Estimado Usuario Recuerde \n Colacar Sello y Firma en el Recibo", "Mensaje Informativo", MessageBoxButtons.OK, MessageBoxIcon.Question);

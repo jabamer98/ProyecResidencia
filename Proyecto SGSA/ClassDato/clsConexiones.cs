@@ -11,7 +11,7 @@ using System.Data;
 namespace ClassDato
 {
   public  class clsConexiones
-    {
+  {
         public static SqlConnection cnx = new SqlConnection(@"Data Source=SQL5071.site4now.net;Initial Catalog=DB_A7241D_sgsa;User Id=DB_A7241D_sgsa_admin;Password=sgsa1234");
 
         public static void EjecutaQuery( string Opcion)
@@ -21,20 +21,20 @@ namespace ClassDato
             switch (Opcion)
             {
 
-                case "RP":
+             /*   case "RP":
                     cmd = new SqlCommand($"INSERT INTO Socios (`APaterno`, `AMaterno`, `Nombre`, `Domicilio`, `Colonia`, `CiudadOPoblacion`, `Telefono`, `NombrePredios`) " +
                         $"VALUES ('{ClassBT.clsSocio.AMaterno}',{ClassBT.clsSocio.APaterno},'{ClassBT.clsSocio.Nombre}','{ClassBT.clsSocio.Domicilio}','{ClassBT.clsSocio.Colonia}'," +
                         $"'{ClassBT.clsSocio.CiudadOPoblacion}','{ClassBT.clsSocio.Telefono}','{ClassBT.clsSocio.NombrePredios}',)", cnx);
-                    break;
+                    break;*/
 
                 case "RV":
-                    cmd = new SqlCommand($"INSERT INTO Pagos ( Fecha, `Costo`) " +
+                    cmd = new SqlCommand($"INSERT INTO Pagos (  Fecha, Costo) " +
                         $"VALUES ('{ClassBT.clsPagos.Fecha}',{ClassBT.clsPagos.Costo})", cnx);
                     break;
 
                 case "RDV":
                     cmd = new SqlCommand($"INSERT INTO DetallePago ( CURPfk, CantidadAños, Costo, Foliofk) " +
-                        $"VALUES ({ClassBT.clsDetallesPago.CURPfk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.CostoDetalle},{ClassBT.clsDetallesPago.Foliofk})", cnx);
+                        $"VALUES ({ClassBT.clsDetallesPago.CURPfk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.Costo},{ClassBT.clsDetallesPago.Foliofk})", cnx);
                     break;
             }
             
@@ -42,7 +42,7 @@ namespace ClassDato
             {
                 cnx.Open();
                 //COMENTADO PARA QUE FUNCIONE********************************************************************
-                //cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
                 cnx.Close();                
             }
             catch (Exception e)
@@ -52,7 +52,7 @@ namespace ClassDato
             finally { cnx.Close(); }
 
         }
-
+        /*
         public static DataTable EjecutaQueryConsulta(string Dato,string Opcion)
         {
             DataTable dt = new DataTable();
@@ -81,7 +81,7 @@ namespace ClassDato
             {
                 cnx.Open();
                 //COMENTADO PARA QUE FUNCIONE*********************************************************************************************
-                //da.Fill(dt); 
+                da.Fill(dt); 
                 cnx.Close();
 
             }
@@ -93,7 +93,7 @@ namespace ClassDato
             finally { cnx.Close(); }
             return dt;
 
-        }
+        }*/
 
-    }
+  }
 }

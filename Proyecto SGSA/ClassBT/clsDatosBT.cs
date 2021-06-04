@@ -10,14 +10,14 @@ namespace ClassBT
     public static class clsDetallesPago
     {
         public static int Folio { get; set; }
-        public static float CURPfk { get; set; }
+        public static string CURPfk { get; set; }
         public static int CantidadAños { get; set; }
-        public static float CostoDetalle { get; set; }
+        public static float Costo { get; set; }
         public static int Foliofk { get; set; }
     }
     public static class clsSocio 
     {
-        public static float CURP { get; set; }
+        public static string CURP { get; set; }
         public static string APaterno { get; set; }
         public static string AMaterno { get; set; }
         public static string Nombre { get; set; }

@@ -107,6 +107,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxColoniaPredio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.lblFolio = new System.Windows.Forms.Label();
+            this.textBoxNoAñosPagar = new System.Windows.Forms.TextBox();
+            this.textBoxFolioPrueba = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.sociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -831,11 +834,37 @@
             this.label6.TabIndex = 103;
             this.label6.Text = "CURP";
             // 
+            // lblFolio
+            // 
+            this.lblFolio.AutoSize = true;
+            this.lblFolio.Location = new System.Drawing.Point(770, 351);
+            this.lblFolio.Name = "lblFolio";
+            this.lblFolio.Size = new System.Drawing.Size(16, 13);
+            this.lblFolio.TabIndex = 104;
+            this.lblFolio.Text = "---";
+            // 
+            // textBoxNoAñosPagar
+            // 
+            this.textBoxNoAñosPagar.Location = new System.Drawing.Point(553, 672);
+            this.textBoxNoAñosPagar.Name = "textBoxNoAñosPagar";
+            this.textBoxNoAñosPagar.Size = new System.Drawing.Size(75, 20);
+            this.textBoxNoAñosPagar.TabIndex = 105;
+            // 
+            // textBoxFolioPrueba
+            // 
+            this.textBoxFolioPrueba.Location = new System.Drawing.Point(830, 349);
+            this.textBoxFolioPrueba.Name = "textBoxFolioPrueba";
+            this.textBoxFolioPrueba.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFolioPrueba.TabIndex = 106;
+            // 
             // Pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 745);
+            this.Controls.Add(this.textBoxFolioPrueba);
+            this.Controls.Add(this.textBoxNoAñosPagar);
+            this.Controls.Add(this.lblFolio);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxColoniaPredio);
             this.Controls.Add(this.label5);
@@ -1002,5 +1031,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxColoniaPredio;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblFolio;
+        private System.Windows.Forms.TextBox textBoxNoAñosPagar;
+        private System.Windows.Forms.TextBox textBoxFolioPrueba;
     }
 }
