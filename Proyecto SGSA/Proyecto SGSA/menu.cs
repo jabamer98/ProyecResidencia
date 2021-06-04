@@ -14,6 +14,7 @@ namespace Proyecto_SGSA
 {
     public partial class menu : MaterialForm
     {
+        private readonly MaterialSkinManager materialSkinManager;
         public menu()
         {
             InitializeComponent();
@@ -215,6 +216,9 @@ namespace Proyecto_SGSA
             button4.BackColor = Color.SteelBlue;
         }
 
- 
+        
+
+        
+        
     }
 }
