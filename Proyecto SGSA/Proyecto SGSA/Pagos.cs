@@ -254,7 +254,7 @@ namespace Proyecto_SGSA
                     //{
 
                     string curp = textBoxCURP.Text;
-                    ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = curp;
+                    //ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = curp;  CHECAR
                         ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
                         ClassBT.clsDetallesPago.Costo = float.Parse(lblCostoApagar.Text);
 
