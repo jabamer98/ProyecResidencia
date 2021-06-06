@@ -60,11 +60,7 @@ namespace Proyecto_SGSA
 
 
         private void Pagos_Load(object sender, EventArgs e)
-        {// TODO: esta línea de código carga datos en la tabla 'dB_A7241D_sgsaDataSet1.DetallePago' Puede moverla o quitarla según sea necesario.
-            this.detallePagoTableAdapter.Fill(this.dB_A7241D_sgsaDataSet1.DetallePago);
-            // TODO: esta línea de código carga datos en la tabla 'dB_A7241D_sgsaDataSet1.Pagos' Puede moverla o quitarla según sea necesario.
-            this.pagosTableAdapter.Fill(this.dB_A7241D_sgsaDataSet1.Pagos);
-            ///
+        {
             InstalledPrintersCombo();
             lblFecha.Text = DateTime.Today.Day.ToString() + "/" + DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString();
             
@@ -128,13 +124,12 @@ namespace Proyecto_SGSA
 
 
         //metodo que autocompleta el textbox donde se ingresa el CURP
-        SqlConnection con=new SqlConnection(@"Data Source=SQL5071.site4now.net;Initial Catalog=DB_A7241D_sgsa;User Id=DB_A7241D_sgsa_admin;Password=sgsa1234");
+        SqlConnection con=new SqlConnection(@"Data Source=SQL5092.site4now.net;Initial Catalog=db_a758a9_sgsa;User Id=db_a758a9_sgsa_admin;Password=sgsa1234");
         DataTable datos = new DataTable();
         void autocompletar()
         {
             AutoCompleteStringCollection lista = new AutoCompleteStringCollection();
             SqlDataAdapter adaptador = new SqlDataAdapter("SELECT * FROM Socios", con);
-            SqlDataAdapter adaptadorr = new SqlDataAdapter("SELECT * FROM Pagos", con);
             
             adaptador.Fill(datos);
             for (int i = 0; i < datos.Rows.Count; i++)
@@ -172,7 +167,7 @@ namespace Proyecto_SGSA
         }
 
         ///
-
+       
 
         ///
 
@@ -224,16 +219,24 @@ namespace Proyecto_SGSA
             }
         }
         ///
-
+        
+        private void dgvPago_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
         ///
+        SqlConnection conec = new SqlConnection(@"Data Source=SQL5092.site4now.net;Initial Catalog=db_a758a9_sgsa;User Id=db_a758a9_sgsa_admin;Password=sgsa1234");
+        DataTable data = new DataTable();
+        BaseDeDatos bdte = new BaseDeDatos();
         int Conteo;
+        int Conteoo;
         private void button1_Click(object sender, EventArgs e)
         {
 
             Conteo = dgvPagos.RowCount; // se cuenta los productos y se utilisa el conteo como limite del for
+            Conteoo = dgvPagos.RowCount;
             if (Conteo != 0)
             {
-
+                
                 //RegistrarCompra
 
                 try
@@ -243,24 +246,27 @@ namespace Proyecto_SGSA
                     ClassBT.clsPagos.Costo = float.Parse(lblCostoApagar.Text);
 
                     ClassFunciones.clsFunciones.EjecutaQuery("RV");
-                    /*
-                    DataTable datos = new DataTable();
-                    datos = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
 
-                    ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(datos.Rows[1][1].ToString());
+                    DataTable d = new DataTable();
+                    d = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
 
-                    */
-                    // for (int i = 0; i < Conteo; i++)
-                    //{
+                    ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(d.Rows[0][0].ToString());
+                    //-----------------------------------------------------------------------------------------------------//
+                    //Convert.ToString(textBoxCURP.Text);
+                    //ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = float.Parse(textBoxCURP.Text);   //checar
 
-                    string curp = textBoxCURP.Text;
-                    //ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = curp;  CHECAR
-                        ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
-                        ClassBT.clsDetallesPago.Costo = float.Parse(lblCostoApagar.Text);
+                    ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
+
+                    //Convert.ToString(txtPagoAnual.Text);
+                    //ClassBT.clsDetallesPago.Años =  float.Parse(txtPagoAnual.Text);//checar
+
+                    ClassBT.clsDetallesPago.Costo = float.Parse(lblCostoApagar.Text);
 
                         ClassFunciones.clsFunciones.EjecutaQuery("RDV");//registra el detalle de la venta 
 
-                    //}
+                    
+
+
                 }
                 catch (Exception a)
                 {
@@ -445,5 +451,12 @@ namespace Proyecto_SGSA
         {
 
         }
+
+        private void cmbInstalledPrinters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

@@ -17,13 +17,13 @@ namespace ClassFunciones
             clsConexiones.EjecutaQuery( Opcion); 
             
         }
-        /*public static DataTable EjecutaQueryConsulta(string Dato, string Opcion)
+        public static DataTable EjecutaQueryConsulta(string Dato, string Opcion)
         {
            
             return clsConexiones.EjecutaQueryConsulta(Dato, Opcion);
 
         }
-        */
+        
 
         public class CreaTicket
         {

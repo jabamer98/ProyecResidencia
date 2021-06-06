@@ -12,7 +12,7 @@ namespace ClassDato
 {
   public  class clsConexiones
   {
-        public static SqlConnection cnx = new SqlConnection(@"Data Source=SQL5071.site4now.net;Initial Catalog=DB_A7241D_sgsa;User Id=DB_A7241D_sgsa_admin;Password=sgsa1234");
+        public static SqlConnection cnx = new SqlConnection(@"Data Source=SQL5092.site4now.net;Initial Catalog=db_a758a9_sgsa;User Id=db_a758a9_sgsa_admin;Password=sgsa1234");
 
         public static void EjecutaQuery( string Opcion)
         {
@@ -33,8 +33,8 @@ namespace ClassDato
                     break;
 
                 case "RDV":
-                    cmd = new SqlCommand($"INSERT INTO DetallePago ( CURPfk, CantidadAños, Costo, Foliofk) " +
-                        $"VALUES ({ClassBT.clsDetallesPago.CURPfk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.Costo},{ClassBT.clsDetallesPago.Foliofk})", cnx);
+                    cmd = new SqlCommand($"INSERT INTO DetallePago ( Folio, CantidadAños,  Costo) " +
+                        $"VALUES ({ClassBT.clsDetallesPago.Foliofk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.Costo})", cnx);
                     break;
             }
             
@@ -52,7 +52,7 @@ namespace ClassDato
             finally { cnx.Close(); }
 
         }
-        /*
+        
         public static DataTable EjecutaQueryConsulta(string Dato,string Opcion)
         {
             DataTable dt = new DataTable();
@@ -65,17 +65,22 @@ namespace ClassDato
                     da = new SqlDataAdapter("SELECT * FROM Socios ", cnx);
                     break;
 
+                case "CO":
+                    da = new SqlDataAdapter("SELECT MAX(CURP)FROM Socios ", cnx);
+                    break;
+
 
                 case "IDV":
                     da = new SqlDataAdapter("SELECT MAX( Folio) FROM Pagos", cnx);
                     break;
 
-            
+
+            /*
                 case "CDV":
                     da = new SqlDataAdapter("SELECT Folio, Fecha, P.Costo, CURP, APaterno, AMaterno, Nombre, CURPfk, dp.CantidadAños " +
                         "FROM Pagos as P, Socio as s,DetallePago as dp WHERE P.Folio=dp.Foliofk and CURP=CURPfk", cnx);
                     break;
-
+*/
             }
             try
             {
@@ -93,7 +98,7 @@ namespace ClassDato
             finally { cnx.Close(); }
             return dt;
 
-        }*/
+        }
 
   }
 }

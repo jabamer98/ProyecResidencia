@@ -55,7 +55,7 @@ namespace Proyecto_SGSA
         }
       
 
-        SqlConnection con = new SqlConnection(@"Data Source=SQL5071.site4now.net;Initial Catalog=DB_A7241D_sgsa;User Id=DB_A7241D_sgsa_admin;Password=sgsa1234");
+        SqlConnection con = new SqlConnection(@"Data Source=SQL5092.site4now.net;Initial Catalog=db_a758a9_sgsa;User Id=db_a758a9_sgsa_admin;Password=sgsa1234");
 
         public void carpet(string apaterno, string amaterno, string nombre, string CURP)
         {

@@ -110,6 +110,13 @@
             this.lblFolio = new System.Windows.Forms.Label();
             this.textBoxNoAñosPagar = new System.Windows.Forms.TextBox();
             this.textBoxFolioPrueba = new System.Windows.Forms.TextBox();
+            this.pagosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvPago = new System.Windows.Forms.DataGridView();
+            this.pagosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.sociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -126,6 +133,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBA7241DsgsaDataSet1BindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -312,16 +322,16 @@
             // lblAñoPagar
             // 
             this.lblAñoPagar.AutoSize = true;
-            this.lblAñoPagar.Location = new System.Drawing.Point(199, 697);
+            this.lblAñoPagar.Location = new System.Drawing.Point(200, 726);
             this.lblAñoPagar.Name = "lblAñoPagar";
-            this.lblAñoPagar.Size = new System.Drawing.Size(146, 13);
+            this.lblAñoPagar.Size = new System.Drawing.Size(168, 13);
             this.lblAñoPagar.TabIndex = 63;
-            this.lblAñoPagar.Text = "Pago correspondiente al año:";
+            this.lblAñoPagar.Text = "Pago(s) correspondiente(s) al año:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(731, 348);
+            this.label17.Location = new System.Drawing.Point(730, 299);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 64;
@@ -427,14 +437,14 @@
             // 
             // txtPagoAnual
             // 
-            this.txtPagoAnual.Location = new System.Drawing.Point(353, 694);
+            this.txtPagoAnual.Location = new System.Drawing.Point(372, 723);
             this.txtPagoAnual.Name = "txtPagoAnual";
             this.txtPagoAnual.Size = new System.Drawing.Size(216, 20);
             this.txtPagoAnual.TabIndex = 77;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(806, 626);
+            this.button1.Location = new System.Drawing.Point(599, 550);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 52);
             this.button1.TabIndex = 78;
@@ -605,16 +615,17 @@
             // 
             this.cmbInstalledPrinters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInstalledPrinters.FormattingEnabled = true;
-            this.cmbInstalledPrinters.Location = new System.Drawing.Point(734, 314);
+            this.cmbInstalledPrinters.Location = new System.Drawing.Point(733, 265);
             this.cmbInstalledPrinters.Name = "cmbInstalledPrinters";
             this.cmbInstalledPrinters.Size = new System.Drawing.Size(250, 21);
             this.cmbInstalledPrinters.TabIndex = 89;
+            this.cmbInstalledPrinters.SelectedIndexChanged += new System.EventHandler(this.cmbInstalledPrinters_SelectedIndexChanged);
             // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(780, 378);
+            this.lblFecha.Location = new System.Drawing.Point(779, 329);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(19, 13);
             this.lblFecha.TabIndex = 91;
@@ -623,7 +634,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(731, 378);
+            this.label20.Location = new System.Drawing.Point(730, 329);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(43, 13);
             this.label20.TabIndex = 90;
@@ -634,7 +645,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Controls.Add(this.lbldevolucion);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Location = new System.Drawing.Point(798, 516);
+            this.panel4.Location = new System.Drawing.Point(591, 440);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 21);
             this.panel4.TabIndex = 95;
@@ -670,7 +681,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(828, 494);
+            this.label22.Location = new System.Drawing.Point(621, 418);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(102, 20);
             this.label22.TabIndex = 94;
@@ -681,7 +692,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Controls.Add(this.lblCostoApagar);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(798, 460);
+            this.panel5.Location = new System.Drawing.Point(591, 384);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(175, 21);
             this.panel5.TabIndex = 93;
@@ -717,7 +728,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Location = new System.Drawing.Point(828, 429);
+            this.label24.Location = new System.Drawing.Point(621, 358);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(115, 20);
             this.label24.TabIndex = 92;
@@ -726,7 +737,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(857, 551);
+            this.label25.Location = new System.Drawing.Point(650, 475);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(49, 13);
             this.label25.TabIndex = 97;
@@ -735,7 +746,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(802, 567);
+            this.textBox3.Location = new System.Drawing.Point(595, 491);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(171, 32);
             this.textBox3.TabIndex = 96;
@@ -753,7 +764,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(731, 292);
+            this.label4.Location = new System.Drawing.Point(730, 243);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 13);
             this.label4.TabIndex = 99;
@@ -837,7 +848,7 @@
             // lblFolio
             // 
             this.lblFolio.AutoSize = true;
-            this.lblFolio.Location = new System.Drawing.Point(770, 351);
+            this.lblFolio.Location = new System.Drawing.Point(769, 302);
             this.lblFolio.Name = "lblFolio";
             this.lblFolio.Size = new System.Drawing.Size(16, 13);
             this.lblFolio.TabIndex = 104;
@@ -845,23 +856,83 @@
             // 
             // textBoxNoAñosPagar
             // 
-            this.textBoxNoAñosPagar.Location = new System.Drawing.Point(553, 672);
+            this.textBoxNoAñosPagar.Location = new System.Drawing.Point(330, 699);
             this.textBoxNoAñosPagar.Name = "textBoxNoAñosPagar";
             this.textBoxNoAñosPagar.Size = new System.Drawing.Size(75, 20);
             this.textBoxNoAñosPagar.TabIndex = 105;
             // 
             // textBoxFolioPrueba
             // 
-            this.textBoxFolioPrueba.Location = new System.Drawing.Point(830, 349);
+            this.textBoxFolioPrueba.Location = new System.Drawing.Point(829, 300);
             this.textBoxFolioPrueba.Name = "textBoxFolioPrueba";
             this.textBoxFolioPrueba.Size = new System.Drawing.Size(100, 20);
             this.textBoxFolioPrueba.TabIndex = 106;
+            // 
+            // pagosBindingSource1
+            // 
+            this.pagosBindingSource1.DataMember = "Pagos";
+            this.pagosBindingSource1.DataSource = this.dBA7241DsgsaDataSet1BindingSource;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(199, 699);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(127, 13);
+            this.label7.TabIndex = 107;
+            this.label7.Text = "Número de años a pagar:";
+            // 
+            // dgvPago
+            // 
+            this.dgvPago.AllowUserToAddRows = false;
+            this.dgvPago.AllowUserToDeleteRows = false;
+            this.dgvPago.AutoGenerateColumns = false;
+            this.dgvPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPago.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.folioDataGridViewTextBoxColumn,
+            this.fechaDataGridViewTextBoxColumn,
+            this.costoDataGridViewTextBoxColumn});
+            this.dgvPago.DataSource = this.pagosBindingSource2;
+            this.dgvPago.Location = new System.Drawing.Point(792, 358);
+            this.dgvPago.Name = "dgvPago";
+            this.dgvPago.ReadOnly = true;
+            this.dgvPago.Size = new System.Drawing.Size(267, 85);
+            this.dgvPago.TabIndex = 108;
+            this.dgvPago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPago_CellContentClick);
+            // 
+            // pagosBindingSource2
+            // 
+            this.pagosBindingSource2.DataMember = "Pagos";
+            this.pagosBindingSource2.DataSource = this.dBA7241DsgsaDataSet1BindingSource;
+            // 
+            // folioDataGridViewTextBoxColumn
+            // 
+            this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
+            this.folioDataGridViewTextBoxColumn.HeaderText = "Folio";
+            this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
+            this.folioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // costoDataGridViewTextBoxColumn
+            // 
+            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
+            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
+            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
+            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 745);
+            this.Controls.Add(this.dgvPago);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxFolioPrueba);
             this.Controls.Add(this.textBoxNoAñosPagar);
             this.Controls.Add(this.lblFolio);
@@ -946,6 +1017,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dBA7241DsgsaDataSet1BindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1034,5 +1108,12 @@
         private System.Windows.Forms.Label lblFolio;
         private System.Windows.Forms.TextBox textBoxNoAñosPagar;
         private System.Windows.Forms.TextBox textBoxFolioPrueba;
+        private System.Windows.Forms.BindingSource pagosBindingSource1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dgvPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn folioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pagosBindingSource2;
     }
 }
