@@ -30,18 +30,22 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.dtasocios = new System.Windows.Forms.DataGridView();
+            this.btnprogramar = new System.Windows.Forms.Button();
+            this.btnbuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtasocios)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -72,6 +76,15 @@
             this.panel1.Size = new System.Drawing.Size(200, 385);
             this.panel1.TabIndex = 1;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 84);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 63);
+            this.panel3.TabIndex = 1;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
@@ -90,15 +103,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(200, 84);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.button1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 84);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 63);
-            this.panel3.TabIndex = 1;
             // 
             // label1
             // 
@@ -131,25 +135,57 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("qtquickcontrols", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(310, 188);
+            this.label3.Location = new System.Drawing.Point(205, 183);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Con el socio:";
             // 
-            // textBox1
+            // txtbuscar
             // 
-            this.textBox1.Location = new System.Drawing.Point(413, 188);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtbuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtbuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtbuscar.Location = new System.Drawing.Point(308, 183);
+            this.txtbuscar.Name = "txtbuscar";
+            this.txtbuscar.Size = new System.Drawing.Size(200, 20);
+            this.txtbuscar.TabIndex = 6;
+            // 
+            // dtasocios
+            // 
+            this.dtasocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtasocios.Location = new System.Drawing.Point(209, 210);
+            this.dtasocios.Name = "dtasocios";
+            this.dtasocios.Size = new System.Drawing.Size(579, 73);
+            this.dtasocios.TabIndex = 7;
+            // 
+            // btnprogramar
+            // 
+            this.btnprogramar.Location = new System.Drawing.Point(449, 298);
+            this.btnprogramar.Name = "btnprogramar";
+            this.btnprogramar.Size = new System.Drawing.Size(110, 23);
+            this.btnprogramar.TabIndex = 8;
+            this.btnprogramar.Text = "Programar evento";
+            this.btnprogramar.UseVisualStyleBackColor = true;
+            // 
+            // btnbuscar
+            // 
+            this.btnbuscar.Location = new System.Drawing.Point(534, 181);
+            this.btnbuscar.Name = "btnbuscar";
+            this.btnbuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnbuscar.TabIndex = 9;
+            this.btnbuscar.Text = "Buscar";
+            this.btnbuscar.UseVisualStyleBackColor = true;
+            this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
             // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnbuscar);
+            this.Controls.Add(this.btnprogramar);
+            this.Controls.Add(this.dtasocios);
+            this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
@@ -157,10 +193,12 @@
             this.Controls.Add(this.panel1);
             this.Name = "Agenda";
             this.Text = "Agenda";
+            this.Load += new System.EventHandler(this.Agenda_Load);
             this.panel1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtasocios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -177,6 +215,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.DataGridView dtasocios;
+        private System.Windows.Forms.Button btnprogramar;
+        private System.Windows.Forms.Button btnbuscar;
     }
 }
