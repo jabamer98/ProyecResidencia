@@ -20,8 +20,9 @@ namespace Proyecto_SGSA
             //Application.Run(new MenuP());
             //Application.Run(new menu());
             //Application.Run(new PagosV2());
+            Application.Run(new Agenda());
             //Application.Run(new AltaSocios());
-            Application.Run(new Pagos());
+            // Application.Run(new Pagos());
             //Application.Run(new Expedientes());
             //Application.Run(new BuscarSocioParaModificar());
             //Application.Run(new Documentos_Personales());

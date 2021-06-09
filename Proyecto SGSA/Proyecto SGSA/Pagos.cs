@@ -457,6 +457,9 @@ namespace Proyecto_SGSA
 
         }
 
-       
+        private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
