@@ -85,41 +85,7 @@ namespace Proyecto_SGSA
             string buscarPorCURP = "SELECT * FROM Socios WHERE CURP = '" + txtBuscar.Text + "'";
             dgvPagos.DataSource = bdt.SelectDataTable(buscarPorCURP);
 
-            /*COMENTADO PARA QUE FUNCIONE************************************************************************************
-
-            try
-            {
-                if (txtBuscar.Text != "" && textBoxCantidadNumero.Text != "")
-                {
-
-
-                    ListaCompra[Fila, 0] = txtBuscar.Text;
-                    ListaCompra[Fila, 1] = lblNombre.Text;
-                    ListaCompra[Fila, 2] = lblTelefono.Text;
-                    ListaCompra[Fila, 3] = lblDomicilio.Text;
-                    ListaCompra[Fila, 4] = lblColonia.Text;
-                    ListaCompra[Fila, 5] = lblCiudad.Text;
-                    ListaCompra[Fila, 6] = lblPredioDenominado.Text;
-                    ListaCompra[Fila, 7] = textBoxCantidadNumero.Text;
-                    ListaCompra[Fila, 8] = (float.Parse(textBoxCantidadNumero.Text) * float.Parse(lblBuenoPor.Text)).ToString();
-
-
-
-                    dgvPagos.Rows.Add(ListaCompra[Fila, 0], ListaCompra[Fila, 1], ListaCompra[Fila, 2], ListaCompra[Fila, 3], ListaCompra[Fila, 4]);
-                    Fila++;// se le agrega uno a la fila para futuras generaciones jejeje
-                    txtBuscar.Text = lblNombre.Text = lblBuenoPor.Text = textBoxCantidadNumero.Text = "";
-
-                    txtBuscar.Focus();
-
-                }
-            }
-            catch
-            {
-
-            }
-            CostoApagar();
-            */
-
+            
         }
 
 
@@ -158,37 +124,12 @@ namespace Proyecto_SGSA
              textBoxTelefono.Text = Convert.ToString(fila.Cells[9].Value);
              textBoxNamePredio.Text = Convert.ToString(fila.Cells[10].Value);
 
-             //dgvPagos.Rows.Add(ListaCompra[Fila, 0], ListaCompra[Fila, 1], ListaCompra[Fila, 2], ListaCompra[Fila, 3], ListaCompra[Fila, 4]);
-             // Fila++;// se le agrega uno a la fila para futuras generaciones jejeje
-             //textBoxCURP.Text = lblNombre.Text = lblBuenoPor.Text = textBoxCantidadNumero.Text = "";
-
-             //txtBuscar.Focus();
-
         }
 
-        ///
-       
 
-        ///
-
-
-
-
-        ///
         public void CostoApagar()
         {
-            /* float CostoTotal = 0;
-             int Conteo = 0;
-
-             Conteo = dgvPagos.RowCount; // se cuenta los productos y se utilisa el conteo como limite del for
-             for (int i = 0; i < Conteo; i++)
-             {
-                 //COMENTADO PARA QUE FUNCIONE****************************************************************************************
-                 //CostoTotal += float.Parse(dgvPagos.Rows[i].Cells[4].Value.ToString());
-                 CostoTotal = (float.Parse(textBoxCantidadNumero.Text) * float.Parse(cmbNoAñosPagar.Text));
-             }*/
-
-            //  lblCostoApagar.Text = (float.Parse(lblBuenoPor.Text)).ToString();
+            
         }
         ///
         ///
@@ -250,9 +191,28 @@ namespace Proyecto_SGSA
                     DataTable d = new DataTable();
                     d = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
 
+                    
+
                     ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(d.Rows[0][0].ToString());
+                  
+
+
+
+                    string insertar = "INSERT INTO DetallePago ([Folio], [CURP],[CantidadAños],[Años],[costo]) " +
+                        " VALUES ('" + ClassBT.clsPagos.Folio + "','" + textBoxCURP.Text + "', '" + textBoxNoAñosPagar.Text + "', '" + txtPagoAnual.Text + "', '" + lblCostoApagar.Text + "')";
+                    con.Open();
+                    SqlCommand comando = new SqlCommand(insertar, con);
+
+
+
+                    comando.ExecuteNonQuery();
+                    con.Close();
+
+
+                    /*
+
                     //-----------------------------------------------------------------------------------------------------//
-                   //Convert.ToString(textBoxCURP.Text);
+                    //Convert.ToString(textBoxCURP.Text);
                     ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = ;   //checar
 
                     ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
@@ -264,7 +224,7 @@ namespace Proyecto_SGSA
 
                         ClassFunciones.clsFunciones.EjecutaQuery("RDV");//registra el detalle de la venta 
 
-                    
+                    */
 
 
                 }
@@ -311,7 +271,7 @@ namespace Proyecto_SGSA
                 Ticket1.RellenarDatos("No. de Cuenta Predial: ", textBoxcuepre1.Text);
                 Ticket1.RellenarDatos("Socio Avecinado: ", textBoxsocioavec.Text);
                 Ticket1.RellenarDatos("No. de Cuenta Predial: ", textBoxcuepre2.Text);
-                Ticket1.RellenarDatos("Domicilio: Calle ", textBoxDomicilio.Text);
+                Ticket1.RellenarDatos("Domicilio: ", textBoxDomicilio.Text);
                 Ticket1.RellenarDatos("Colonia: ", textBoxColonia.Text);
                 Ticket1.RellenarDatos("Teléfono: ", textBoxTelefono.Text);
                 Ticket1.RellenarDatos("Ciudad o Población: ", textBoxPoblacion.Text);
@@ -369,9 +329,9 @@ namespace Proyecto_SGSA
                 txtBuscar.Text = lblCantidadLetra.Text = textBoxNombreS.Text = textBoxApellidoPS.Text = textBoxApellidoMS.Text= textBoxCURP.Text
                 = textBoxcuepre1.Text = textBoxsocioavec.Text = textBoxcuepre2.Text = textBoxDomicilio.Text = textBoxColonia.Text = textBoxTelefono.Text
                 = textBoxPoblacion.Text = textBoxconcepto.Text = textBoxNamePredio.Text = comboBox1.Text = textBoxubicpred.Text = textBoxColoniaPredio.Text
-                = txtPagoAnual.Text = txtPagoAnual.Text = textBoxCantidadNumero.Text = "";
+                = txtPagoAnual.Text = txtPagoAnual.Text = textBoxCantidadNumero.Text = textBoxColoniaPredio.Text = textBoxNoAñosPagar.Text = textBox3.Text = "";
 
-                lblCostoApagar.Text = lbldevolucion.Text = textBoxCantidadNumero.Text = "0";
+                lblCostoApagar.Text = lbldevolucion.Text = textBoxCantidadNumero.Text = "";
                 txtBuscar.Focus();
                 MessageBox.Show("    Estimado Usuario Recuerde \n Colacar Sello y Firma en el Recibo", "Mensaje Informativo", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 
@@ -458,6 +418,11 @@ namespace Proyecto_SGSA
         }
 
         private void txtBuscar_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblFecha_Click(object sender, EventArgs e)
         {
 
         }

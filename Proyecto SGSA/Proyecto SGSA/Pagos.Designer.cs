@@ -52,7 +52,6 @@
             this.lblAñoPagar = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxCantidadNumero = new System.Windows.Forms.TextBox();
-            this.textBoxCantidadLetra = new System.Windows.Forms.TextBox();
             this.textBoxNombreS = new System.Windows.Forms.TextBox();
             this.textBoxcuepre1 = new System.Windows.Forms.TextBox();
             this.textBoxsocioavec = new System.Windows.Forms.TextBox();
@@ -105,18 +104,13 @@
             this.detallePagoTableAdapter = new Proyecto_SGSA.DB_A7241D_sgsaDataSet1TableAdapters.DetallePagoTableAdapter();
             this.detallePagoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxColoniaPredio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.lblFolio = new System.Windows.Forms.Label();
             this.textBoxNoAñosPagar = new System.Windows.Forms.TextBox();
-            this.textBoxFolioPrueba = new System.Windows.Forms.TextBox();
             this.pagosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.dgvPago = new System.Windows.Forms.DataGridView();
-            this.folioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.costoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pagosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.textBoxColoniaPredio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.sociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -134,7 +128,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -346,13 +339,6 @@
             this.textBoxCantidadNumero.TabIndex = 65;
             this.textBoxCantidadNumero.TextChanged += new System.EventHandler(this.textBoxCantidadNumero_TextChanged);
             // 
-            // textBoxCantidadLetra
-            // 
-            this.textBoxCantidadLetra.Location = new System.Drawing.Point(1017, 292);
-            this.textBoxCantidadLetra.Name = "textBoxCantidadLetra";
-            this.textBoxCantidadLetra.Size = new System.Drawing.Size(10, 20);
-            this.textBoxCantidadLetra.TabIndex = 66;
-            // 
             // textBoxNombreS
             // 
             this.textBoxNombreS.Cursor = System.Windows.Forms.Cursors.No;
@@ -445,7 +431,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(599, 550);
+            this.button1.Location = new System.Drawing.Point(756, 618);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(165, 52);
             this.button1.TabIndex = 78;
@@ -631,6 +617,7 @@
             this.lblFecha.Size = new System.Drawing.Size(19, 13);
             this.lblFecha.TabIndex = 91;
             this.lblFecha.Text = "...";
+            this.lblFecha.Click += new System.EventHandler(this.lblFecha_Click);
             // 
             // label20
             // 
@@ -646,7 +633,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Controls.Add(this.lbldevolucion);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Location = new System.Drawing.Point(591, 440);
+            this.panel4.Location = new System.Drawing.Point(748, 508);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 21);
             this.panel4.TabIndex = 95;
@@ -682,7 +669,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(621, 418);
+            this.label22.Location = new System.Drawing.Point(778, 486);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(102, 20);
             this.label22.TabIndex = 94;
@@ -693,7 +680,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Controls.Add(this.lblCostoApagar);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(591, 384);
+            this.panel5.Location = new System.Drawing.Point(748, 452);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(175, 21);
             this.panel5.TabIndex = 93;
@@ -729,7 +716,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Location = new System.Drawing.Point(621, 358);
+            this.label24.Location = new System.Drawing.Point(778, 426);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(115, 20);
             this.label24.TabIndex = 92;
@@ -738,7 +725,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(650, 475);
+            this.label25.Location = new System.Drawing.Point(807, 543);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(49, 13);
             this.label25.TabIndex = 97;
@@ -747,7 +734,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(595, 491);
+            this.textBox3.Location = new System.Drawing.Point(752, 559);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(171, 32);
             this.textBox3.TabIndex = 96;
@@ -828,15 +815,6 @@
             this.label5.Text = "Colonia:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBoxColoniaPredio
-            // 
-            this.textBoxColoniaPredio.Cursor = System.Windows.Forms.Cursors.No;
-            this.textBoxColoniaPredio.Location = new System.Drawing.Point(308, 618);
-            this.textBoxColoniaPredio.Name = "textBoxColoniaPredio";
-            this.textBoxColoniaPredio.ReadOnly = true;
-            this.textBoxColoniaPredio.Size = new System.Drawing.Size(161, 20);
-            this.textBoxColoniaPredio.TabIndex = 102;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -853,7 +831,7 @@
             this.lblFolio.Name = "lblFolio";
             this.lblFolio.Size = new System.Drawing.Size(16, 13);
             this.lblFolio.TabIndex = 104;
-            this.lblFolio.Text = "---";
+            this.lblFolio.Text = "...";
             // 
             // textBoxNoAñosPagar
             // 
@@ -861,13 +839,6 @@
             this.textBoxNoAñosPagar.Name = "textBoxNoAñosPagar";
             this.textBoxNoAñosPagar.Size = new System.Drawing.Size(75, 20);
             this.textBoxNoAñosPagar.TabIndex = 105;
-            // 
-            // textBoxFolioPrueba
-            // 
-            this.textBoxFolioPrueba.Location = new System.Drawing.Point(829, 300);
-            this.textBoxFolioPrueba.Name = "textBoxFolioPrueba";
-            this.textBoxFolioPrueba.Size = new System.Drawing.Size(100, 20);
-            this.textBoxFolioPrueba.TabIndex = 106;
             // 
             // pagosBindingSource1
             // 
@@ -883,62 +854,28 @@
             this.label7.TabIndex = 107;
             this.label7.Text = "Número de años a pagar:";
             // 
-            // dgvPago
-            // 
-            this.dgvPago.AllowUserToAddRows = false;
-            this.dgvPago.AllowUserToDeleteRows = false;
-            this.dgvPago.AutoGenerateColumns = false;
-            this.dgvPago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPago.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.folioDataGridViewTextBoxColumn,
-            this.fechaDataGridViewTextBoxColumn,
-            this.costoDataGridViewTextBoxColumn});
-            this.dgvPago.DataSource = this.pagosBindingSource2;
-            this.dgvPago.Location = new System.Drawing.Point(792, 358);
-            this.dgvPago.Name = "dgvPago";
-            this.dgvPago.ReadOnly = true;
-            this.dgvPago.Size = new System.Drawing.Size(267, 85);
-            this.dgvPago.TabIndex = 108;
-            this.dgvPago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPago_CellContentClick);
-            // 
-            // folioDataGridViewTextBoxColumn
-            // 
-            this.folioDataGridViewTextBoxColumn.DataPropertyName = "Folio";
-            this.folioDataGridViewTextBoxColumn.HeaderText = "Folio";
-            this.folioDataGridViewTextBoxColumn.Name = "folioDataGridViewTextBoxColumn";
-            this.folioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // costoDataGridViewTextBoxColumn
-            // 
-            this.costoDataGridViewTextBoxColumn.DataPropertyName = "Costo";
-            this.costoDataGridViewTextBoxColumn.HeaderText = "Costo";
-            this.costoDataGridViewTextBoxColumn.Name = "costoDataGridViewTextBoxColumn";
-            this.costoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // pagosBindingSource2
             // 
             this.pagosBindingSource2.DataMember = "Pagos";
             this.pagosBindingSource2.DataSource = this.dBA7241DsgsaDataSet1BindingSource;
+            // 
+            // textBoxColoniaPredio
+            // 
+            this.textBoxColoniaPredio.Location = new System.Drawing.Point(306, 618);
+            this.textBoxColoniaPredio.Name = "textBoxColoniaPredio";
+            this.textBoxColoniaPredio.Size = new System.Drawing.Size(100, 20);
+            this.textBoxColoniaPredio.TabIndex = 108;
             // 
             // Pagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1074, 760);
-            this.Controls.Add(this.dgvPago);
+            this.Controls.Add(this.textBoxColoniaPredio);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBoxFolioPrueba);
             this.Controls.Add(this.textBoxNoAñosPagar);
             this.Controls.Add(this.lblFolio);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxColoniaPredio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxCURP);
             this.Controls.Add(this.label4);
@@ -973,7 +910,6 @@
             this.Controls.Add(this.textBoxsocioavec);
             this.Controls.Add(this.textBoxcuepre1);
             this.Controls.Add(this.textBoxNombreS);
-            this.Controls.Add(this.textBoxCantidadLetra);
             this.Controls.Add(this.textBoxCantidadNumero);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.lblAñoPagar);
@@ -1019,7 +955,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPago)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1051,7 +986,6 @@
         private System.Windows.Forms.Label lblAñoPagar;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxCantidadNumero;
-        private System.Windows.Forms.TextBox textBoxCantidadLetra;
         private System.Windows.Forms.TextBox textBoxNombreS;
         private System.Windows.Forms.TextBox textBoxcuepre1;
         private System.Windows.Forms.TextBox textBoxsocioavec;
@@ -1104,17 +1038,12 @@
         private DB_A7241D_sgsaDataSet1TableAdapters.DetallePagoTableAdapter detallePagoTableAdapter;
         private System.Windows.Forms.BindingSource detallePagoBindingSource1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxColoniaPredio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblFolio;
         private System.Windows.Forms.TextBox textBoxNoAñosPagar;
-        private System.Windows.Forms.TextBox textBoxFolioPrueba;
         private System.Windows.Forms.BindingSource pagosBindingSource1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dgvPago;
-        private System.Windows.Forms.DataGridViewTextBoxColumn folioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn costoDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource pagosBindingSource2;
+        private System.Windows.Forms.TextBox textBoxColoniaPredio;
     }
 }
