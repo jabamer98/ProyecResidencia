@@ -33,8 +33,8 @@ namespace ClassDato
                     break;
 
                 case "RDV":
-                    cmd = new SqlCommand($"INSERT INTO DetallePago ( Folio, CantidadAños,  Costo) " +
-                        $"VALUES ({ClassBT.clsDetallesPago.Foliofk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.Costo})", cnx);
+                    cmd = new SqlCommand($"INSERT INTO DetallePago (  Folio, CURP, CantidadAños,  Costo) " +
+                        $"VALUES ({ClassBT.clsDetallesPago.Foliofk}, {ClassBT.clsDetallesPago.CURPfk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.Costo})", cnx);
                     break;
             }
             

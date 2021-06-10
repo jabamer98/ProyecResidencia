@@ -12,7 +12,7 @@ namespace ClassBT
         public static int FolioDetalle { get; set; }
         public static string CURPfk { get; set; }
         public static int CantidadAños { get; set; }
-        public static string Años { get; set; }
+        public static bool Años { get; set; }
         public static float Costo { get; set; }
         public static int Foliofk { get; set; }
     }

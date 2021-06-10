@@ -252,8 +252,8 @@ namespace Proyecto_SGSA
 
                     ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(d.Rows[0][0].ToString());
                     //-----------------------------------------------------------------------------------------------------//
-                    //Convert.ToString(textBoxCURP.Text);
-                    //ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = float.Parse(textBoxCURP.Text);   //checar
+                   //Convert.ToString(textBoxCURP.Text);
+                    ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = ;   //checar
 
                     ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
 
