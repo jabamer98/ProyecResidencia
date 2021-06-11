@@ -323,6 +323,16 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Pagoicono {
+            get {
+                object obj = ResourceManager.GetObject("Pagoicono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngkin_com_agenda_png_1601086 {
             get {
                 object obj = ResourceManager.GetObject("pngkin.com_agenda-png_1601086", resourceCulture);

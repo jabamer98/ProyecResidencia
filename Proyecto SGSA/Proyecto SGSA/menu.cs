@@ -130,6 +130,14 @@ namespace Proyecto_SGSA
             pagos.Show();
         }
 
+        private void materialFlatButton6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ConsultaPagos consultapagos = new ConsultaPagos();
+            ocultarSubmenu();
+            consultapagos.Show();
+        }
+
         private void materialFlatButton2_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -216,9 +224,6 @@ namespace Proyecto_SGSA
             button4.BackColor = Color.SteelBlue;
         }
 
-        
-
-        
         
     }
 }
