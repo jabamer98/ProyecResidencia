@@ -52,9 +52,9 @@
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblApaterno = new System.Windows.Forms.Label();
             this.lblAmaterno = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.lblhoraprogr = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -174,6 +174,7 @@
             this.dtasocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtasocios.Location = new System.Drawing.Point(209, 289);
             this.dtasocios.Name = "dtasocios";
+            this.dtasocios.ReadOnly = true;
             this.dtasocios.Size = new System.Drawing.Size(579, 73);
             this.dtasocios.TabIndex = 7;
             this.dtasocios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtasocios_CellContentClick);
@@ -235,7 +236,8 @@
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker2.CustomFormat = "hh:mm tt";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker2.Location = new System.Drawing.Point(507, 193);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
@@ -285,16 +287,6 @@
             this.lblAmaterno.TabIndex = 28;
             this.lblAmaterno.Visible = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("qtquickcontrols", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(206, 365);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 17);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "label6";
-            // 
             // lblhoraprogr
             // 
             this.lblhoraprogr.AutoSize = true;
@@ -308,13 +300,22 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("qtquickcontrols", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(209, 402);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(230, 18);
+            this.textBox2.TabIndex = 31;
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.lblhoraprogr);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblAmaterno);
             this.Controls.Add(this.lblApaterno);
             this.Controls.Add(this.lblnombre);
@@ -373,8 +374,8 @@
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.Label lblApaterno;
         private System.Windows.Forms.Label lblAmaterno;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblhoraprogr;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

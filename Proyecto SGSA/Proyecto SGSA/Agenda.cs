@@ -103,12 +103,22 @@ namespace Proyecto_SGSA
                 comando.Parameters.AddWithValue("@evento", textBox1.Text);
                 comando.Parameters.AddWithValue("@fecha", dateTimePicker1.Value);
                 comando.Parameters.AddWithValue("@hora", dateTimePicker2.Value);
-                comando.Parameters.AddWithValue("@socio", label6.Text);
+                comando.Parameters.AddWithValue("@socio", textBox2.Text);
                 comando.Parameters.AddWithValue("@estatus", "Programado");
                 comando.Parameters.AddWithValue("@ubicacion", txtsitio.Text);
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Agregado correctamente");
                 con.Close();
+
+                while (dtasocios.RowCount > 1)
+                {
+                    dtasocios.Rows.Remove(dtasocios.CurrentRow);
+                }
+
+                Limpiar limpiar = new Limpiar();
+                limpiar.BorrarCampos(this);
+
+                registroApagado();
             }
 
             //string consultar = bd.selectstring("SELECT * FROM Eventos WHERE Socio = '" + txtbuscar.Text + "'");
@@ -150,7 +160,7 @@ namespace Proyecto_SGSA
             string nombre = lblnombre.Text;
             string apaterno = lblApaterno.Text;
             string amaterno = lblAmaterno.Text;
-            label6.Text = nombre + " " + apaterno + " " + amaterno;
+            textBox2.Text = nombre + " " + apaterno + " " + amaterno;
         }
 
         bool validaCampos()
