@@ -56,15 +56,25 @@ namespace Proyecto_SGSA
             //label1.Text = e.Start.ToShortDateString();
             label1.Text = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
 
+            string buscarporFecha = "SELECT Evento,Hora,Socio,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'";
+            SqlDataAdapter adaptador = new SqlDataAdapter(buscarporFecha, con);
+            SqlCommand comando = new SqlCommand(buscarporFecha, con);
+            var ds = new DataSet();
+            adaptador.Fill(ds);
+            dataeventos.ReadOnly = true;
+            dataeventos.DataSource = ds.Tables[0];
+
+            adaptador.Fill(datos);
 
 
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             /*string buscarporFecha = "SELECT * FROM Eventos WHERE Fecha = '" + label1.Text  + "'";
-            dataeventos.DataSource = bd.SelectDataTable(buscarporFecha);*/
+            dataeventos.DataSource = bd.SelectDataTable(buscarporFecha);
+
+
             string buscarporFecha = "SELECT Evento,Hora,Socio,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'";
             SqlDataAdapter adaptador = new SqlDataAdapter(buscarporFecha, con);
             SqlCommand comando = new SqlCommand(buscarporFecha, con);
@@ -73,7 +83,7 @@ namespace Proyecto_SGSA
             dataeventos.ReadOnly = true;
             dataeventos.DataSource = ds.Tables[0];
            
-            adaptador.Fill(datos);
+            adaptador.Fill(datos);*/
         }
     }
 }
