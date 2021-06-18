@@ -49,6 +49,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtsitio = new System.Windows.Forms.TextBox();
+            this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -259,11 +260,20 @@
             this.txtsitio.Size = new System.Drawing.Size(198, 20);
             this.txtsitio.TabIndex = 22;
             // 
+            // domainUpDown1
+            // 
+            this.domainUpDown1.Location = new System.Drawing.Point(555, 232);
+            this.domainUpDown1.Name = "domainUpDown1";
+            this.domainUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.domainUpDown1.TabIndex = 23;
+            this.domainUpDown1.Text = "12:23";
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.domainUpDown1);
             this.Controls.Add(this.txtsitio);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dateTimePicker2);
@@ -317,5 +327,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtsitio;
+        private System.Windows.Forms.DomainUpDown domainUpDown1;
     }
 }
