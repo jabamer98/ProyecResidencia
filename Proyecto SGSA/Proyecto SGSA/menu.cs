@@ -64,10 +64,10 @@ namespace Proyecto_SGSA
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            mostrarSubmenu(subpanelbtn4);
 
-            Agenda agenda = new Agenda();
-            agenda.Show();
+            /*Agenda agenda = new Agenda();
+            agenda.Show();*/
         }
 
         private void menu_Load(object sender, EventArgs e)
@@ -93,6 +93,7 @@ namespace Proyecto_SGSA
             subpanelbtn2.Visible = false;
             subpanelbtn3.Visible = false;
             subpanelbtn4.Visible = false;
+         
         }
         private void ocultarSubmenu()
         {
@@ -224,6 +225,20 @@ namespace Proyecto_SGSA
             button4.BackColor = Color.SteelBlue;
         }
 
-        
+        private void materialFlatButton7_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HistorialCitas historialcitas = new HistorialCitas();
+            ocultarSubmenu();
+            historialcitas.Show();
+        }
+
+        private void materialFlatButton8_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Agenda agenda = new Agenda();
+            ocultarSubmenu();
+            agenda.Show();
+        }
     }
 }

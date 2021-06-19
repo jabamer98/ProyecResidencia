@@ -220,5 +220,7 @@ namespace Proyecto_SGSA
         {
             button2.BackColor = Color.SteelBlue;
         }
+
+
     }
 }
