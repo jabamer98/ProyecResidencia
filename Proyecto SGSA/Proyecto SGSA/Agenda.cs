@@ -96,7 +96,7 @@ namespace Proyecto_SGSA
 
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("No ha colocado un sitio para la cita", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No ha colocado un sitio para la cita o no ha colocado ubicación", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             borrarMensajesError();
