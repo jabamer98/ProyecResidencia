@@ -51,6 +51,7 @@
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 386);
@@ -76,9 +77,10 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(200, 63);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Regresar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
             // 
@@ -111,7 +113,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(765, 64);
+            this.label1.Location = new System.Drawing.Point(12, 180);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
@@ -166,12 +168,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataeventos);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panel1);
             this.Name = "HistorialCitas";
             this.Text = "Historial De Citas";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -23,6 +23,7 @@ namespace Proyecto_SGSA
             InitializeComponent();
             autocompletar();
             registroApagado();
+            horaCompleta();
 
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -89,36 +90,49 @@ namespace Proyecto_SGSA
 
         private void btnprogramar_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrWhiteSpace(textBox1.Text))
+            
+
+            string consultar = "SELECT CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + lblhoraprogr.Text + "'";
+
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
-                MessageBox.Show("No ha colocado un sitio para la cita", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No ha colocado un sitio para la cita o no ha colocado ubicación", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             borrarMensajesError();
             if(validaCampos())
             {
-                string agregar = "INSERT INTO Eventos (Evento,Fecha,Hora,Socio,Estatus,Ubicacion) VALUES (@evento,@fecha,@hora,@socio,@estatus,@ubicacion)";
-                con.Open();
-                SqlCommand comando = new SqlCommand(agregar, con);
-                comando.Parameters.AddWithValue("@evento", textBox1.Text);
-                comando.Parameters.AddWithValue("@fecha", dateTimePicker1.Value);
-                comando.Parameters.AddWithValue("@hora", dateTimePicker2.Value);
-                comando.Parameters.AddWithValue("@socio", textBox2.Text);
-                comando.Parameters.AddWithValue("@estatus", "Programado");
-                comando.Parameters.AddWithValue("@ubicacion", txtsitio.Text);
-                comando.ExecuteNonQuery();
-                MessageBox.Show("Agregado correctamente");
-                con.Close();
-
-                while (dtasocios.RowCount > 1)
+                if(label6.Text == textBox3.Text && label9.Text == label8.Text)
                 {
-                    dtasocios.Rows.Remove(dtasocios.CurrentRow);
+                    MessageBox.Show("Esta fecha ya esta programada");
+                }
+                else
+                {
+
+                    string agregar = "INSERT INTO Eventos (Evento,Fecha,Hora,Socio,Estatus,Ubicacion) VALUES (@evento,@fecha,@hora,@socio,@estatus,@ubicacion)";
+                    con.Open();
+                    SqlCommand comando = new SqlCommand(agregar, con);
+                    comando.Parameters.AddWithValue("@evento", textBox1.Text);
+                    comando.Parameters.AddWithValue("@fecha", monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"));
+                    comando.Parameters.AddWithValue("@hora", label8.Text);
+                    comando.Parameters.AddWithValue("@socio", textBox2.Text);
+                    comando.Parameters.AddWithValue("@estatus", "Programado");
+                    comando.Parameters.AddWithValue("@ubicacion", txtsitio.Text);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("Agregado correctamente");
+                    con.Close();
+
+                    while (dtasocios.RowCount > 1)
+                    {
+                        dtasocios.Rows.Remove(dtasocios.CurrentRow);
+                    }
+
+                    Limpiar limpiar = new Limpiar();
+                    limpiar.BorrarCampos(this);
+
+                    registroApagado();
                 }
 
-                Limpiar limpiar = new Limpiar();
-                limpiar.BorrarCampos(this);
-
-                registroApagado();
             }
 
             //string consultar = bd.selectstring("SELECT * FROM Eventos WHERE Socio = '" + txtbuscar.Text + "'");
@@ -127,11 +141,15 @@ namespace Proyecto_SGSA
           
 
         }
-
+        DataTable busquedaxFecha = new DataTable();
+        DataTable busquedaxHora = new DataTable();
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            DateTime fecha = dateTimePicker1.Value;
-            lblhoraprogr.Text = fecha.ToString();
+            //DateTime fecha = dateTimePicker1.Value;
+            //lblhoraprogr.Text = fecha.Date.ToShortDateString();
+
+
+
         }
 
         private void dtasocios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -163,6 +181,15 @@ namespace Proyecto_SGSA
             textBox2.Text = nombre + " " + apaterno + " " + amaterno;
         }
 
+        private void horaCompleta()
+        {
+            string hora = cboxhoras.Text;
+            string minutos = cboxminutos.Text;
+            string ampm = cboxAMPM.Text;
+            label8.Text = hora + ":" + minutos + " " + ampm;
+
+        }
+
         bool validaCampos()
         {
             bool valido = true;
@@ -186,6 +213,104 @@ namespace Proyecto_SGSA
             errorProvider1.SetError(txtsitio, "");
         }
 
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
 
+
+            buscandoportiempo();
+            lblhoraprogr.Text = monthCalendar1.SelectionRange.Start.ToString("yyyy/MM/dd");
+            string buscarFecha = "SELECT Fecha, CONVERT(varchar(10),getdate(),23) FROM Eventos WHERE Fecha ='" + lblhoraprogr.Text + "'";
+            SqlDataAdapter adaptador = new SqlDataAdapter(buscarFecha, con);
+            SqlCommand command = new SqlCommand(buscarFecha, con);
+            var ds = new DataSet();
+            adaptador.Fill(ds);
+            dtafechas.ReadOnly = true;
+            dtafechas.DataSource = ds.Tables[0];
+            dtafechas.Columns[0].DefaultCellStyle.Format = "yyyy/MM/dd";
+            adaptador.Fill(busquedaxFecha);
+            con.Open();
+            label6.Text = Convert.ToString(command.ExecuteScalar());
+            //textBox3.Text = Convert.ToString(command.ExecuteScalar());
+
+            SqlDataReader dr = null;
+            SqlCommand cmd = new SqlCommand("SELECT Fecha, CONVERT(varchar(10),getdate(),23) FROM Eventos WHERE Fecha ='" + lblhoraprogr.Text + "'",con);
+            
+            try
+            {
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read() == true)
+                {
+                    MessageBox.Show("Tiene citas pendientes este dia");
+                    if (label6.Text == textBox3.Text)
+                {
+                    
+                }
+                    textBox3.Text = dr["fecha"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Día libre");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("error en el sql");
+            }
+
+
+
+            con.Close();
+        }
+         
+            
+        
+
+        
+
+        private void dtafechas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (dtafechas.Columns[e.ColumnIndex].Name.Equals(0))
+            {
+                DateTime dateValue;
+                if (DateTime.TryParse((String)e.Value, out dateValue))
+                {
+                    e.Value = dateValue.ToString("yyyy-MM-dd");
+                }
+            }
+        }
+
+        private void cboxAMPM_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            horaCompleta();
+            buscandoportiempo();
+        }
+
+        private void cboxminutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            horaCompleta();
+            buscandoportiempo();
+        }
+
+        private void cboxhoras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            horaCompleta();
+            buscandoportiempo();
+        }
+
+        private void buscandoportiempo()
+        {
+            string buscarHora = "SELECT Hora FROM Eventos WHERE Hora = '" + label8.Text + "'";
+            SqlDataAdapter adaptador2 = new SqlDataAdapter(buscarHora, con);
+            SqlCommand comando2 = new SqlCommand(buscarHora, con);
+            var ds2 = new DataSet();
+            adaptador2.Fill(ds2);
+            dtahoras.ReadOnly = true;
+            dtahoras.DataSource = ds2.Tables[0];
+            adaptador2.Fill(busquedaxHora);
+            con.Open();
+            label9.Text = Convert.ToString(comando2.ExecuteScalar());
+            con.Close();
+        }
     }
 }

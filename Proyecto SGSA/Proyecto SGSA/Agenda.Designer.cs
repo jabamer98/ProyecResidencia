@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,7 +45,6 @@
             this.btnbuscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,12 +55,23 @@
             this.lblhoraprogr = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtafechas = new System.Windows.Forms.DataGridView();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.cboxhoras = new System.Windows.Forms.ComboBox();
+            this.cboxminutos = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboxAMPM = new System.Windows.Forms.ComboBox();
+            this.dtahoras = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtasocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtafechas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtahoras)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -85,11 +96,27 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.dtahoras);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.dateTimePicker2);
+            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.dtafechas);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.lblhoraprogr);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 385);
             this.panel1.TabIndex = 1;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(212, 164);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // panel3
             // 
@@ -123,7 +150,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(350, 84);
+            this.label1.Location = new System.Drawing.Point(303, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(371, 29);
             this.label1.TabIndex = 2;
@@ -131,20 +158,21 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd-MM-yyyy ";
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(341, 193);
+            this.dateTimePicker1.Location = new System.Drawing.Point(12, 180);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(98, 20);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.Visible = false;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(273, 189);
+            this.label2.Location = new System.Drawing.Point(298, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 24);
             this.label2.TabIndex = 4;
@@ -154,7 +182,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(249, 257);
+            this.label3.Location = new System.Drawing.Point(464, 274);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 5;
@@ -164,7 +192,7 @@
             // 
             this.txtbuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtbuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtbuscar.Location = new System.Drawing.Point(375, 261);
+            this.txtbuscar.Location = new System.Drawing.Point(590, 278);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(200, 20);
             this.txtbuscar.TabIndex = 6;
@@ -172,7 +200,7 @@
             // dtasocios
             // 
             this.dtasocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtasocios.Location = new System.Drawing.Point(209, 289);
+            this.dtasocios.Location = new System.Drawing.Point(209, 336);
             this.dtasocios.Name = "dtasocios";
             this.dtasocios.ReadOnly = true;
             this.dtasocios.Size = new System.Drawing.Size(579, 73);
@@ -181,7 +209,7 @@
             // 
             // btnprogramar
             // 
-            this.btnprogramar.Location = new System.Drawing.Point(678, 368);
+            this.btnprogramar.Location = new System.Drawing.Point(678, 415);
             this.btnprogramar.Name = "btnprogramar";
             this.btnprogramar.Size = new System.Drawing.Size(110, 23);
             this.btnprogramar.TabIndex = 8;
@@ -191,7 +219,7 @@
             // 
             // btnbuscar
             // 
-            this.btnbuscar.Location = new System.Drawing.Point(587, 260);
+            this.btnbuscar.Location = new System.Drawing.Point(618, 303);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 9;
@@ -203,7 +231,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(246, 148);
+            this.label7.Location = new System.Drawing.Point(206, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 24);
             this.label7.TabIndex = 15;
@@ -211,24 +239,16 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(406, 153);
+            this.textBox1.Location = new System.Drawing.Point(366, 109);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(199, 20);
+            this.textBox1.Size = new System.Drawing.Size(422, 20);
             this.textBox1.TabIndex = 16;
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(651, 153);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 17;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(445, 191);
+            this.label4.Location = new System.Drawing.Point(528, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 24);
             this.label4.TabIndex = 19;
@@ -238,16 +258,17 @@
             // 
             this.dateTimePicker2.CustomFormat = "hh:mm tt";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(507, 193);
+            this.dateTimePicker2.Location = new System.Drawing.Point(12, 154);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
             this.dateTimePicker2.TabIndex = 20;
+            this.dateTimePicker2.Visible = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(273, 227);
+            this.label5.Location = new System.Drawing.Point(488, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 21;
@@ -255,7 +276,7 @@
             // 
             // txtsitio
             // 
-            this.txtsitio.Location = new System.Drawing.Point(375, 231);
+            this.txtsitio.Location = new System.Drawing.Point(590, 228);
             this.txtsitio.Name = "txtsitio";
             this.txtsitio.Size = new System.Drawing.Size(198, 20);
             this.txtsitio.TabIndex = 22;
@@ -290,11 +311,12 @@
             // lblhoraprogr
             // 
             this.lblhoraprogr.AutoSize = true;
-            this.lblhoraprogr.Location = new System.Drawing.Point(221, 386);
+            this.lblhoraprogr.Location = new System.Drawing.Point(116, 160);
             this.lblhoraprogr.Name = "lblhoraprogr";
             this.lblhoraprogr.Size = new System.Drawing.Size(35, 13);
             this.lblhoraprogr.TabIndex = 30;
             this.lblhoraprogr.Text = "label8";
+            this.lblhoraprogr.Visible = false;
             // 
             // errorProvider1
             // 
@@ -304,26 +326,192 @@
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("qtquickcontrols", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(209, 402);
+            this.textBox2.Location = new System.Drawing.Point(209, 420);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(230, 18);
             this.textBox2.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(83, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
+            // 
+            // dtafechas
+            // 
+            this.dtafechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtafechas.Location = new System.Drawing.Point(3, 206);
+            this.dtafechas.Name = "dtafechas";
+            this.dtafechas.Size = new System.Drawing.Size(74, 62);
+            this.dtafechas.TabIndex = 33;
+            this.dtafechas.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(83, 239);
+            this.textBox3.MaxLength = 10;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(110, 20);
+            this.textBox3.TabIndex = 34;
+            this.textBox3.Visible = false;
+            // 
+            // cboxhoras
+            // 
+            this.cboxhoras.FormattingEnabled = true;
+            this.cboxhoras.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cboxhoras.Location = new System.Drawing.Point(591, 177);
+            this.cboxhoras.Name = "cboxhoras";
+            this.cboxhoras.Size = new System.Drawing.Size(39, 21);
+            this.cboxhoras.TabIndex = 35;
+            this.cboxhoras.Text = "01";
+            this.cboxhoras.SelectedIndexChanged += new System.EventHandler(this.cboxhoras_SelectedIndexChanged);
+            // 
+            // cboxminutos
+            // 
+            this.cboxminutos.FormattingEnabled = true;
+            this.cboxminutos.Items.AddRange(new object[] {
+            "00",
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59"});
+            this.cboxminutos.Location = new System.Drawing.Point(636, 177);
+            this.cboxminutos.Name = "cboxminutos";
+            this.cboxminutos.Size = new System.Drawing.Size(38, 21);
+            this.cboxminutos.TabIndex = 36;
+            this.cboxminutos.Text = "00";
+            this.cboxminutos.SelectedIndexChanged += new System.EventHandler(this.cboxminutos_SelectedIndexChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(116, 341);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "label9";
+            this.label9.Visible = false;
+            // 
+            // cboxAMPM
+            // 
+            this.cboxAMPM.FormattingEnabled = true;
+            this.cboxAMPM.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.cboxAMPM.Location = new System.Drawing.Point(680, 177);
+            this.cboxAMPM.Name = "cboxAMPM";
+            this.cboxAMPM.Size = new System.Drawing.Size(43, 21);
+            this.cboxAMPM.TabIndex = 37;
+            this.cboxAMPM.Text = "AM";
+            this.cboxAMPM.SelectedIndexChanged += new System.EventHandler(this.cboxAMPM_SelectedIndexChanged);
+            // 
+            // dtahoras
+            // 
+            this.dtahoras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtahoras.Location = new System.Drawing.Point(3, 320);
+            this.dtahoras.Name = "dtahoras";
+            this.dtahoras.Size = new System.Drawing.Size(110, 62);
+            this.dtahoras.TabIndex = 38;
+            this.dtahoras.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(116, 360);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "label8";
+            this.label8.Visible = false;
             // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.monthCalendar1);
+            this.Controls.Add(this.cboxAMPM);
+            this.Controls.Add(this.cboxminutos);
+            this.Controls.Add(this.cboxhoras);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.lblhoraprogr);
             this.Controls.Add(this.lblAmaterno);
             this.Controls.Add(this.lblApaterno);
             this.Controls.Add(this.lblnombre);
             this.Controls.Add(this.txtsitio);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnbuscar);
@@ -332,18 +520,20 @@
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Agenda";
             this.Text = "Agenda";
             this.Load += new System.EventHandler(this.Agenda_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtasocios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtafechas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtahoras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,7 +556,6 @@
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label5;
@@ -377,5 +566,15 @@
         private System.Windows.Forms.Label lblhoraprogr;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dtafechas;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cboxminutos;
+        private System.Windows.Forms.ComboBox cboxhoras;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cboxAMPM;
+        private System.Windows.Forms.DataGridView dtahoras;
+        private System.Windows.Forms.Label label8;
     }
 }
