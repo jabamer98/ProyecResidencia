@@ -103,6 +103,13 @@
     <Compile Include="Expedientes.Designer.cs">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistorialCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialCitas.Designer.cs">
+      <DependentUpon>HistorialCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Limpiar.cs" />
     <Compile Include="MenuExpedientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialCitas.resx">
+      <DependentUpon>HistorialCitas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuExpedientes.resx">
       <DependentUpon>MenuExpedientes.cs</DependentUpon>
