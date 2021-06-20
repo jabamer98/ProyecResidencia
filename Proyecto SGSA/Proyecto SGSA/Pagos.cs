@@ -184,7 +184,7 @@ namespace Proyecto_SGSA
                 {
                     ClassBT.clsPagos.Fecha = lblFecha.Text;
 
-                    ClassBT.clsPagos.Costo = float.Parse(lblCostoApagar.Text);
+                    ClassBT.clsPagos.Costos = float.Parse(lblCostoApagar.Text);
 
                     ClassFunciones.clsFunciones.EjecutaQuery("RV");
 

@@ -36,7 +36,7 @@ namespace ClassBT
 
         public static int Folio { get; set; }
         public static string Fecha { get; set; }
-        public static float Costo { get; set; }
+        public static float Costos { get; set; }
 
     }
     public static class clsBT 

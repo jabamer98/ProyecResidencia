@@ -178,12 +178,12 @@ namespace Proyecto_SGSA
                 if (textBoxColonia.Text == "")
                 {
                     valido = false;
-                    errorProvider1.SetError(textBox7Domicilio, "ingrese una Colonia");
+                    errorProvider1.SetError(textBoxColonia, "ingrese una Colonia");
                 }
                 if (textBoxPoblacion.Text == "")
                 {
                     valido = false;
-                    errorProvider1.SetError(textBox7Domicilio, "ingrese una Poblacion");
+                    errorProvider1.SetError(textBoxPoblacion, "ingrese una Poblacion");
                 }
                 if (textBox8Telefono.Text == "")
                 {
@@ -302,7 +302,7 @@ namespace Proyecto_SGSA
                 errorProvider1.SetError(textBox6Edad, "");
             }
         }
-        //metodo para confirmar que el usuario esta ingresando solo numeros enteros por el int tel, donde tel es la variable y al final se muestra en una ventana de dialogo
+        /*//metodo para confirmar que el usuario esta ingresando solo numeros enteros por el int tel, donde tel es la variable y al final se muestra en una ventana de dialogo
         private void textBox8Telefono_Validating(object sender, CancelEventArgs e)
         {
             int tel;
@@ -315,7 +315,7 @@ namespace Proyecto_SGSA
             {
                 errorProvider1.SetError(textBox8Telefono, "");
             }
-        }
+        }*/
 
         private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
@@ -386,6 +386,11 @@ namespace Proyecto_SGSA
         private void button3_MouseLeave(object sender, EventArgs e)
         {
             button3.BackColor = Color.SteelBlue;
+        }
+
+        private void textBox8Telefono_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

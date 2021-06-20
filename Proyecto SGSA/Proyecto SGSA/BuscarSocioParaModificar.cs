@@ -74,35 +74,38 @@ namespace Proyecto_SGSA
         BaseDeDatos database = new BaseDeDatos();
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            if (MessageBox.Show("¿Esta seguro de MODIFICAR el registro?", "Esta Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                string fecha = textBox5FNacimiento.Text.Trim();
-                string actualizar = "UPDATE Socios SET APaterno = @apaterno, AMaterno = @amaterno, Nombre = @nombre, FNacimiento = @fnacimiento, " +
-                    "Edad = @edad, Domicilio = @domicilio, Colonia = @colonia, CiudadOPoblacion = @ciudadopoblacion, Telefono = @telefono, NombrePredios = @nombrepredios WHERE CURP = @curp";
-                con.Open();
-                SqlCommand comando = new SqlCommand(actualizar, con);
+                try
+                {
+                    string fecha = textBox5FNacimiento.Text.Trim();
+                    string actualizar = "UPDATE Socios SET APaterno = @apaterno, AMaterno = @amaterno, Nombre = @nombre, FNacimiento = @fnacimiento, " +
+                        "Edad = @edad, Domicilio = @domicilio, Colonia = @colonia, CiudadOPoblacion = @ciudadopoblacion, Telefono = @telefono, NombrePredios = @nombrepredios WHERE CURP = @curp";
+                    con.Open();
+                    SqlCommand comando = new SqlCommand(actualizar, con);
 
-                comando.Parameters.AddWithValue("@curp", textBox1CURP.Text);
-                comando.Parameters.AddWithValue("@apaterno", textBox2Paterno.Text);
-                comando.Parameters.AddWithValue("@amaterno", textBox3Materno.Text);
-                comando.Parameters.AddWithValue("@nombre", textBox4Nombre.Text);
-                comando.Parameters.AddWithValue("@fnacimiento", Convert.ToDateTime(textBox5FNacimiento.Text));
-                comando.Parameters.AddWithValue("@edad", textBox6Edad.Text);
-                comando.Parameters.AddWithValue("@domicilio", textBox7Domicilio.Text);
-                comando.Parameters.AddWithValue("@colonia", textBoxColonia.Text);
-                comando.Parameters.AddWithValue("@ciudadopoblacion", textBoxPoblacion.Text);
-                comando.Parameters.AddWithValue("@telefono", textBox8Telefono.Text);
-                comando.Parameters.AddWithValue("@nombrepredios", textBox9NamePredios.Text);
-                comando.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Registro actualizado correctamente");
+                    comando.Parameters.AddWithValue("@curp", textBox1CURP.Text);
+                    comando.Parameters.AddWithValue("@apaterno", textBox2Paterno.Text);
+                    comando.Parameters.AddWithValue("@amaterno", textBox3Materno.Text);
+                    comando.Parameters.AddWithValue("@nombre", textBox4Nombre.Text);
+                    comando.Parameters.AddWithValue("@fnacimiento", Convert.ToDateTime(textBox5FNacimiento.Text));
+                    comando.Parameters.AddWithValue("@edad", textBox6Edad.Text);
+                    comando.Parameters.AddWithValue("@domicilio", textBox7Domicilio.Text);
+                    comando.Parameters.AddWithValue("@colonia", textBoxColonia.Text);
+                    comando.Parameters.AddWithValue("@ciudadopoblacion", textBoxPoblacion.Text);
+                    comando.Parameters.AddWithValue("@telefono", textBox8Telefono.Text);
+                    comando.Parameters.AddWithValue("@nombrepredios", textBox9NamePredios.Text);
+                    comando.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Registro actualizado correctamente");
 
-                dgvRegistros.DataSource = bd.SelectDataTable("select * from Socios");
-            }
+                    dgvRegistros.DataSource = bd.SelectDataTable("select * from Socios");
+                }
 
-            catch
-            {
-                MessageBox.Show("Error al actualizar");
+                catch
+                {
+                    MessageBox.Show("Error al actualizar");
+                }
             }
         }
 
@@ -134,22 +137,41 @@ namespace Proyecto_SGSA
         //Metodo que elimina un usuario
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            
             con.Open();
             int flag = 0;
             string cadena = "DELETE FROM Socios WHERE CURP = '" + textBox1CURP.Text + "'";
-            SqlCommand comando = new SqlCommand(cadena, con);
-            flag = comando.ExecuteNonQuery();
-
-            if (flag == 1)
+            if (MessageBox.Show("¿Esta seguro de ELIMINAR el registro permanentemente?", "Esta Seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                MessageBox.Show("El registro se borro correctamente");
+                SqlCommand comand = new SqlCommand(cadena, con);
+                flag = comand.ExecuteNonQuery();
+
+                if (flag == 1)
+                {
+                    MessageBox.Show("El registro se borro correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontro a la persona");
+                }
+                textBox1CURP.Text = "";
+                textBox2Paterno.Text = "";
+                textBox3Materno.Text = "";
+                textBox4Nombre.Text = "";
+                textBox5FNacimiento.Text = "";
+                textBox6Edad.Text = "";
+                textBoxColonia.Text = "";
+                textBoxPoblacion.Text = "";
+                textBox7Domicilio.Text = "";
+                textBox8Telefono.Text = "";
+                textBox9NamePredios.Text = "";
+                dgvRegistros.DataSource = bd.SelectDataTable("select * from Socios");
+                
             }
             else
             {
-                MessageBox.Show("No se encontro a la persona");
+                dgvRegistros.DataSource = bd.SelectDataTable("select * from Socios");
             }
-            textBox1CURP.Text = "";
-            dgvRegistros.DataSource = bd.SelectDataTable("select * from Socios");
             con.Close();
         }
 

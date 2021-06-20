@@ -28,14 +28,14 @@ namespace ClassDato
                     break;*/
 
                 case "RV":
-                    cmd = new SqlCommand($"INSERT INTO Pagos (  Fecha, Costo) " +
-                        $"VALUES ('{ClassBT.clsPagos.Fecha}',{ClassBT.clsPagos.Costo})", cnx);
+                    cmd = new SqlCommand($"INSERT INTO Pagos ( Fecha, Costos) " +
+                        $"VALUES ('{ClassBT.clsPagos.Fecha}',{ClassBT.clsPagos.Costos})", cnx);
                     break;
-
+/*
                 case "RDV":
                     cmd = new SqlCommand($"INSERT INTO DetallePago (  Folio, CURP, CantidadAños,  Costo) " +
                         $"VALUES ({ClassBT.clsDetallesPago.Foliofk}, {ClassBT.clsDetallesPago.CURPfk},{ClassBT.clsDetallesPago.CantidadAños},{ClassBT.clsDetallesPago.Costo})", cnx);
-                    break;
+                    break;*/
             }
             
              try
