@@ -290,7 +290,7 @@
             this.textBox8Telefono.Size = new System.Drawing.Size(155, 20);
             this.textBox8Telefono.TabIndex = 16;
             this.textBox8Telefono.TextChanged += new System.EventHandler(this.textBox8Telefono_TextChanged);
-           // this.textBox8Telefono.Validating += new System.ComponentModel.CancelEventHandler(this.textBox8Telefono_Validating);
+           this.textBox8Telefono.Validating += new System.ComponentModel.CancelEventHandler(this.textBox8Telefono_Validating);
             // 
             // textBox9NamePredios
             // 

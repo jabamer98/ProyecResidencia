@@ -302,7 +302,7 @@ namespace Proyecto_SGSA
                 errorProvider1.SetError(textBox6Edad, "");
             }
         }
-        /*//metodo para confirmar que el usuario esta ingresando solo numeros enteros por el int tel, donde tel es la variable y al final se muestra en una ventana de dialogo
+        //metodo para confirmar que el usuario esta ingresando solo numeros enteros por el int tel, donde tel es la variable y al final se muestra en una ventana de dialogo
         private void textBox8Telefono_Validating(object sender, CancelEventArgs e)
         {
             int tel;
@@ -315,7 +315,7 @@ namespace Proyecto_SGSA
             {
                 errorProvider1.SetError(textBox8Telefono, "");
             }
-        }*/
+        }
 
         private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
