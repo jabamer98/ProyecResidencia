@@ -16,9 +16,9 @@ namespace Proyecto_SGSA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
             //Application.Run(new MenuP());
-            //Application.Run(new menu());
+            Application.Run(new menu());
             //Application.Run(new PagosV2());
             //Application.Run(new Agenda());
             //Application.Run(new AltaSocios());
