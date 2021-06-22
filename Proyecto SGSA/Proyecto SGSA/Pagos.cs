@@ -25,9 +25,11 @@ namespace Proyecto_SGSA
 
         public Pagos()
         {
+   
             InitializeComponent();
             personalizarDiseño();
             autocompletar();
+            pagoApagado();
 
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
@@ -171,175 +173,180 @@ namespace Proyecto_SGSA
         int Conteo;
         int Conteoo;
         private void button1_Click(object sender, EventArgs e)
-        {
-
-            Conteo = dgvPagos.RowCount; // se cuenta los productos y se utilisa el conteo como limite del for
-            Conteoo = dgvPagos.RowCount;
-            if (Conteo != 0)
+        {//INICIO DE BUTTON1_CLICK
+            borrarMensajesError();
+            if(validarCampos())
             {
-                
-                //RegistrarCompra
-
-                try
-                {
-                    ClassBT.clsPagos.Fecha = lblFecha.Text;
-
-                    ClassBT.clsPagos.Costos = float.Parse(lblCostoApagar.Text);
-
-                    ClassFunciones.clsFunciones.EjecutaQuery("RV");
-
-                    DataTable d = new DataTable();
-                    d = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
-
-                    
-
-                    ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(d.Rows[0][0].ToString());
-                  
-
-
-
-                    string insertar = "INSERT INTO DetallePago ([Folio], [CURP],[CantidadAños],[Años],[costo]) " +
-                        " VALUES ('" + ClassBT.clsPagos.Folio + "','" + textBoxCURP.Text + "', '" + textBoxNoAñosPagar.Text + "', '" + txtPagoAnual.Text + "', '" + lblCostoApagar.Text + "')";
-                    con.Open();
-                    SqlCommand comando = new SqlCommand(insertar, con);
-
-
-
-                    comando.ExecuteNonQuery();
-                    con.Close();
-
-
-                    /*
-
-                    //-----------------------------------------------------------------------------------------------------//
-                    //Convert.ToString(textBoxCURP.Text);
-                    ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = ;   //checar
-
-                    ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
-
-                    //Convert.ToString(txtPagoAnual.Text);
-                    //ClassBT.clsDetallesPago.Años =  float.Parse(txtPagoAnual.Text);//checar
-
-                    ClassBT.clsDetallesPago.Costo = float.Parse(lblCostoApagar.Text);
-
-                        ClassFunciones.clsFunciones.EjecutaQuery("RDV");//registra el detalle de la venta 
-
-                    */
-
-
-                }
-                catch (Exception a)
+                Conteo = dgvPagos.RowCount; // se cuenta los productos y se utilisa el conteo como limite del for
+                Conteoo = dgvPagos.RowCount;
+                if (Conteo != 0)
                 {
 
-                    MessageBox.Show(a.Message);
+                    //RegistrarCompra
+
+                    try
+                    {
+                        ClassBT.clsPagos.Fecha = lblFecha.Text;
+
+                        ClassBT.clsPagos.Costos = float.Parse(lblCostoApagar.Text);
+
+                        ClassFunciones.clsFunciones.EjecutaQuery("RV");
+
+                        DataTable d = new DataTable();
+                        d = ClassFunciones.clsFunciones.EjecutaQueryConsulta("", "IDV");
+
+
+
+                        ClassBT.clsDetallesPago.Foliofk = ClassBT.clsPagos.Folio = int.Parse(d.Rows[0][0].ToString());
+
+
+
+
+                        string insertar = "INSERT INTO DetallePago ([Folio], [CURP],[CantidadAños],[Años],[costo]) " +
+                            " VALUES ('" + ClassBT.clsPagos.Folio + "','" + textBoxCURP.Text + "', '" + textBoxNoAñosPagar.Text + "', '" + txtPagoAnual.Text + "', '" + lblCostoApagar.Text + "')";
+                        con.Open();
+                        SqlCommand comando = new SqlCommand(insertar, con);
+
+
+
+                        comando.ExecuteNonQuery();
+                        con.Close();
+
+
+                        /*
+
+                        //-----------------------------------------------------------------------------------------------------//
+                        //Convert.ToString(textBoxCURP.Text);
+                        ClassBT.clsDetallesPago.CURPfk = ClassBT.clsSocio.CURP = ;   //checar
+
+                        ClassBT.clsDetallesPago.CantidadAños = int.Parse(textBoxNoAñosPagar.Text);
+
+                        //Convert.ToString(txtPagoAnual.Text);
+                        //ClassBT.clsDetallesPago.Años =  float.Parse(txtPagoAnual.Text);//checar
+
+                        ClassBT.clsDetallesPago.Costo = float.Parse(lblCostoApagar.Text);
+
+                            ClassFunciones.clsFunciones.EjecutaQuery("RDV");//registra el detalle de la venta 
+
+                        */
+
+
+                    }
+                    catch (Exception a)
+                    {
+
+                        MessageBox.Show(a.Message);
+                    }
+
+
+                    ClassFunciones.clsFunciones.CreaTicket Ticket1 = new ClassFunciones.clsFunciones.CreaTicket();
+                    Ticket1.TextoCentro("                                                 S            A            S            CH "); //imprime una linea de descripcion
+                    Ticket1.TextoCentro("            SOCIEDAD AGRÍCOLA DE SANTIAGO CHAZUMBA");
+                    Ticket1.TextoCentro("                                 Al Servicio de Nuestros Socios Sucesores");
+                    Ticket1.TextoIzquierda("____________________________________________________________________________________");
+
+                    Ticket1.TextoIzquierda("Dirección: Av. Luis Huerta No. 17 C.P 69010 Col. Centro  Santiago Chazumba");
+                    Ticket1.TextoIzquierda("Teléfono: 953-52-502-22 ");
+                    Ticket1.TextoIzquierda("");
+                    Ticket1.TextoCentro("                                        TESORERIA");
+                    Ticket1.TextoCentro("                                     RECIBO PREDIAL"); //imprime una linea de descripcion
+                    Ticket1.TextoDerecha("FOLIO:" + ClassBT.clsDetallesPago.Foliofk.ToString());
+                    //Ticket1.TextoIzquierda("Villa de Santiago Chazumba, Huaj., Oax., a:  " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
+                    Ticket1.TextoIzquierda("");
+                    //ClassFunciones.clsFunciones.CreaTicket.LineasGuion();//-------------------------
+
+                    //ClassFunciones.clsFunciones.CreaTicket.EncabezadoVenta();
+                    //ClassFunciones.clsFunciones.CreaTicket.LineasGuion();
+                    //Detalle de la factura
+
+                    //COMENTADO PARA QUE FUNCIONE************************************************************************************************
+                    /* foreach (DataGridViewRow r in dataGridView1.Rows)
+                     {
+                         // Articulo                     //Precio                                    cantidad                            Subtotal
+                         Ticket1.AgregaArticulo(r.Cells[0].Value.ToString(), 
+                             int.Parse(r.Cells[1].Value.ToString()), 
+                             int.Parse(r.Cells[3].Value.ToString()), 
+                             double.Parse(r.Cells[2].Value.ToString())); //imprime una linea de descripcion
+                     }*/
+
+
+                    Ticket1.RellenarDatos("Recibí del Socio: ", (textBoxNombreS.Text + " " + textBoxApellidoPS.Text + " " + textBoxApellidoMS.Text)); // imprime linea con Subtotal
+                    Ticket1.RellenarDatos("CURP: ", textBoxCURP.Text);
+                    Ticket1.RellenarDatos("No. de Cuenta Predial: ", textBoxcuepre1.Text);
+                    Ticket1.RellenarDatos("Socio Avecinado: ", textBoxsocioavec.Text);
+                    Ticket1.RellenarDatos("No. de Cuenta Predial: ", textBoxcuepre2.Text);
+                    Ticket1.RellenarDatos("Domicilio: ", textBoxDomicilio.Text);
+                    Ticket1.RellenarDatos("Colonia: ", textBoxColonia.Text);
+                    Ticket1.RellenarDatos("Teléfono: ", textBoxTelefono.Text);
+                    Ticket1.RellenarDatos("Ciudad o Población: ", textBoxPoblacion.Text);
+                    Ticket1.RellenarDatos("Concepto de Pago: ", textBoxconcepto.Text);
+                    Ticket1.RellenarDatos("Predio Denominado: ", textBoxNamePredio.Text);
+                    Ticket1.RellenarDatos("Tipo de predio: ", comboBox1.Text);
+                    Ticket1.RellenarDatos("Predio ubicado en: ", textBoxubicpred.Text);
+                    Ticket1.RellenarDatos("Colonia: ", textBoxColoniaPredio.Text);
+                    Ticket1.RellenarDatos("Pago Correspondiente al Año: ", txtPagoAnual.Text);
+
+
+
+                    ClassFunciones.clsFunciones.CreaTicket.LineasGuion();
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.AgregaTotales("Total:                 " + "        ", double.Parse(textBoxCantidadNumero.Text)); // imprime linea con total
+                    Ticket1.Letra("Importe con letra:      ", lblCantidadLetra.Text);
+                    Ticket1.TextoIzquierda(" ");
+                    try { Ticket1.AgregaTotales("Efectivo Entregado:   ", double.Parse(textBox3.Text)); }
+                    catch (FormatException ex) { MessageBox.Show("Ingrese la acantidad de $ entregada por el cliente", "Atención"); }
+
+
+
+                    Ticket1.AgregaTotales("Efectivo Devuelto:     ", double.Parse(lbldevolucion.Text));
+                    Ticket1.TextoIzquierda(" ");
+                    ClassFunciones.clsFunciones.CreaTicket.LineasGuion();//-------------------------
+                    Ticket1.TextoIzquierda("Villa de Santiago Chazumba, Huaj., Oax., a:  " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda("                                  Tesorero                                                               Sello");
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda(" ");
+                    Ticket1.TextoIzquierda("                 ________________________                             _____________________");
+
+                    // Ticket1.LineasTotales(); // imprime linea 
+
+
+                    Ticket1.TextoIzquierda(" ");
+                    //Ticket1.TextoCentro("**************************************************************************************************");
+                    Ticket1.TextoCentro("            Estimado Socio favor de conservar su Recibo Predial para cualquier Aclaración");
+                    Ticket1.TextoCentro("                                   El Pago de este Recibo No Libera de Adeudos Anteriores");
+                    //Ticket1.TextoCentro("**************************************************************************************************");
+                    Ticket1.TextoIzquierda(" ");
+
+                    Ticket1.ImprimirTiket(cmbInstalledPrinters.Text); //Imprimir
+
+
+
+                    //METODO QUE LIMPIA LOS REGISTROS DESPUES DE IMPRIMIR O GUARDAR EL RECIBO Y SOLO DEJA EL DATAGRIDVIEW CON LA PERSONA QUE SE BUSCÓ
+                    Fila = 0;
+                    while (dgvPagos.RowCount > 1)//limpia el dgv
+                    {
+                        dgvPagos.Rows.Remove(dgvPagos.CurrentRow);
+                    }
+                    //LBLIDnuevaFACTURA.Text = ClaseFunciones.ClsFunciones.IDNUEVAFACTURA().ToString();
+                    //Checar si Txt Buscar se le queda la curp al hacer clic en la curp del datagridview
+                    txtBuscar.Text = lblCantidadLetra.Text = textBoxNombreS.Text = textBoxApellidoPS.Text = textBoxApellidoMS.Text = textBoxCURP.Text
+                    = textBoxcuepre1.Text = textBoxsocioavec.Text = textBoxcuepre2.Text = textBoxDomicilio.Text = textBoxColonia.Text = textBoxTelefono.Text
+                    = textBoxPoblacion.Text = textBoxconcepto.Text = textBoxNamePredio.Text = comboBox1.Text = textBoxubicpred.Text = textBoxColoniaPredio.Text
+                    = txtPagoAnual.Text = txtPagoAnual.Text = textBoxCantidadNumero.Text = textBoxColoniaPredio.Text = textBoxNoAñosPagar.Text = textBox3.Text = "";
+
+                    lblCostoApagar.Text = lbldevolucion.Text = textBoxCantidadNumero.Text = "";
+                    txtBuscar.Focus();
+                    MessageBox.Show("    Estimado Usuario Recuerde \n Colacar Sello y Firma en el Recibo", "Mensaje Informativo", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+                    pagoApagado();
+
                 }
-
-
-                ClassFunciones.clsFunciones.CreaTicket Ticket1 = new ClassFunciones.clsFunciones.CreaTicket();
-                Ticket1.TextoCentro("                                                 S            A            S            CH "); //imprime una linea de descripcion
-                Ticket1.TextoCentro("            SOCIEDAD AGRÍCOLA DE SANTIAGO CHAZUMBA");
-                Ticket1.TextoCentro("                                 Al Servicio de Nuestros Socios Sucesores");
-                Ticket1.TextoIzquierda("____________________________________________________________________________________");
-
-                Ticket1.TextoIzquierda("Dirección: Av. Luis Huerta No. 17 C.P 69010 Col. Centro  Santiago Chazumba");
-                Ticket1.TextoIzquierda("Teléfono: 953-52-502-22 ");
-                Ticket1.TextoIzquierda("");
-                Ticket1.TextoCentro("                                        TESORERIA");
-                Ticket1.TextoCentro("                                     RECIBO PREDIAL"); //imprime una linea de descripcion
-                Ticket1.TextoDerecha("FOLIO:" + ClassBT.clsDetallesPago.Foliofk.ToString());
-                //Ticket1.TextoIzquierda("Villa de Santiago Chazumba, Huaj., Oax., a:  " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
-                Ticket1.TextoIzquierda("");
-                //ClassFunciones.clsFunciones.CreaTicket.LineasGuion();//-------------------------
-
-                //ClassFunciones.clsFunciones.CreaTicket.EncabezadoVenta();
-                //ClassFunciones.clsFunciones.CreaTicket.LineasGuion();
-                //Detalle de la factura
-
-                //COMENTADO PARA QUE FUNCIONE************************************************************************************************
-                /* foreach (DataGridViewRow r in dataGridView1.Rows)
-                 {
-                     // Articulo                     //Precio                                    cantidad                            Subtotal
-                     Ticket1.AgregaArticulo(r.Cells[0].Value.ToString(), 
-                         int.Parse(r.Cells[1].Value.ToString()), 
-                         int.Parse(r.Cells[3].Value.ToString()), 
-                         double.Parse(r.Cells[2].Value.ToString())); //imprime una linea de descripcion
-                 }*/
-
-
-                Ticket1.RellenarDatos("Recibí del Socio: ", (textBoxNombreS.Text +" "+ textBoxApellidoPS.Text +" "+ textBoxApellidoMS.Text)); // imprime linea con Subtotal
-                Ticket1.RellenarDatos("CURP: ", textBoxCURP.Text);
-                Ticket1.RellenarDatos("No. de Cuenta Predial: ", textBoxcuepre1.Text);
-                Ticket1.RellenarDatos("Socio Avecinado: ", textBoxsocioavec.Text);
-                Ticket1.RellenarDatos("No. de Cuenta Predial: ", textBoxcuepre2.Text);
-                Ticket1.RellenarDatos("Domicilio: ", textBoxDomicilio.Text);
-                Ticket1.RellenarDatos("Colonia: ", textBoxColonia.Text);
-                Ticket1.RellenarDatos("Teléfono: ", textBoxTelefono.Text);
-                Ticket1.RellenarDatos("Ciudad o Población: ", textBoxPoblacion.Text);
-                Ticket1.RellenarDatos("Concepto de Pago: ", textBoxconcepto.Text);
-                Ticket1.RellenarDatos("Predio Denominado: ", textBoxNamePredio.Text);
-                Ticket1.RellenarDatos("Tipo de predio: ", comboBox1.Text);
-                Ticket1.RellenarDatos("Predio ubicado en: ", textBoxubicpred.Text);
-                Ticket1.RellenarDatos("Colonia: ", textBoxColoniaPredio.Text);
-                Ticket1.RellenarDatos("Pago Correspondiente al Año: ",txtPagoAnual.Text);
-
-
-
-                ClassFunciones.clsFunciones.CreaTicket.LineasGuion();
-                Ticket1.TextoIzquierda(" ");
-                Ticket1.AgregaTotales("Total:                 "+"        ", double.Parse(textBoxCantidadNumero.Text)); // imprime linea con total
-                Ticket1.Letra("Importe con letra:      ", lblCantidadLetra.Text);
-                Ticket1.TextoIzquierda(" ");
-                try {Ticket1.AgregaTotales("Efectivo Entregado:   ", double.Parse(textBox3.Text));}
-                catch (FormatException ex){MessageBox.Show("Ingrese la acantidad de $ entregada por el cliente", "Atención");}
-               
-                
-
-                Ticket1.AgregaTotales("Efectivo Devuelto:     ", double.Parse(lbldevolucion.Text));
-                Ticket1.TextoIzquierda(" ");
-                ClassFunciones.clsFunciones.CreaTicket.LineasGuion();//-------------------------
-                Ticket1.TextoIzquierda("Villa de Santiago Chazumba, Huaj., Oax., a:  " + DateTime.Now.ToShortDateString() + " Hora:" + DateTime.Now.ToShortTimeString());
-                Ticket1.TextoIzquierda(" ");
-                Ticket1.TextoIzquierda("                                  Tesorero                                                               Sello");
-                Ticket1.TextoIzquierda(" ");
-                Ticket1.TextoIzquierda(" ");
-                Ticket1.TextoIzquierda("                 ________________________                             _____________________");
-         
-                // Ticket1.LineasTotales(); // imprime linea 
-
-
-                Ticket1.TextoIzquierda(" ");
-                //Ticket1.TextoCentro("**************************************************************************************************");
-                Ticket1.TextoCentro("            Estimado Socio favor de conservar su Recibo Predial para cualquier Aclaración");
-                Ticket1.TextoCentro("                                   El Pago de este Recibo No Libera de Adeudos Anteriores");
-                //Ticket1.TextoCentro("**************************************************************************************************");
-                Ticket1.TextoIzquierda(" ");
-
-                Ticket1.ImprimirTiket(cmbInstalledPrinters.Text); //Imprimir
-
-
-
-                //METODO QUE LIMPIA LOS REGISTROS DESPUES DE IMPRIMIR O GUARDAR EL RECIBO Y SOLO DEJA EL DATAGRIDVIEW CON LA PERSONA QUE SE BUSCÓ
-                Fila = 0;
-                while (dgvPagos.RowCount > 1)//limpia el dgv
-                {
-                    dgvPagos.Rows.Remove(dgvPagos.CurrentRow);
-                }
-                //LBLIDnuevaFACTURA.Text = ClaseFunciones.ClsFunciones.IDNUEVAFACTURA().ToString();
-                //Checar si Txt Buscar se le queda la curp al hacer clic en la curp del datagridview
-                txtBuscar.Text = lblCantidadLetra.Text = textBoxNombreS.Text = textBoxApellidoPS.Text = textBoxApellidoMS.Text= textBoxCURP.Text
-                = textBoxcuepre1.Text = textBoxsocioavec.Text = textBoxcuepre2.Text = textBoxDomicilio.Text = textBoxColonia.Text = textBoxTelefono.Text
-                = textBoxPoblacion.Text = textBoxconcepto.Text = textBoxNamePredio.Text = comboBox1.Text = textBoxubicpred.Text = textBoxColoniaPredio.Text
-                = txtPagoAnual.Text = txtPagoAnual.Text = textBoxCantidadNumero.Text = textBoxColoniaPredio.Text = textBoxNoAñosPagar.Text = textBox3.Text = "";
-
-                lblCostoApagar.Text = lbldevolucion.Text = textBoxCantidadNumero.Text = "";
-                txtBuscar.Focus();
-                MessageBox.Show("    Estimado Usuario Recuerde \n Colacar Sello y Firma en el Recibo", "Mensaje Informativo", MessageBoxButtons.OK, MessageBoxIcon.Question);
-                
-
-
             }
 
-        }
+            
+
+        }//FIN DE BUTTON1_CLICK
         //
 
 
@@ -414,7 +421,7 @@ namespace Proyecto_SGSA
 
         private void cmbInstalledPrinters_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            pagoEncendido();
         }
 
         private void txtBuscar_TextChanged_1(object sender, EventArgs e)
@@ -425,6 +432,71 @@ namespace Proyecto_SGSA
         private void lblFecha_Click(object sender, EventArgs e)
         {
 
+        }
+        private void pagoEncendido()
+        {
+            button1.Enabled = true;
+        }
+        private void pagoApagado()
+        {
+            button1.Enabled = false;
+        }
+
+        bool validarCampos()
+        {
+            bool valido = true;
+            if(textBoxCantidadNumero.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(textBoxCantidadNumero, "Ingrese una cantidad a pagar");
+            }
+            if(textBoxconcepto.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(textBoxconcepto, "Debe ingresar el concepto de pago");
+            }
+            if(comboBox1.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(comboBox1, "Seleccione un tipo de predio");
+            }
+            if(textBoxubicpred.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(textBoxubicpred, "Coloque la ubicación del predio");
+            }
+            if(textBoxColoniaPredio.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(textBoxColoniaPredio, "Coloque la colonia donde se encuentra el predio");
+            }
+            if(textBoxNoAñosPagar.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(textBoxNoAñosPagar, "Ingrese la cantidad de años que pagará en esta exhibición");
+            }
+            if(txtPagoAnual.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(txtPagoAnual, "Ingrese los años que pagará en esta exhibición");
+            }
+            if(textBox3.Text=="")
+            {
+                valido = false;
+                errorProvider1.SetError(textBox3, "Ingrese el monto recibido");
+            }
+            return valido;
+        }
+        void borrarMensajesError()
+        {
+            errorProvider1.SetError(textBoxCantidadNumero,"");
+            errorProvider1.SetError(textBoxconcepto, "");
+            errorProvider1.SetError(comboBox1, "");
+            errorProvider1.SetError(textBoxubicpred, "");
+            errorProvider1.SetError(textBoxColoniaPredio, "");
+            errorProvider1.SetError(textBoxNoAñosPagar, "");
+            errorProvider1.SetError(txtPagoAnual, "");
+            errorProvider1.SetError(textBox3, "");
         }
 
 
