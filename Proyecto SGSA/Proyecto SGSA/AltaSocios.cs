@@ -392,5 +392,10 @@ namespace Proyecto_SGSA
         {
 
         }
+
+        private void textBox5FNacimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

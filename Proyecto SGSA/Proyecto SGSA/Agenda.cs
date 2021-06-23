@@ -312,5 +312,7 @@ namespace Proyecto_SGSA
             label9.Text = Convert.ToString(comando2.ExecuteScalar());
             con.Close();
         }
+
+      
     }
 }

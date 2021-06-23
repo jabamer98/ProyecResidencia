@@ -255,6 +255,7 @@
             this.textBox5FNacimiento.Size = new System.Drawing.Size(155, 20);
             this.textBox5FNacimiento.TabIndex = 13;
             this.textBox5FNacimiento.Text = "Año-Mes-Día";
+            this.textBox5FNacimiento.TextChanged += new System.EventHandler(this.textBox5FNacimiento_TextChanged);
             this.textBox5FNacimiento.Enter += new System.EventHandler(this.textBox5FNacimiento_Enter);
             this.textBox5FNacimiento.Leave += new System.EventHandler(this.textBox5FNacimiento_Leave);
             this.textBox5FNacimiento.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5FNacimiento_Validating);
@@ -290,7 +291,7 @@
             this.textBox8Telefono.Size = new System.Drawing.Size(155, 20);
             this.textBox8Telefono.TabIndex = 16;
             this.textBox8Telefono.TextChanged += new System.EventHandler(this.textBox8Telefono_TextChanged);
-           this.textBox8Telefono.Validating += new System.ComponentModel.CancelEventHandler(this.textBox8Telefono_Validating);
+            this.textBox8Telefono.Validating += new System.ComponentModel.CancelEventHandler(this.textBox8Telefono_Validating);
             // 
             // textBox9NamePredios
             // 
@@ -385,7 +386,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(622, 274);
+            this.label12.Location = new System.Drawing.Point(617, 268);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 24;
