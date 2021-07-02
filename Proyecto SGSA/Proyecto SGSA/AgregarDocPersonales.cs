@@ -37,7 +37,8 @@ namespace Proyecto_SGSA
             ListScanners();
 
             // Establecer carpeta de salida de inicio TMP
-            textBox1.Text = Path.GetTempPath();
+            textBox1.Text = Path.GetFullPath(@"D:\" + "" + textBox4.Text + " " + textBox6.Text + " " + textBox5.Text + " " + textBox3.Text);
+
             // Establecer JPEG como predeterminada
             comboBox1.SelectedIndex = 1;
 
@@ -114,19 +115,27 @@ namespace Proyecto_SGSA
                         break;
                 }
             }));
-            
-            
-            // Guarda la imagen
-            var path = Path.Combine(textBox1.Text, textBox2.Text + imageExtension);
 
+
+            // Guarda la imagen
+
+            var path = Path.Combine(textBox1.Text, textBox2.Text + imageExtension);
+            
             if (File.Exists(path))
             {
                 File.Delete(path);
             }
+            try
+            {
+                image.SaveFile(path);
+                pictureBox1.Image = new Bitmap(path);
+            }
+            catch
+            {
+                MessageBox.Show("La carpeta para guardar el archivo no existe, cree una nueva carpeta con los datos para identificar al socio o de lo contrario registrelo en el sistema", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            image.SaveFile(path);
-
-            pictureBox1.Image = new Bitmap(path);
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
