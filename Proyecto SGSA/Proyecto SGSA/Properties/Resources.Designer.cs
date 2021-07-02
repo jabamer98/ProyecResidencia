@@ -83,6 +83,16 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap buscar_persona {
+            get {
+                object obj = ResourceManager.GetObject("buscar persona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carpeta {
             get {
                 object obj = ResourceManager.GetObject("carpeta", resourceCulture);
@@ -193,9 +203,29 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eliminar_persona {
+            get {
+                object obj = ResourceManager.GetObject("eliminar persona", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap escaner {
             get {
                 object obj = ResourceManager.GetObject("escaner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap examinar_carpeta {
+            get {
+                object obj = ResourceManager.GetObject("examinar carpeta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +313,36 @@ namespace Proyecto_SGSA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconomodificar {
+            get {
+                object obj = ResourceManager.GetObject("iconomodificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconomodificar1 {
+            get {
+                object obj = ResourceManager.GetObject("iconomodificar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconomodificar2 {
+            get {
+                object obj = ResourceManager.GetObject("iconomodificar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imagen_de_desierto {
             get {
                 object obj = ResourceManager.GetObject("imagen de desierto", resourceCulture);
@@ -306,6 +366,16 @@ namespace Proyecto_SGSA.Properties {
         internal static System.Drawing.Bitmap inventarioprinc {
             get {
                 object obj = ResourceManager.GetObject("inventarioprinc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lapiz_modificar {
+            get {
+                object obj = ResourceManager.GetObject("lapiz modificar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
