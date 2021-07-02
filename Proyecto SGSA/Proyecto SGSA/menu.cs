@@ -14,6 +14,11 @@ namespace Proyecto_SGSA
 {
     public partial class menu : MaterialForm
     {
+
+        Form frm = Application.OpenForms.Cast<Form>().FirstOrDefault(x => x is HistorialCitas);
+
+        HistorialCitas historialcitasform;
+
         private readonly MaterialSkinManager materialSkinManager;
         public menu()
         {
@@ -227,10 +232,22 @@ namespace Proyecto_SGSA
 
         private void materialFlatButton7_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            HistorialCitas historialcitas = new HistorialCitas();
-            ocultarSubmenu();
-            historialcitas.Show();
+            
+
+            if (frm != null)
+            {
+
+                frm.BringToFront();
+
+                return;
+            }
+            else
+            {
+                this.Hide();
+                HistorialCitas historialcitas = new HistorialCitas();
+                ocultarSubmenu();
+                historialcitas.Show();
+            }
         }
 
         private void materialFlatButton8_Click(object sender, EventArgs e)

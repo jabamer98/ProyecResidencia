@@ -16,12 +16,13 @@ using System.Diagnostics;
 
 namespace Proyecto_SGSA
 {
+
     public partial class HistorialCitas : MaterialForm
     {
         public HistorialCitas()
         {
-            InitializeComponent();
 
+            InitializeComponent();
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
@@ -91,5 +92,8 @@ namespace Proyecto_SGSA
             menu menu = new menu();
             menu.Show();
         }
+
+
+        
     }
 }
