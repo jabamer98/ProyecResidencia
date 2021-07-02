@@ -111,6 +111,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.pagosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxColoniaPredio = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             this.panel1.SuspendLayout();
@@ -129,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -325,7 +327,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(730, 299);
+            this.label17.Location = new System.Drawing.Point(753, 550);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(32, 13);
             this.label17.TabIndex = 64;
@@ -602,7 +604,7 @@
             // 
             this.cmbInstalledPrinters.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbInstalledPrinters.FormattingEnabled = true;
-            this.cmbInstalledPrinters.Location = new System.Drawing.Point(733, 265);
+            this.cmbInstalledPrinters.Location = new System.Drawing.Point(756, 516);
             this.cmbInstalledPrinters.Name = "cmbInstalledPrinters";
             this.cmbInstalledPrinters.Size = new System.Drawing.Size(250, 21);
             this.cmbInstalledPrinters.TabIndex = 89;
@@ -612,7 +614,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(779, 329);
+            this.lblFecha.Location = new System.Drawing.Point(802, 580);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(19, 13);
             this.lblFecha.TabIndex = 91;
@@ -622,7 +624,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(730, 329);
+            this.label20.Location = new System.Drawing.Point(753, 580);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(43, 13);
             this.label20.TabIndex = 90;
@@ -633,7 +635,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel4.Controls.Add(this.lbldevolucion);
             this.panel4.Controls.Add(this.label21);
-            this.panel4.Location = new System.Drawing.Point(748, 508);
+            this.panel4.Location = new System.Drawing.Point(776, 331);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(175, 21);
             this.panel4.TabIndex = 95;
@@ -669,7 +671,7 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.Red;
-            this.label22.Location = new System.Drawing.Point(778, 486);
+            this.label22.Location = new System.Drawing.Point(806, 309);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(102, 20);
             this.label22.TabIndex = 94;
@@ -680,7 +682,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Controls.Add(this.lblCostoApagar);
             this.panel5.Controls.Add(this.label23);
-            this.panel5.Location = new System.Drawing.Point(748, 452);
+            this.panel5.Location = new System.Drawing.Point(776, 275);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(175, 21);
             this.panel5.TabIndex = 93;
@@ -716,7 +718,7 @@
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Red;
-            this.label24.Location = new System.Drawing.Point(778, 426);
+            this.label24.Location = new System.Drawing.Point(806, 249);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(115, 20);
             this.label24.TabIndex = 92;
@@ -725,7 +727,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(807, 543);
+            this.label25.Location = new System.Drawing.Point(835, 366);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(49, 13);
             this.label25.TabIndex = 97;
@@ -734,7 +736,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(752, 559);
+            this.textBox3.Location = new System.Drawing.Point(780, 382);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(171, 32);
             this.textBox3.TabIndex = 96;
@@ -752,7 +754,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(730, 243);
+            this.label4.Location = new System.Drawing.Point(753, 494);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(133, 13);
             this.label4.TabIndex = 99;
@@ -827,7 +829,7 @@
             // lblFolio
             // 
             this.lblFolio.AutoSize = true;
-            this.lblFolio.Location = new System.Drawing.Point(769, 302);
+            this.lblFolio.Location = new System.Drawing.Point(792, 553);
             this.lblFolio.Name = "lblFolio";
             this.lblFolio.Size = new System.Drawing.Size(16, 13);
             this.lblFolio.TabIndex = 104;
@@ -865,6 +867,10 @@
             this.textBoxColoniaPredio.Name = "textBoxColoniaPredio";
             this.textBoxColoniaPredio.Size = new System.Drawing.Size(100, 20);
             this.textBoxColoniaPredio.TabIndex = 108;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Pagos
             // 
@@ -956,6 +962,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.detallePagoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pagosBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1045,5 +1052,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.BindingSource pagosBindingSource2;
         private System.Windows.Forms.TextBox textBoxColoniaPredio;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

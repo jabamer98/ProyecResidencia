@@ -73,6 +73,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dB_A7241D_sgsaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dBA7241DsgsaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -255,7 +257,6 @@
             this.textBox5FNacimiento.Size = new System.Drawing.Size(155, 20);
             this.textBox5FNacimiento.TabIndex = 13;
             this.textBox5FNacimiento.Text = "Año-Mes-Día";
-            this.textBox5FNacimiento.TextChanged += new System.EventHandler(this.textBox5FNacimiento_TextChanged);
             this.textBox5FNacimiento.Enter += new System.EventHandler(this.textBox5FNacimiento_Enter);
             this.textBox5FNacimiento.Leave += new System.EventHandler(this.textBox5FNacimiento_Leave);
             this.textBox5FNacimiento.Validating += new System.ComponentModel.CancelEventHandler(this.textBox5FNacimiento_Validating);
@@ -291,7 +292,6 @@
             this.textBox8Telefono.Size = new System.Drawing.Size(155, 20);
             this.textBox8Telefono.TabIndex = 16;
             this.textBox8Telefono.TextChanged += new System.EventHandler(this.textBox8Telefono_TextChanged);
-            this.textBox8Telefono.Validating += new System.ComponentModel.CancelEventHandler(this.textBox8Telefono_Validating);
             // 
             // textBox9NamePredios
             // 
@@ -386,7 +386,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(617, 268);
+            this.label12.Location = new System.Drawing.Point(622, 274);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 24;
@@ -532,6 +532,24 @@
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(575, 404);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(13, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "0";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(594, 404);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(24, 13);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "/10";
+            // 
             // AltaSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,6 +557,8 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1002, 547);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxPoblacion);
             this.Controls.Add(this.textBoxColonia);
@@ -636,5 +656,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
     }
 }

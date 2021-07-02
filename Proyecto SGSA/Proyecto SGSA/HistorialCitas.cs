@@ -88,7 +88,6 @@ namespace Proyecto_SGSA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
             menu menu = new menu();
             menu.Show();
         }

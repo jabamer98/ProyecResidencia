@@ -303,19 +303,7 @@ namespace Proyecto_SGSA
             }
         }
         //metodo para confirmar que el usuario esta ingresando solo numeros enteros por el int tel, donde tel es la variable y al final se muestra en una ventana de dialogo
-        private void textBox8Telefono_Validating(object sender, CancelEventArgs e)
-        {
-            int tel;
-            if(!int.TryParse(textBox8Telefono.Text, out tel))
-            {
-                MessageBox.Show("Debe colocar el teléfono en formato númerico","Error de captura",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                errorProvider1.SetError(textBox8Telefono, "el teléfono va en formato númerico");
-            }
-            else
-            {
-                errorProvider1.SetError(textBox8Telefono, "");
-            }
-        }
+
 
         private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
         {
@@ -390,7 +378,8 @@ namespace Proyecto_SGSA
 
         private void textBox8Telefono_TextChanged(object sender, EventArgs e)
         {
-
+            label18.Text = Convert.ToString(textBox8Telefono.Text.Length);
+            textBox8Telefono.MaxLength = 10;
         }
 
         private void textBox5FNacimiento_TextChanged(object sender, EventArgs e)
