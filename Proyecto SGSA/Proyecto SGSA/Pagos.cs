@@ -115,16 +115,19 @@ namespace Proyecto_SGSA
 
         private void dgvPagos_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-             DataGridViewRow fila = dgvPagos.Rows[e.RowIndex];
-             textBoxCURP.Text = Convert.ToString(fila.Cells[0].Value);
-             textBoxNombreS.Text = Convert.ToString(fila.Cells[3].Value);
-             textBoxApellidoPS.Text = Convert.ToString(fila.Cells[1].Value);
-             textBoxApellidoMS.Text = Convert.ToString(fila.Cells[2].Value);
-             textBoxDomicilio.Text = Convert.ToString(fila.Cells[6].Value);
-             textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
-             textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
-             textBoxTelefono.Text = Convert.ToString(fila.Cells[9].Value);
-             textBoxNamePredio.Text = Convert.ToString(fila.Cells[10].Value);
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvPagos.Rows[e.RowIndex];//[e.RowIndex]
+                textBoxCURP.Text = Convert.ToString(fila.Cells[0].Value);
+                textBoxNombreS.Text = Convert.ToString(fila.Cells[3].Value);
+                textBoxApellidoPS.Text = Convert.ToString(fila.Cells[1].Value);
+                textBoxApellidoMS.Text = Convert.ToString(fila.Cells[2].Value);
+                textBoxDomicilio.Text = Convert.ToString(fila.Cells[6].Value);
+                textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
+                textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
+                textBoxTelefono.Text = Convert.ToString(fila.Cells[9].Value);
+                textBoxNamePredio.Text = Convert.ToString(fila.Cells[10].Value);
+            }
 
         }
 
@@ -445,7 +448,8 @@ namespace Proyecto_SGSA
         bool validarCampos()
         {
             bool valido = true;
-            if(textBoxCantidadNumero.Text=="")
+            
+            if (textBoxCantidadNumero.Text=="")
             {
                 valido = false;
                 errorProvider1.SetError(textBoxCantidadNumero, "Ingrese una cantidad a pagar");
@@ -498,7 +502,5 @@ namespace Proyecto_SGSA
             errorProvider1.SetError(txtPagoAnual, "");
             errorProvider1.SetError(textBox3, "");
         }
-
-
     }
 }

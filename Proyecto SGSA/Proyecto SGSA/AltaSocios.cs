@@ -381,5 +381,10 @@ namespace Proyecto_SGSA
             label18.Text = Convert.ToString(textBox8Telefono.Text.Length);
             textBox8Telefono.MaxLength = 10;
         }
+
+        private void textBox5FNacimiento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

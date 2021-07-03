@@ -384,5 +384,26 @@
   <ItemGroup>
     <None Include="Resources\Pagoicono.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconomodificar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconomodificar1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconomodificar2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\examinar carpeta.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar persona.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz modificar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar persona.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

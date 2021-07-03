@@ -155,11 +155,14 @@ namespace Proyecto_SGSA
         private void dtasocios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             registroEncendido();
-            DataGridViewRow fila = dtasocios.Rows[e.RowIndex];
-            lblnombre.Text = Convert.ToString(fila.Cells[3].Value);
-            lblApaterno.Text = Convert.ToString(fila.Cells[1].Value);
-            lblAmaterno.Text = Convert.ToString(fila.Cells[2].Value);
-            nombreCompleto();
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dtasocios.Rows[e.RowIndex];//[e.RowIndex]
+                lblnombre.Text = Convert.ToString(fila.Cells[3].Value);
+                lblApaterno.Text = Convert.ToString(fila.Cells[1].Value);
+                lblAmaterno.Text = Convert.ToString(fila.Cells[2].Value);
+                nombreCompleto();
+            }
             
         }
         /*Con los metodos de registro apagado y registro encendido lo que se hace es habilitar y deshabiliar el boton
@@ -312,5 +315,7 @@ namespace Proyecto_SGSA
             label9.Text = Convert.ToString(comando2.ExecuteScalar());
             con.Close();
         }
+
+      
     }
 }

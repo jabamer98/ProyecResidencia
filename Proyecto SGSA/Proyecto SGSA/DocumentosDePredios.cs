@@ -55,18 +55,21 @@ namespace Proyecto_SGSA
         BaseDeDatos db = new BaseDeDatos();
         private void dgvRegistro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow fila = dgvRegistros.Rows[e.RowIndex];
-            textBox1CURP.Text = Convert.ToString(fila.Cells[0].Value);
-            textBox2Paterno.Text = Convert.ToString(fila.Cells[1].Value);
-            textBox3Materno.Text = Convert.ToString(fila.Cells[2].Value);
-            textBox4Nombre.Text = Convert.ToString(fila.Cells[3].Value);
-            textBox5FNacimiento.Text = Convert.ToString(fila.Cells[4].Value);
-            textBox6Edad.Text = Convert.ToString(fila.Cells[5].Value);
-            textBox7Domicilio.Text = Convert.ToString(fila.Cells[6].Value);
-            textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
-            textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
-            textBox8Telefono.Text = Convert.ToString(fila.Cells[9].Value);
-            textBox9NamePredios.Text = Convert.ToString(fila.Cells[10].Value);
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow fila = dgvRegistros.Rows[e.RowIndex];//[e.RowIndex]
+                textBox1CURP.Text = Convert.ToString(fila.Cells[0].Value);
+                textBox2Paterno.Text = Convert.ToString(fila.Cells[1].Value);
+                textBox3Materno.Text = Convert.ToString(fila.Cells[2].Value);
+                textBox4Nombre.Text = Convert.ToString(fila.Cells[3].Value);
+                textBox5FNacimiento.Text = Convert.ToString(fila.Cells[4].Value);
+                textBox6Edad.Text = Convert.ToString(fila.Cells[5].Value);
+                textBox7Domicilio.Text = Convert.ToString(fila.Cells[6].Value);
+                textBoxColonia.Text = Convert.ToString(fila.Cells[7].Value);
+                textBoxPoblacion.Text = Convert.ToString(fila.Cells[8].Value);
+                textBox8Telefono.Text = Convert.ToString(fila.Cells[9].Value);
+                textBox9NamePredios.Text = Convert.ToString(fila.Cells[10].Value);
+            }
         }
 
         //Metodo que actualiza los datos del Usuario
