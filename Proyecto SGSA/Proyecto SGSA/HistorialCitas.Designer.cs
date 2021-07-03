@@ -72,6 +72,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lblbusquedafecha = new System.Windows.Forms.Label();
             this.lblfechacomprobacion = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtafechasnuevas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).BeginInit();
@@ -94,7 +95,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 386);
+            this.panel1.Size = new System.Drawing.Size(200, 482);
             this.panel1.TabIndex = 0;
             // 
             // dtafechasnuevas
@@ -179,18 +180,12 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // monthCalendar1
             // 
             this.monthCalendar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 37);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
-            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
-            // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(380, 114);
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 33);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
@@ -210,9 +205,9 @@
             // 
             this.dataeventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataeventos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataeventos.Location = new System.Drawing.Point(262, 31);
+            this.dataeventos.Location = new System.Drawing.Point(262, 27);
             this.dataeventos.Name = "dataeventos";
-            this.dataeventos.Size = new System.Drawing.Size(447, 168);
+            this.dataeventos.Size = new System.Drawing.Size(447, 172);
             this.dataeventos.TabIndex = 4;
             this.dataeventos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataeventos_CellContentClick);
             // 
@@ -232,7 +227,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 26);
+            this.label3.Size = new System.Drawing.Size(243, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Seleccione la fecha en el calendario para ver sus citas agendadas";
             // 
@@ -266,7 +261,7 @@
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Location = new System.Drawing.Point(537, 550);
+            this.lblfecha.Location = new System.Drawing.Point(842, 522);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(0, 13);
             this.lblfecha.TabIndex = 9;
@@ -285,7 +280,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 174F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 178F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 202);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
@@ -375,7 +370,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(475, 550);
+            this.label9.Location = new System.Drawing.Point(780, 522);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 19;
@@ -399,10 +394,11 @@
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
             this.label10.Location = new System.Drawing.Point(3, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(191, 13);
+            this.label10.Size = new System.Drawing.Size(229, 13);
             this.label10.TabIndex = 29;
             this.label10.Text = "Seleccione la nueva fecha a actualizar";
             // 
@@ -553,11 +549,13 @@
             // lblfechanueva
             // 
             this.lblfechanueva.AutoSize = true;
+            this.lblfechanueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblfechanueva.ForeColor = System.Drawing.Color.Red;
             this.lblfechanueva.Location = new System.Drawing.Point(554, 503);
             this.lblfechanueva.Name = "lblfechanueva";
-            this.lblfechanueva.Size = new System.Drawing.Size(67, 13);
+            this.lblfechanueva.Size = new System.Drawing.Size(148, 13);
             this.lblfechanueva.TabIndex = 30;
-            this.lblfechanueva.Text = "Fechanueva";
+            this.lblfechanueva.Text = "*Seleccione una nueva fecha";
             // 
             // label11
             // 
@@ -597,11 +595,19 @@
             this.lblfechacomprobacion.Text = "label13";
             this.lblfechacomprobacion.Visible = false;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Location = new System.Drawing.Point(206, 326);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(722, 209);
+            this.panel4.TabIndex = 35;
+            // 
             // HistorialCitas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 572);
+            this.ClientSize = new System.Drawing.Size(933, 547);
             this.Controls.Add(this.lblfechacomprobacion);
             this.Controls.Add(this.lblbusquedafecha);
             this.Controls.Add(this.label12);
@@ -632,6 +638,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel4);
             this.Name = "HistorialCitas";
             this.Text = "Historial De Citas";
             this.panel1.ResumeLayout(false);
@@ -697,5 +704,6 @@
         private System.Windows.Forms.DataGridView dtafechasnuevas;
         private System.Windows.Forms.Label lblbusquedafecha;
         private System.Windows.Forms.Label lblfechacomprobacion;
+        private System.Windows.Forms.Panel panel4;
     }
 }
