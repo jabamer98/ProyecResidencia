@@ -31,12 +31,20 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dtahoras = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtafechas = new System.Windows.Forms.DataGridView();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblhoraprogr = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
@@ -46,32 +54,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.txtsitio = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblApaterno = new System.Windows.Forms.Label();
             this.lblAmaterno = new System.Windows.Forms.Label();
-            this.lblhoraprogr = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtafechas = new System.Windows.Forms.DataGridView();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.cboxhoras = new System.Windows.Forms.ComboBox();
             this.cboxminutos = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.cboxAMPM = new System.Windows.Forms.ComboBox();
-            this.dtahoras = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtahoras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtafechas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtasocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtafechas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtahoras)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -111,13 +111,6 @@
             this.panel1.Size = new System.Drawing.Size(200, 385);
             this.panel1.TabIndex = 1;
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(212, 164);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 2;
-            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button1);
@@ -126,6 +119,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 63);
             this.panel3.TabIndex = 1;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(116, 360);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "label8";
+            this.label8.Visible = false;
             // 
             // panel2
             // 
@@ -146,15 +149,34 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // dtahoras
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 64);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(371, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "PROGRAMACIÓN DE EVENTOS";
+            this.dtahoras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtahoras.Location = new System.Drawing.Point(3, 320);
+            this.dtahoras.Name = "dtahoras";
+            this.dtahoras.Size = new System.Drawing.Size(110, 62);
+            this.dtahoras.TabIndex = 38;
+            this.dtahoras.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(116, 341);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "label9";
+            this.label9.Visible = false;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.CustomFormat = "hh:mm tt";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(12, 154);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
+            this.dateTimePicker2.TabIndex = 20;
+            this.dateTimePicker2.Visible = false;
             // 
             // dateTimePicker1
             // 
@@ -167,6 +189,62 @@
             this.dateTimePicker1.TabIndex = 3;
             this.dateTimePicker1.Visible = false;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // dtafechas
+            // 
+            this.dtafechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtafechas.Location = new System.Drawing.Point(3, 206);
+            this.dtafechas.Name = "dtafechas";
+            this.dtafechas.Size = new System.Drawing.Size(74, 62);
+            this.dtafechas.TabIndex = 33;
+            this.dtafechas.Visible = false;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(83, 239);
+            this.textBox3.MaxLength = 10;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(110, 20);
+            this.textBox3.TabIndex = 34;
+            this.textBox3.Visible = false;
+            // 
+            // lblhoraprogr
+            // 
+            this.lblhoraprogr.AutoSize = true;
+            this.lblhoraprogr.Location = new System.Drawing.Point(116, 160);
+            this.lblhoraprogr.Name = "lblhoraprogr";
+            this.lblhoraprogr.Size = new System.Drawing.Size(35, 13);
+            this.lblhoraprogr.TabIndex = 30;
+            this.lblhoraprogr.Text = "label8";
+            this.lblhoraprogr.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(83, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 32;
+            this.label6.Text = "label6";
+            this.label6.Visible = false;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(212, 164);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 2;
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(303, 64);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(371, 29);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "PROGRAMACIÓN DE EVENTOS";
             // 
             // label2
             // 
@@ -254,16 +332,6 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "A las:";
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "hh:mm tt";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(12, 154);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(98, 20);
-            this.dateTimePicker2.TabIndex = 20;
-            this.dateTimePicker2.Visible = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -308,16 +376,6 @@
             this.lblAmaterno.TabIndex = 28;
             this.lblAmaterno.Visible = false;
             // 
-            // lblhoraprogr
-            // 
-            this.lblhoraprogr.AutoSize = true;
-            this.lblhoraprogr.Location = new System.Drawing.Point(116, 160);
-            this.lblhoraprogr.Name = "lblhoraprogr";
-            this.lblhoraprogr.Size = new System.Drawing.Size(35, 13);
-            this.lblhoraprogr.TabIndex = 30;
-            this.lblhoraprogr.Text = "label8";
-            this.lblhoraprogr.Visible = false;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -330,35 +388,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(230, 18);
             this.textBox2.TabIndex = 31;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(83, 210);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 32;
-            this.label6.Text = "label6";
-            this.label6.Visible = false;
-            // 
-            // dtafechas
-            // 
-            this.dtafechas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtafechas.Location = new System.Drawing.Point(3, 206);
-            this.dtafechas.Name = "dtafechas";
-            this.dtafechas.Size = new System.Drawing.Size(74, 62);
-            this.dtafechas.TabIndex = 33;
-            this.dtafechas.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(83, 239);
-            this.textBox3.MaxLength = 10;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(110, 20);
-            this.textBox3.TabIndex = 34;
-            this.textBox3.Visible = false;
             // 
             // cboxhoras
             // 
@@ -454,16 +483,6 @@
             this.cboxminutos.Text = "00";
             this.cboxminutos.SelectedIndexChanged += new System.EventHandler(this.cboxminutos_SelectedIndexChanged);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(116, 341);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "label9";
-            this.label9.Visible = false;
-            // 
             // cboxAMPM
             // 
             this.cboxAMPM.FormattingEnabled = true;
@@ -476,25 +495,6 @@
             this.cboxAMPM.TabIndex = 37;
             this.cboxAMPM.Text = "AM";
             this.cboxAMPM.SelectedIndexChanged += new System.EventHandler(this.cboxAMPM_SelectedIndexChanged);
-            // 
-            // dtahoras
-            // 
-            this.dtahoras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtahoras.Location = new System.Drawing.Point(3, 320);
-            this.dtahoras.Name = "dtahoras";
-            this.dtahoras.Size = new System.Drawing.Size(110, 62);
-            this.dtahoras.TabIndex = 38;
-            this.dtahoras.Visible = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(116, 360);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 13);
-            this.label8.TabIndex = 39;
-            this.label8.Text = "label8";
-            this.label8.Visible = false;
             // 
             // Agenda
             // 
@@ -530,10 +530,10 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtahoras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtafechas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtasocios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtafechas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtahoras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
