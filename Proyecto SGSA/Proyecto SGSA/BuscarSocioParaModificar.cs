@@ -196,17 +196,27 @@ namespace Proyecto_SGSA
 
         private void button1_Click_3(object sender, EventArgs e)
         {
-            this.Hide();
 
-            AgregarDocPersonales agregarDocPersonales = new AgregarDocPersonales();
-           // agregarDocPersonales.Show();
+            if (textBox1CURP.Text == "")
+            {
+                MessageBox.Show("Debe selecionar un socio para continuar", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            }
 
-            AgregarDocPersonales docper = new AgregarDocPersonales();
-            docper.textBox4.Text = textBox2Paterno.Text;
-            docper.textBox6.Text = textBox3Materno.Text;
-            docper.textBox5.Text = textBox4Nombre.Text;
-            docper.textBox3.Text = textBox1CURP.Text;
-            docper.Show();
+            else
+            {
+                this.Hide();
+
+                AgregarDocPersonales agregarDocPersonales = new AgregarDocPersonales();
+                // agregarDocPersonales.Show();
+
+                AgregarDocPersonales docper = new AgregarDocPersonales();
+                docper.textBox4.Text = textBox2Paterno.Text;
+                docper.textBox6.Text = textBox3Materno.Text;
+                docper.textBox5.Text = textBox4Nombre.Text;
+                docper.textBox3.Text = textBox1CURP.Text;
+                docper.Show();
+            }
+
         }
 
         private void label16_Click(object sender, EventArgs e)

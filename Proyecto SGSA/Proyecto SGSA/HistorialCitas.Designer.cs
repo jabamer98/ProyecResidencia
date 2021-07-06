@@ -82,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataeventos)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.layoutCalModificado.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,7 +96,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 482);
+            this.panel1.Size = new System.Drawing.Size(200, 561);
             this.panel1.TabIndex = 0;
             // 
             // dtafechasnuevas
@@ -185,9 +186,10 @@
             // monthCalendar1
             // 
             this.monthCalendar1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.monthCalendar1.Location = new System.Drawing.Point(9, 33);
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 36);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
+            this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // button2
@@ -205,9 +207,9 @@
             // 
             this.dataeventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataeventos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataeventos.Location = new System.Drawing.Point(262, 27);
+            this.dataeventos.Location = new System.Drawing.Point(252, 30);
             this.dataeventos.Name = "dataeventos";
-            this.dataeventos.Size = new System.Drawing.Size(447, 172);
+            this.dataeventos.Size = new System.Drawing.Size(657, 202);
             this.dataeventos.TabIndex = 4;
             this.dataeventos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataeventos_CellContentClick);
             // 
@@ -225,15 +227,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(243, 24);
+            this.label3.Size = new System.Drawing.Size(240, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "Seleccione la fecha en el calendario para ver sus citas agendadas";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(847, 466);
+            this.btneliminar.Location = new System.Drawing.Point(847, 494);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
             this.btneliminar.TabIndex = 7;
@@ -245,7 +249,7 @@
             // 
             this.lblnombrecompleto.AutoSize = true;
             this.lblnombrecompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnombrecompleto.Location = new System.Drawing.Point(536, 387);
+            this.lblnombrecompleto.Location = new System.Drawing.Point(536, 415);
             this.lblnombrecompleto.Name = "lblnombrecompleto";
             this.lblnombrecompleto.Size = new System.Drawing.Size(0, 20);
             this.lblnombrecompleto.TabIndex = 6;
@@ -253,7 +257,7 @@
             // lblhora
             // 
             this.lblhora.AutoSize = true;
-            this.lblhora.Location = new System.Drawing.Point(541, 442);
+            this.lblhora.Location = new System.Drawing.Point(541, 470);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(0, 13);
             this.lblhora.TabIndex = 8;
@@ -261,7 +265,7 @@
             // lblfecha
             // 
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Location = new System.Drawing.Point(842, 522);
+            this.lblfecha.Location = new System.Drawing.Point(842, 550);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(0, 13);
             this.lblfecha.TabIndex = 9;
@@ -270,32 +274,33 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.51685F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.48315F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.38853F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.61147F));
             this.tableLayoutPanel1.Controls.Add(this.dataeventos, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.monthCalendar1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(206, 102);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(206, 106);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 178F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 202);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 208F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(912, 235);
             this.tableLayoutPanel1.TabIndex = 10;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(262, 0);
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(252, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 13);
+            this.label4.Size = new System.Drawing.Size(205, 12);
             this.label4.TabIndex = 7;
             this.label4.Text = "Seleccione la cita para ver a detalle";
             // 
             // btneditar
             // 
-            this.btneditar.Location = new System.Drawing.Point(847, 403);
+            this.btneditar.Location = new System.Drawing.Point(847, 431);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 11;
@@ -305,7 +310,7 @@
             // 
             // btnactualizar
             // 
-            this.btnactualizar.Location = new System.Drawing.Point(847, 432);
+            this.btnactualizar.Location = new System.Drawing.Point(847, 460);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(75, 23);
             this.btnactualizar.TabIndex = 12;
@@ -317,7 +322,7 @@
             // 
             this.lblevento.AutoSize = true;
             this.lblevento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblevento.Location = new System.Drawing.Point(536, 358);
+            this.lblevento.Location = new System.Drawing.Point(536, 386);
             this.lblevento.Name = "lblevento";
             this.lblevento.Size = new System.Drawing.Size(0, 20);
             this.lblevento.TabIndex = 13;
@@ -326,7 +331,7 @@
             // 
             this.lblubicacion.AutoSize = true;
             this.lblubicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblubicacion.Location = new System.Drawing.Point(537, 413);
+            this.lblubicacion.Location = new System.Drawing.Point(537, 441);
             this.lblubicacion.Name = "lblubicacion";
             this.lblubicacion.Size = new System.Drawing.Size(0, 20);
             this.lblubicacion.TabIndex = 14;
@@ -334,7 +339,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(475, 365);
+            this.label5.Location = new System.Drawing.Point(269, 34);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 15;
@@ -343,7 +348,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(475, 392);
+            this.label6.Location = new System.Drawing.Point(269, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 16;
@@ -352,7 +357,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(475, 413);
+            this.label7.Location = new System.Drawing.Point(267, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 17;
@@ -361,7 +366,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(475, 442);
+            this.label8.Location = new System.Drawing.Point(475, 470);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 18;
@@ -370,7 +375,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(780, 522);
+            this.label9.Location = new System.Drawing.Point(780, 550);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 19;
@@ -383,7 +388,7 @@
             this.layoutCalModificado.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.layoutCalModificado.Controls.Add(this.label10, 0, 0);
             this.layoutCalModificado.Controls.Add(this.monthCalendar2, 0, 1);
-            this.layoutCalModificado.Location = new System.Drawing.Point(206, 339);
+            this.layoutCalModificado.Location = new System.Drawing.Point(206, 367);
             this.layoutCalModificado.Name = "layoutCalModificado";
             this.layoutCalModificado.RowCount = 2;
             this.layoutCalModificado.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -411,23 +416,23 @@
             // 
             // txtevento
             // 
-            this.txtevento.Location = new System.Drawing.Point(544, 358);
+            this.txtevento.Location = new System.Drawing.Point(544, 386);
             this.txtevento.Name = "txtevento";
-            this.txtevento.Size = new System.Drawing.Size(100, 20);
+            this.txtevento.Size = new System.Drawing.Size(158, 20);
             this.txtevento.TabIndex = 21;
             // 
             // txtnombresocio
             // 
-            this.txtnombresocio.Location = new System.Drawing.Point(544, 389);
+            this.txtnombresocio.Location = new System.Drawing.Point(544, 417);
             this.txtnombresocio.Name = "txtnombresocio";
-            this.txtnombresocio.Size = new System.Drawing.Size(100, 20);
+            this.txtnombresocio.Size = new System.Drawing.Size(158, 20);
             this.txtnombresocio.TabIndex = 22;
             // 
             // txtubicacion
             // 
-            this.txtubicacion.Location = new System.Drawing.Point(544, 410);
+            this.txtubicacion.Location = new System.Drawing.Point(338, 86);
             this.txtubicacion.Name = "txtubicacion";
-            this.txtubicacion.Size = new System.Drawing.Size(100, 20);
+            this.txtubicacion.Size = new System.Drawing.Size(158, 20);
             this.txtubicacion.TabIndex = 23;
             // 
             // cmboxhora
@@ -446,7 +451,7 @@
             "10",
             "11",
             "12"});
-            this.cmboxhora.Location = new System.Drawing.Point(544, 466);
+            this.cmboxhora.Location = new System.Drawing.Point(544, 494);
             this.cmboxhora.Name = "cmboxhora";
             this.cmboxhora.Size = new System.Drawing.Size(39, 21);
             this.cmboxhora.TabIndex = 26;
@@ -517,7 +522,7 @@
             "57",
             "58",
             "59"});
-            this.cmboxminutos.Location = new System.Drawing.Point(589, 466);
+            this.cmboxminutos.Location = new System.Drawing.Point(589, 494);
             this.cmboxminutos.Name = "cmboxminutos";
             this.cmboxminutos.Size = new System.Drawing.Size(38, 21);
             this.cmboxminutos.TabIndex = 27;
@@ -530,7 +535,7 @@
             this.cmboxampm.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.cmboxampm.Location = new System.Drawing.Point(633, 466);
+            this.cmboxampm.Location = new System.Drawing.Point(633, 494);
             this.cmboxampm.Name = "cmboxampm";
             this.cmboxampm.Size = new System.Drawing.Size(42, 21);
             this.cmboxampm.TabIndex = 28;
@@ -540,7 +545,7 @@
             // lblhoranueva
             // 
             this.lblhoranueva.AutoSize = true;
-            this.lblhoranueva.Location = new System.Drawing.Point(681, 471);
+            this.lblhoranueva.Location = new System.Drawing.Point(681, 499);
             this.lblhoranueva.Name = "lblhoranueva";
             this.lblhoranueva.Size = new System.Drawing.Size(58, 13);
             this.lblhoranueva.TabIndex = 29;
@@ -551,7 +556,7 @@
             this.lblfechanueva.AutoSize = true;
             this.lblfechanueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechanueva.ForeColor = System.Drawing.Color.Red;
-            this.lblfechanueva.Location = new System.Drawing.Point(554, 503);
+            this.lblfechanueva.Location = new System.Drawing.Point(554, 531);
             this.lblfechanueva.Name = "lblfechanueva";
             this.lblfechanueva.Size = new System.Drawing.Size(148, 13);
             this.lblfechanueva.TabIndex = 30;
@@ -560,7 +565,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(475, 471);
+            this.label11.Location = new System.Drawing.Point(475, 499);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 31;
@@ -569,7 +574,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(475, 503);
+            this.label12.Location = new System.Drawing.Point(475, 531);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 13);
             this.label12.TabIndex = 32;
@@ -598,7 +603,11 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel4.Location = new System.Drawing.Point(206, 326);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.txtubicacion);
+            this.panel4.Location = new System.Drawing.Point(206, 357);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(722, 209);
             this.panel4.TabIndex = 35;
@@ -607,7 +616,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 547);
+            this.ClientSize = new System.Drawing.Size(1143, 625);
             this.Controls.Add(this.lblfechacomprobacion);
             this.Controls.Add(this.lblbusquedafecha);
             this.Controls.Add(this.label12);
@@ -617,15 +626,11 @@
             this.Controls.Add(this.cmboxampm);
             this.Controls.Add(this.cmboxminutos);
             this.Controls.Add(this.cmboxhora);
-            this.Controls.Add(this.txtubicacion);
             this.Controls.Add(this.txtnombresocio);
             this.Controls.Add(this.txtevento);
             this.Controls.Add(this.layoutCalModificado);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblubicacion);
             this.Controls.Add(this.lblevento);
             this.Controls.Add(this.btnactualizar);
@@ -640,6 +645,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Name = "HistorialCitas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial De Citas";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -653,6 +659,8 @@
             this.tableLayoutPanel1.PerformLayout();
             this.layoutCalModificado.ResumeLayout(false);
             this.layoutCalModificado.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
