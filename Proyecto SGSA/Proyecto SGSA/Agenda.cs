@@ -109,14 +109,14 @@ namespace Proyecto_SGSA
                 else
                 {
 
-                    string agregar = "INSERT INTO Eventos (Evento,Fecha,Hora,Socio,Estatus,Ubicacion) VALUES (@evento,@fecha,@hora,@socio,@estatus,@ubicacion)";
+                    string agregar = "INSERT INTO Eventos (Evento,Fecha,Hora,Socio,Ubicacion) VALUES (@evento,@fecha,@hora,@socio,@ubicacion)";
                     con.Open();
                     SqlCommand comando = new SqlCommand(agregar, con);
                     comando.Parameters.AddWithValue("@evento", textBox1.Text);
                     comando.Parameters.AddWithValue("@fecha", monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"));
                     comando.Parameters.AddWithValue("@hora", label8.Text);
                     comando.Parameters.AddWithValue("@socio", textBox2.Text);
-                    comando.Parameters.AddWithValue("@estatus", "Programado");
+                    //comando.Parameters.AddWithValue("@estatus", "Programado");
                     comando.Parameters.AddWithValue("@ubicacion", txtsitio.Text);
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Agregado correctamente");
