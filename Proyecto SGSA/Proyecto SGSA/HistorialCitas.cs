@@ -357,8 +357,8 @@ namespace Proyecto_SGSA
                     try
                     {
                        
-                        string fecha = lblfechanueva.Text.Trim();
-                        string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = '" + lblnombrecompleto.Text + "' and Hora = @hora";
+                        //string fecha = lblfechanueva.Text.Trim();
+                        string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = '" + lblnombrecompleto.Text + "' and fecha = @fecha and hora = @hora";
                         con.Open();
                         SqlCommand comando = new SqlCommand(actualizar, con);
 
