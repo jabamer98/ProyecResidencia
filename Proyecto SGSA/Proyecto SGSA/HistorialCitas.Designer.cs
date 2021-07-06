@@ -237,7 +237,7 @@
             // 
             // btneliminar
             // 
-            this.btneliminar.Location = new System.Drawing.Point(847, 494);
+            this.btneliminar.Location = new System.Drawing.Point(606, 137);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(75, 23);
             this.btneliminar.TabIndex = 7;
@@ -300,7 +300,7 @@
             // 
             // btneditar
             // 
-            this.btneditar.Location = new System.Drawing.Point(847, 431);
+            this.btneditar.Location = new System.Drawing.Point(606, 79);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 11;
@@ -310,7 +310,7 @@
             // 
             // btnactualizar
             // 
-            this.btnactualizar.Location = new System.Drawing.Point(847, 460);
+            this.btnactualizar.Location = new System.Drawing.Point(606, 108);
             this.btnactualizar.Name = "btnactualizar";
             this.btnactualizar.Size = new System.Drawing.Size(75, 23);
             this.btnactualizar.TabIndex = 12;
@@ -607,6 +607,9 @@
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.txtubicacion);
+            this.panel4.Controls.Add(this.btneditar);
+            this.panel4.Controls.Add(this.btnactualizar);
+            this.panel4.Controls.Add(this.btneliminar);
             this.panel4.Location = new System.Drawing.Point(206, 357);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(722, 209);
@@ -633,13 +636,10 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblubicacion);
             this.Controls.Add(this.lblevento);
-            this.Controls.Add(this.btnactualizar);
-            this.Controls.Add(this.btneditar);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.lblnombrecompleto);
-            this.Controls.Add(this.btneliminar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
