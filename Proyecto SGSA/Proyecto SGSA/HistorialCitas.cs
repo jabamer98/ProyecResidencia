@@ -225,7 +225,7 @@ namespace Proyecto_SGSA
 
             txtnombresocio.Text = Convert.ToString(fila.Cells[0].Value);
             txtevento.Text = Convert.ToString(fila.Cells[1].Value);
-            txtubicacion.Text = Convert.ToString(fila.Cells[4].Value);
+            txtubicacion.Text = Convert.ToString(fila.Cells[3].Value);
 
             //lblfechanueva.Text = Convert.ToString(fila.Cells[5].Value);
             lblhoranueva.Text = Convert.ToString(fila.Cells[2].Value);
@@ -358,7 +358,7 @@ namespace Proyecto_SGSA
                     {
                        
                         //string fecha = lblfechanueva.Text.Trim();
-                        string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = '" + lblnombrecompleto.Text + "' and fecha = @fecha and hora = @hora";
+                        string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = '" + lblnombrecompleto.Text + "', fecha = @fecha, hora = @hora";
                         con.Open();
                         SqlCommand comando = new SqlCommand(actualizar, con);                
                         comando.Parameters.AddWithValue("@evento", txtevento.Text);

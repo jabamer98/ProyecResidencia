@@ -300,7 +300,7 @@
             // 
             // btneditar
             // 
-            this.btneditar.Location = new System.Drawing.Point(606, 79);
+            this.btneditar.Location = new System.Drawing.Point(606, 40);
             this.btneditar.Name = "btneditar";
             this.btneditar.Size = new System.Drawing.Size(75, 23);
             this.btneditar.TabIndex = 11;
