@@ -360,9 +360,7 @@ namespace Proyecto_SGSA
                         //string fecha = lblfechanueva.Text.Trim();
                         string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = '" + lblnombrecompleto.Text + "' and fecha = @fecha and hora = @hora";
                         con.Open();
-                        SqlCommand comando = new SqlCommand(actualizar, con);
-
-                  
+                        SqlCommand comando = new SqlCommand(actualizar, con);                
                         comando.Parameters.AddWithValue("@evento", txtevento.Text);
                         comando.Parameters.AddWithValue("@fecha", Convert.ToDateTime(lblfechanueva.Text));
                         comando.Parameters.AddWithValue("@hora", lblhoranueva.Text);

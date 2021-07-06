@@ -114,6 +114,7 @@
             // 
             this.txtBuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtBuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBuscar.BackColor = System.Drawing.SystemColors.Window;
             this.txtBuscar.Location = new System.Drawing.Point(400, 134);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(207, 20);
