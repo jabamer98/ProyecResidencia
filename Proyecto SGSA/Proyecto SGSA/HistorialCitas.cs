@@ -138,7 +138,7 @@ namespace Proyecto_SGSA
             //label1.Text = e.Start.ToShortDateString();
             label1.Text = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
             dataeventos.Enabled = true;
-            string buscarporFecha = "SELECT Socio,Evento,Hora,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'";
+            string buscarporFecha = "SELECT Socio,Evento,Hora,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'";
             SqlDataAdapter adaptador = new SqlDataAdapter(buscarporFecha, con);
             SqlCommand comando = new SqlCommand(buscarporFecha, con);
             var ds = new DataSet();
@@ -202,11 +202,11 @@ namespace Proyecto_SGSA
                 {
                     MessageBox.Show("No se encontro a la persona");
                 }
-                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
             else
             {
-                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
             con.Close();
         }
@@ -219,9 +219,9 @@ namespace Proyecto_SGSA
             DataGridViewRow fila = dataeventos.Rows[e.RowIndex];
             lblnombrecompleto.Text = Convert.ToString(fila.Cells[0].Value);
             lblhora.Text = Convert.ToString(fila.Cells[2].Value);
-            lblfecha.Text = Convert.ToString(fila.Cells[5].Value);
+            lblfecha.Text = Convert.ToString(fila.Cells[4].Value);
             lblevento.Text = Convert.ToString(fila.Cells[1].Value);
-            lblubicacion.Text = Convert.ToString(fila.Cells[4].Value);
+            lblubicacion.Text = Convert.ToString(fila.Cells[3].Value);
 
             txtnombresocio.Text = Convert.ToString(fila.Cells[0].Value);
             txtevento.Text = Convert.ToString(fila.Cells[1].Value);
@@ -233,14 +233,14 @@ namespace Proyecto_SGSA
             if (string.IsNullOrWhiteSpace(lblnombrecompleto.Text))
             {
                 btneditarapagado();
-                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
                 encenderetiquetas();
                
             }
             else
             {
                 btneditarencendido();
-                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
               
             }
             
@@ -370,7 +370,7 @@ namespace Proyecto_SGSA
                         comando.ExecuteNonQuery();
                         con.Close();
                         MessageBox.Show("Registro actualizado correctamente");
-                        dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Estatus,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                        dataeventos.DataSource = bd.SelectDataTable("SELECT Socio,Evento,Hora,Ubicacion, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
                         calendarioMODapagado();
                         apagartxt();
                     }
