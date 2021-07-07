@@ -373,7 +373,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(780, 550);
+            this.label9.Location = new System.Drawing.Point(530, 189);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 19;
@@ -610,6 +610,7 @@
             this.panel4.Controls.Add(this.btnactualizar);
             this.panel4.Controls.Add(this.btneliminar);
             this.panel4.Controls.Add(this.txtevento);
+            this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(206, 357);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(722, 209);
@@ -649,7 +650,6 @@
             this.Controls.Add(this.cmboxhora);
             this.Controls.Add(this.txtnombresocio);
             this.Controls.Add(this.layoutCalModificado);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblubicacion);
             this.Controls.Add(this.lblevento);
