@@ -202,11 +202,11 @@ namespace Proyecto_SGSA
                 {
                     MessageBox.Show("No se encontro a la persona");
                 }
-                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
             else
             {
-                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
             con.Close();
         }
@@ -316,7 +316,7 @@ namespace Proyecto_SGSA
             adaptador2.Fill(busquedaxfecha);
             con.Open();
             lblbusquedafecha.Text = Convert.ToString(comandofech.ExecuteScalar());
-
+            
             SqlDataReader dr = null;
             SqlCommand cmd = new SqlCommand("SELECT Fecha, CONVERT(varchar(10),getdate(),23) FROM Eventos WHERE Fecha ='" + lblfechanueva.Text + "'", con);
 

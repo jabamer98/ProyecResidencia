@@ -579,12 +579,12 @@
             // lblbusquedafecha
             // 
             this.lblbusquedafecha.AutoSize = true;
+            this.lblbusquedafecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblbusquedafecha.Location = new System.Drawing.Point(0, 454);
             this.lblbusquedafecha.Name = "lblbusquedafecha";
-            this.lblbusquedafecha.Size = new System.Drawing.Size(41, 13);
+            this.lblbusquedafecha.Size = new System.Drawing.Size(48, 13);
             this.lblbusquedafecha.TabIndex = 33;
             this.lblbusquedafecha.Text = "label13";
-            this.lblbusquedafecha.Visible = false;
             // 
             // lblfechacomprobacion
             // 
