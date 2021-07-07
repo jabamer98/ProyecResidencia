@@ -138,7 +138,7 @@ namespace Proyecto_SGSA
             //label1.Text = e.Start.ToShortDateString();
             label1.Text = monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd");
             dataeventos.Enabled = true;
-            string buscarporFecha = "SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus, CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + label1.Text + "'";
+            string buscarporFecha = "SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus,Fecha FROM Eventos WHERE Fecha ='" + label1.Text + "'";
             SqlDataAdapter adaptador = new SqlDataAdapter(buscarporFecha, con);
             SqlCommand comando = new SqlCommand(buscarporFecha, con);
             var ds = new DataSet();
@@ -202,11 +202,11 @@ namespace Proyecto_SGSA
                 {
                     MessageBox.Show("No se encontro a la persona");
                 }
-                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus,Fecha FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
             else
             {
-                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus FROM Eventos WHERE Fecha ='" + label1.Text + "'");
+                dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus,Fecha FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
             con.Close();
         }
