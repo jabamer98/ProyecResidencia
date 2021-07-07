@@ -186,7 +186,7 @@ namespace Proyecto_SGSA
         {
             con.Open();
             int flag = 0;
-            string cadena = "DELETE FROM Eventos WHERE Evento = '" + lblIDEvento.Text + "'"; // string cadena = "DELETE FROM Eventos WHERE Evento = '" + lblevento.Text + "'";
+            string cadena = "DELETE FROM Eventos WHERE ID = '" + lblIDEvento.Text + "'"; // string cadena = "DELETE FROM Eventos WHERE Evento = '" + lblevento.Text + "'";
             if (MessageBox.Show("¿Está seguro de eliminar la cita permanentemente", "¿Esta seguro?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 SqlCommand comando = new SqlCommand(cadena, con);
