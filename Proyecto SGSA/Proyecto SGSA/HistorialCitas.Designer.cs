@@ -106,7 +106,6 @@
             this.dtafechasnuevas.Name = "dtafechasnuevas";
             this.dtafechasnuevas.Size = new System.Drawing.Size(141, 78);
             this.dtafechasnuevas.TabIndex = 5;
-            this.dtafechasnuevas.Visible = false;
             // 
             // lblbusquedahora
             // 
@@ -116,7 +115,6 @@
             this.lblbusquedahora.Size = new System.Drawing.Size(41, 13);
             this.lblbusquedahora.TabIndex = 4;
             this.lblbusquedahora.Text = "label13";
-            this.lblbusquedahora.Visible = false;
             // 
             // dtahoranueva
             // 
@@ -125,7 +123,6 @@
             this.dtahoranueva.Name = "dtahoranueva";
             this.dtahoranueva.Size = new System.Drawing.Size(141, 81);
             this.dtahoranueva.TabIndex = 3;
-            this.dtahoranueva.Visible = false;
             // 
             // panel3
             // 
@@ -181,7 +178,6 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
-            this.label1.Visible = false;
             // 
             // monthCalendar1
             // 
@@ -598,7 +594,6 @@
             this.lblfechacomprobacion.Size = new System.Drawing.Size(41, 13);
             this.lblfechacomprobacion.TabIndex = 34;
             this.lblfechacomprobacion.Text = "label13";
-            this.lblfechacomprobacion.Visible = false;
             // 
             // panel4
             // 

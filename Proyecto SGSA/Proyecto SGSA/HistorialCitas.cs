@@ -309,7 +309,7 @@ namespace Proyecto_SGSA
             adaptador2.Fill(ds2);
             dtafechasnuevas.ReadOnly = true;
             dtafechasnuevas.DataSource = ds2.Tables[0];
-            dtafechasnuevas.Columns[0].DefaultCellStyle.Format = "yyyy/MM/dd";
+            dtafechasnuevas.Columns[0].DefaultCellStyle.Format = "yyyy-MM-dd";
             adaptador2.Fill(busquedaxfecha);
             con.Open();
             lblbusquedafecha.Text = Convert.ToString(comandofech.ExecuteScalar());
@@ -348,7 +348,7 @@ namespace Proyecto_SGSA
             if (MessageBox.Show("¿Está seguro de modificar el registro?","Está seguro?",MessageBoxButtons.YesNo,MessageBoxIcon.Question)== DialogResult.Yes)
             {
                 
-                if(lblbusquedafecha.Text==lblfechacomprobacion.Text && lblbusquedahora.Text == lblhoranueva.Text)
+                if(label1.Text==lblfechanueva.Text && lblbusquedahora.Text == lblhoranueva.Text)
                 {
                     MessageBox.Show("Esta fecha ya está programada");
                 }
@@ -358,10 +358,9 @@ namespace Proyecto_SGSA
                     {
                        
                         //string fecha = lblfechanueva.Text.Trim();
-                        string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = @socio and  fecha = @fecha and  hora = @hora";
+                        string actualizar = "UPDATE Eventos SET Evento = @evento, Fecha = @fecha, Hora = @hora, Ubicacion = @ubicacion WHERE Socio = '" + lblnombrecompleto.Text + "'";
                         con.Open();
-                        SqlCommand comando = new SqlCommand(actualizar, con);
-                        comando.Parameters.AddWithValue("@socio", txtnombresocio.Text);
+                        SqlCommand comando = new SqlCommand(actualizar, con);                
                         comando.Parameters.AddWithValue("@evento", txtevento.Text);
                         comando.Parameters.AddWithValue("@fecha", Convert.ToDateTime(lblfechanueva.Text));
                         comando.Parameters.AddWithValue("@hora", lblhoranueva.Text);
