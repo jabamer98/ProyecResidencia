@@ -94,7 +94,7 @@ namespace Proyecto_SGSA
 
             string consultar = "SELECT CONVERT(varchar,getdate(),23) as [Fecha] FROM Eventos WHERE Fecha ='" + lblhoraprogr.Text + "'";
 
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            if (string.IsNullOrWhiteSpace(txtEvento.Text))
             {
                 MessageBox.Show("No ha colocado un sitio para la cita o no ha colocado ubicación", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -109,15 +109,16 @@ namespace Proyecto_SGSA
                 else
                 {
 
-                    string agregar = "INSERT INTO Eventos (Evento,Fecha,Hora,Socio,Ubicacion) VALUES (@evento,@fecha,@hora,@socio,@ubicacion)";
+                    string agregar = "INSERT INTO Eventos (NombreSocio,Evento,Fecha,Hora,Ubicacion,Estatus) VALUES (@nombresocio,@evento,@fecha,@hora,@ubicacion,@estatus)";
                     con.Open();
                     SqlCommand comando = new SqlCommand(agregar, con);
-                    comando.Parameters.AddWithValue("@evento", textBox1.Text);
+                   // comando.Parameters.AddWithValue("@id", lblID.Text);
+                    comando.Parameters.AddWithValue("@nombresocio", txtNombreSocio.Text);
+                    comando.Parameters.AddWithValue("@evento", txtEvento.Text);
                     comando.Parameters.AddWithValue("@fecha", monthCalendar1.SelectionRange.Start.ToString("yyyy-MM-dd"));
                     comando.Parameters.AddWithValue("@hora", label8.Text);
-                    comando.Parameters.AddWithValue("@socio", textBox2.Text);
-                    //comando.Parameters.AddWithValue("@estatus", "Programado");
-                    comando.Parameters.AddWithValue("@ubicacion", txtsitio.Text);
+                    comando.Parameters.AddWithValue("@ubicacion", txtUbicacion.Text);
+                    comando.Parameters.AddWithValue("@estatus", "Programado");
                     comando.ExecuteNonQuery();
                     MessageBox.Show("Agregado correctamente");
                     con.Close();
@@ -181,7 +182,7 @@ namespace Proyecto_SGSA
             string nombre = lblnombre.Text;
             string apaterno = lblApaterno.Text;
             string amaterno = lblAmaterno.Text;
-            textBox2.Text = nombre + " " + apaterno + " " + amaterno;
+            txtNombreSocio.Text = nombre + " " + apaterno + " " + amaterno;
         }
 
         private void horaCompleta()
@@ -196,15 +197,15 @@ namespace Proyecto_SGSA
         bool validaCampos()
         {
             bool valido = true;
-            if (textBox1.Text == "")
+            if (txtEvento.Text == "")
             {
                 valido = false;
-                errorProvider1.SetError(textBox1, "Ingrese un evento para continuar");
+                errorProvider1.SetError(txtEvento, "Ingrese un evento para continuar");
             }
-            if (txtsitio.Text == "")
+            if (txtUbicacion.Text == "")
             {
                 valido = false;
-                errorProvider1.SetError(txtsitio, "Ingrese un sitio para continuar");
+                errorProvider1.SetError(txtUbicacion, "Ingrese un sitio para continuar");
             }
 
             return valido;
@@ -212,8 +213,8 @@ namespace Proyecto_SGSA
 
         void borrarMensajesError()
         {
-            errorProvider1.SetError(textBox1, "");
-            errorProvider1.SetError(txtsitio, "");
+            errorProvider1.SetError(txtEvento, "");
+            errorProvider1.SetError(txtUbicacion, "");
         }
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)

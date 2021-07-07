@@ -103,6 +103,12 @@
     <Compile Include="Expedientes.Designer.cs">
       <DependentUpon>Expedientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="HistorialAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialAgenda.Designer.cs">
+      <DependentUpon>HistorialAgenda.cs</DependentUpon>
+    </Compile>
     <Compile Include="HistorialCitas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Expedientes.resx">
       <DependentUpon>Expedientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialAgenda.resx">
+      <DependentUpon>HistorialAgenda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HistorialCitas.resx">
       <DependentUpon>HistorialCitas.cs</DependentUpon>

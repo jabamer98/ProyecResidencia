@@ -244,7 +244,7 @@ namespace Proyecto_SGSA
             else
             {
                 this.Hide();
-                HistorialCitas historialcitas = new HistorialCitas();
+                HistorialAgenda historialcitas = new HistorialAgenda();
                 ocultarSubmenu();
                 historialcitas.Show();
             }

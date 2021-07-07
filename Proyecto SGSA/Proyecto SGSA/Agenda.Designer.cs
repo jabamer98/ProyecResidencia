@@ -52,18 +52,19 @@
             this.btnprogramar = new System.Windows.Forms.Button();
             this.btnbuscar = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEvento = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtsitio = new System.Windows.Forms.TextBox();
+            this.txtUbicacion = new System.Windows.Forms.TextBox();
             this.lblnombre = new System.Windows.Forms.Label();
             this.lblApaterno = new System.Windows.Forms.Label();
             this.lblAmaterno = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombreSocio = new System.Windows.Forms.TextBox();
             this.cboxhoras = new System.Windows.Forms.ComboBox();
             this.cboxminutos = new System.Windows.Forms.ComboBox();
             this.cboxAMPM = new System.Windows.Forms.ComboBox();
+            this.lblID = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -108,7 +109,7 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 385);
+            this.panel1.Size = new System.Drawing.Size(200, 514);
             this.panel1.TabIndex = 1;
             // 
             // panel3
@@ -231,7 +232,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(212, 164);
+            this.monthCalendar1.Location = new System.Drawing.Point(237, 362);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
@@ -240,7 +241,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(303, 64);
+            this.label1.Location = new System.Drawing.Point(417, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(371, 29);
             this.label1.TabIndex = 2;
@@ -250,7 +251,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(298, 131);
+            this.label2.Location = new System.Drawing.Point(233, 329);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 24);
             this.label2.TabIndex = 4;
@@ -260,7 +261,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(464, 274);
+            this.label3.Location = new System.Drawing.Point(233, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 24);
             this.label3.TabIndex = 5;
@@ -270,7 +271,7 @@
             // 
             this.txtbuscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtbuscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtbuscar.Location = new System.Drawing.Point(590, 278);
+            this.txtbuscar.Location = new System.Drawing.Point(359, 128);
             this.txtbuscar.Name = "txtbuscar";
             this.txtbuscar.Size = new System.Drawing.Size(200, 20);
             this.txtbuscar.TabIndex = 6;
@@ -278,18 +279,18 @@
             // dtasocios
             // 
             this.dtasocios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtasocios.Location = new System.Drawing.Point(209, 336);
+            this.dtasocios.Location = new System.Drawing.Point(321, 171);
             this.dtasocios.Name = "dtasocios";
             this.dtasocios.ReadOnly = true;
-            this.dtasocios.Size = new System.Drawing.Size(579, 73);
+            this.dtasocios.Size = new System.Drawing.Size(636, 140);
             this.dtasocios.TabIndex = 7;
             this.dtasocios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtasocios_CellContentClick);
             // 
             // btnprogramar
             // 
-            this.btnprogramar.Location = new System.Drawing.Point(678, 415);
+            this.btnprogramar.Location = new System.Drawing.Point(834, 500);
             this.btnprogramar.Name = "btnprogramar";
-            this.btnprogramar.Size = new System.Drawing.Size(110, 23);
+            this.btnprogramar.Size = new System.Drawing.Size(123, 52);
             this.btnprogramar.TabIndex = 8;
             this.btnprogramar.Text = "Programar evento";
             this.btnprogramar.UseVisualStyleBackColor = true;
@@ -297,7 +298,7 @@
             // 
             // btnbuscar
             // 
-            this.btnbuscar.Location = new System.Drawing.Point(618, 303);
+            this.btnbuscar.Location = new System.Drawing.Point(569, 125);
             this.btnbuscar.Name = "btnbuscar";
             this.btnbuscar.Size = new System.Drawing.Size(75, 23);
             this.btnbuscar.TabIndex = 9;
@@ -309,24 +310,24 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(206, 104);
+            this.label7.Location = new System.Drawing.Point(490, 411);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(154, 24);
             this.label7.TabIndex = 15;
             this.label7.Text = "Evento a realizar:";
             // 
-            // textBox1
+            // txtEvento
             // 
-            this.textBox1.Location = new System.Drawing.Point(366, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(422, 20);
-            this.textBox1.TabIndex = 16;
+            this.txtEvento.Location = new System.Drawing.Point(650, 416);
+            this.txtEvento.Name = "txtEvento";
+            this.txtEvento.Size = new System.Drawing.Size(374, 20);
+            this.txtEvento.TabIndex = 16;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(528, 175);
+            this.label4.Location = new System.Drawing.Point(490, 360);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 24);
             this.label4.TabIndex = 19;
@@ -336,23 +337,23 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(488, 224);
+            this.label5.Location = new System.Drawing.Point(490, 461);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 21;
             this.label5.Text = "En el sitio:";
             // 
-            // txtsitio
+            // txtUbicacion
             // 
-            this.txtsitio.Location = new System.Drawing.Point(590, 228);
-            this.txtsitio.Name = "txtsitio";
-            this.txtsitio.Size = new System.Drawing.Size(198, 20);
-            this.txtsitio.TabIndex = 22;
+            this.txtUbicacion.Location = new System.Drawing.Point(592, 465);
+            this.txtUbicacion.Name = "txtUbicacion";
+            this.txtUbicacion.Size = new System.Drawing.Size(198, 20);
+            this.txtUbicacion.TabIndex = 22;
             // 
             // lblnombre
             // 
             this.lblnombre.AutoSize = true;
-            this.lblnombre.Location = new System.Drawing.Point(514, 428);
+            this.lblnombre.Location = new System.Drawing.Point(873, 461);
             this.lblnombre.Name = "lblnombre";
             this.lblnombre.Size = new System.Drawing.Size(0, 13);
             this.lblnombre.TabIndex = 26;
@@ -361,7 +362,7 @@
             // lblApaterno
             // 
             this.lblApaterno.AutoSize = true;
-            this.lblApaterno.Location = new System.Drawing.Point(584, 428);
+            this.lblApaterno.Location = new System.Drawing.Point(943, 461);
             this.lblApaterno.Name = "lblApaterno";
             this.lblApaterno.Size = new System.Drawing.Size(0, 13);
             this.lblApaterno.TabIndex = 27;
@@ -370,7 +371,7 @@
             // lblAmaterno
             // 
             this.lblAmaterno.AutoSize = true;
-            this.lblAmaterno.Location = new System.Drawing.Point(649, 428);
+            this.lblAmaterno.Location = new System.Drawing.Point(1008, 461);
             this.lblAmaterno.Name = "lblAmaterno";
             this.lblAmaterno.Size = new System.Drawing.Size(0, 13);
             this.lblAmaterno.TabIndex = 28;
@@ -380,14 +381,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // textBox2
+            // txtNombreSocio
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(209, 420);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(230, 19);
-            this.textBox2.TabIndex = 31;
+            this.txtNombreSocio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNombreSocio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreSocio.Location = new System.Drawing.Point(680, 129);
+            this.txtNombreSocio.Name = "txtNombreSocio";
+            this.txtNombreSocio.Size = new System.Drawing.Size(344, 19);
+            this.txtNombreSocio.TabIndex = 31;
             // 
             // cboxhoras
             // 
@@ -405,7 +406,7 @@
             "10",
             "11",
             "12"});
-            this.cboxhoras.Location = new System.Drawing.Point(591, 177);
+            this.cboxhoras.Location = new System.Drawing.Point(553, 362);
             this.cboxhoras.Name = "cboxhoras";
             this.cboxhoras.Size = new System.Drawing.Size(39, 21);
             this.cboxhoras.TabIndex = 35;
@@ -476,7 +477,7 @@
             "57",
             "58",
             "59"});
-            this.cboxminutos.Location = new System.Drawing.Point(636, 177);
+            this.cboxminutos.Location = new System.Drawing.Point(598, 362);
             this.cboxminutos.Name = "cboxminutos";
             this.cboxminutos.Size = new System.Drawing.Size(38, 21);
             this.cboxminutos.TabIndex = 36;
@@ -489,30 +490,40 @@
             this.cboxAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.cboxAMPM.Location = new System.Drawing.Point(680, 177);
+            this.cboxAMPM.Location = new System.Drawing.Point(642, 362);
             this.cboxAMPM.Name = "cboxAMPM";
             this.cboxAMPM.Size = new System.Drawing.Size(43, 21);
             this.cboxAMPM.TabIndex = 37;
             this.cboxAMPM.Text = "AM";
             this.cboxAMPM.SelectedIndexChanged += new System.EventHandler(this.cboxAMPM_SelectedIndexChanged);
             // 
+            // lblID
+            // 
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(494, 510);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(117, 13);
+            this.lblID.TabIndex = 38;
+            this.lblID.Text = "Identificador de Evento";
+            // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1090, 576);
+            this.Controls.Add(this.lblID);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.cboxAMPM);
             this.Controls.Add(this.cboxminutos);
             this.Controls.Add(this.cboxhoras);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNombreSocio);
             this.Controls.Add(this.lblAmaterno);
             this.Controls.Add(this.lblApaterno);
             this.Controls.Add(this.lblnombre);
-            this.Controls.Add(this.txtsitio);
+            this.Controls.Add(this.txtUbicacion);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEvento);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnbuscar);
             this.Controls.Add(this.btnprogramar);
@@ -555,17 +566,17 @@
         private System.Windows.Forms.Button btnprogramar;
         private System.Windows.Forms.Button btnbuscar;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEvento;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtsitio;
+        private System.Windows.Forms.TextBox txtUbicacion;
         private System.Windows.Forms.Label lblnombre;
         private System.Windows.Forms.Label lblApaterno;
         private System.Windows.Forms.Label lblAmaterno;
         private System.Windows.Forms.Label lblhoraprogr;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombreSocio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dtafechas;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
@@ -576,5 +587,6 @@
         private System.Windows.Forms.ComboBox cboxAMPM;
         private System.Windows.Forms.DataGridView dtahoras;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblID;
     }
 }
