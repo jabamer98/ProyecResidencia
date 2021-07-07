@@ -31,9 +31,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtafechasnuevas = new System.Windows.Forms.DataGridView();
             this.lblbusquedahora = new System.Windows.Forms.Label();
-            this.dtahoranueva = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dtahoranueva = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.button2 = new System.Windows.Forms.Button();
@@ -68,26 +70,24 @@
             this.lblbusquedafecha = new System.Windows.Forms.Label();
             this.lblfechacomprobacion = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lblIDEvento = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btneditar = new System.Windows.Forms.Button();
             this.btnactualizar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
-            this.lblNombreSocio = new System.Windows.Forms.Label();
-            this.label14Evento = new System.Windows.Forms.Label();
             this.labelUbicacion = new System.Windows.Forms.Label();
+            this.label14Evento = new System.Windows.Forms.Label();
+            this.lblNombreSocio = new System.Windows.Forms.Label();
+            this.lblIDEvento = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtafechasnuevas)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataeventos)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.layoutCalModificado.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -123,15 +123,6 @@
             this.lblbusquedahora.Text = "label13";
             this.lblbusquedahora.Visible = false;
             // 
-            // dtahoranueva
-            // 
-            this.dtahoranueva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtahoranueva.Location = new System.Drawing.Point(3, 196);
-            this.dtahoranueva.Name = "dtahoranueva";
-            this.dtahoranueva.Size = new System.Drawing.Size(141, 81);
-            this.dtahoranueva.TabIndex = 3;
-            this.dtahoranueva.Visible = false;
-            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.button1);
@@ -141,6 +132,24 @@
             this.panel3.Size = new System.Drawing.Size(200, 67);
             this.panel3.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Proyecto_SGSA.Properties.Resources.casa;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 63);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Regresar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
@@ -149,6 +158,25 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 84);
             this.panel2.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::Proyecto_SGSA.Properties.Resources.logocactusrpueba;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 83);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // dtahoranueva
+            // 
+            this.dtahoranueva.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtahoranueva.Location = new System.Drawing.Point(3, 196);
+            this.dtahoranueva.Name = "dtahoranueva";
+            this.dtahoranueva.Size = new System.Drawing.Size(141, 81);
+            this.dtahoranueva.TabIndex = 3;
+            this.dtahoranueva.Visible = false;
             // 
             // label1
             // 
@@ -313,6 +341,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label8.Location = new System.Drawing.Point(475, 470);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
@@ -492,6 +521,7 @@
             // lblhoranueva
             // 
             this.lblhoranueva.AutoSize = true;
+            this.lblhoranueva.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblhoranueva.Location = new System.Drawing.Point(681, 499);
             this.lblhoranueva.Name = "lblhoranueva";
             this.lblhoranueva.Size = new System.Drawing.Size(58, 13);
@@ -501,6 +531,7 @@
             // lblfechanueva
             // 
             this.lblfechanueva.AutoSize = true;
+            this.lblfechanueva.BackColor = System.Drawing.SystemColors.ControlLight;
             this.lblfechanueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblfechanueva.ForeColor = System.Drawing.Color.Red;
             this.lblfechanueva.Location = new System.Drawing.Point(554, 531);
@@ -512,6 +543,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label11.Location = new System.Drawing.Point(475, 499);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 13);
@@ -521,6 +553,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.SystemColors.ControlLight;
             this.label12.Location = new System.Drawing.Point(475, 531);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 13);
@@ -569,54 +602,6 @@
             this.panel4.Size = new System.Drawing.Size(977, 209);
             this.panel4.TabIndex = 35;
             // 
-            // lblIDEvento
-            // 
-            this.lblIDEvento.AutoSize = true;
-            this.lblIDEvento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEvento.Location = new System.Drawing.Point(335, 10);
-            this.lblIDEvento.Name = "lblIDEvento";
-            this.lblIDEvento.Size = new System.Drawing.Size(23, 18);
-            this.lblIDEvento.TabIndex = 25;
-            this.lblIDEvento.Text = "---";
-            this.lblIDEvento.Click += new System.EventHandler(this.lblIDEvento_Click);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(269, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(58, 13);
-            this.label13.TabIndex = 24;
-            this.label13.Text = "ID Evento:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Proyecto_SGSA.Properties.Resources.casa;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 63);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Regresar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::Proyecto_SGSA.Properties.Resources.logocactusrpueba;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 83);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btneditar
             // 
             this.btneditar.Image = global::Proyecto_SGSA.Properties.Resources.lapiz_modificar1;
@@ -653,15 +638,15 @@
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
-            // lblNombreSocio
+            // labelUbicacion
             // 
-            this.lblNombreSocio.AutoSize = true;
-            this.lblNombreSocio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.lblNombreSocio.Location = new System.Drawing.Point(335, 63);
-            this.lblNombreSocio.Name = "lblNombreSocio";
-            this.lblNombreSocio.Size = new System.Drawing.Size(23, 18);
-            this.lblNombreSocio.TabIndex = 26;
-            this.lblNombreSocio.Text = "---";
+            this.labelUbicacion.AutoSize = true;
+            this.labelUbicacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.labelUbicacion.Location = new System.Drawing.Point(335, 91);
+            this.labelUbicacion.Name = "labelUbicacion";
+            this.labelUbicacion.Size = new System.Drawing.Size(23, 18);
+            this.labelUbicacion.TabIndex = 28;
+            this.labelUbicacion.Text = "---";
             // 
             // label14Evento
             // 
@@ -673,15 +658,35 @@
             this.label14Evento.TabIndex = 27;
             this.label14Evento.Text = "---";
             // 
-            // labelUbicacion
+            // lblNombreSocio
             // 
-            this.labelUbicacion.AutoSize = true;
-            this.labelUbicacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.labelUbicacion.Location = new System.Drawing.Point(335, 91);
-            this.labelUbicacion.Name = "labelUbicacion";
-            this.labelUbicacion.Size = new System.Drawing.Size(23, 18);
-            this.labelUbicacion.TabIndex = 28;
-            this.labelUbicacion.Text = "---";
+            this.lblNombreSocio.AutoSize = true;
+            this.lblNombreSocio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lblNombreSocio.Location = new System.Drawing.Point(335, 63);
+            this.lblNombreSocio.Name = "lblNombreSocio";
+            this.lblNombreSocio.Size = new System.Drawing.Size(23, 18);
+            this.lblNombreSocio.TabIndex = 26;
+            this.lblNombreSocio.Text = "---";
+            // 
+            // lblIDEvento
+            // 
+            this.lblIDEvento.AutoSize = true;
+            this.lblIDEvento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDEvento.Location = new System.Drawing.Point(335, 10);
+            this.lblIDEvento.Name = "lblIDEvento";
+            this.lblIDEvento.Size = new System.Drawing.Size(23, 18);
+            this.lblIDEvento.TabIndex = 25;
+            this.lblIDEvento.Text = "---";
+            this.lblIDEvento.Click += new System.EventHandler(this.lblIDEvento_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(269, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.TabIndex = 24;
+            this.label13.Text = "ID Evento:";
             // 
             // HistorialAgenda
             // 
@@ -715,9 +720,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtafechasnuevas)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataeventos)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -725,7 +731,6 @@
             this.layoutCalModificado.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
