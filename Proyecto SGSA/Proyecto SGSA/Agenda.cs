@@ -104,7 +104,7 @@ namespace Proyecto_SGSA
             {
                 if(label6.Text == textBox3.Text && label9.Text == label8.Text)
                 {
-                    MessageBox.Show("Esta fecha ya esta programada");
+                    MessageBox.Show("Hay una cita programada en esta fecha y en esta hora", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -120,7 +120,7 @@ namespace Proyecto_SGSA
                     comando.Parameters.AddWithValue("@ubicacion", txtUbicacion.Text);
                     comando.Parameters.AddWithValue("@estatus", "Programado");
                     comando.ExecuteNonQuery();
-                    MessageBox.Show("Agregado correctamente");
+                    MessageBox.Show("Evento Agendado Correctamente");
                     con.Close();
 
                     while (dtasocios.RowCount > 1)
@@ -155,7 +155,7 @@ namespace Proyecto_SGSA
 
         private void dtasocios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            registroEncendido();
+            
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow fila = dtasocios.Rows[e.RowIndex];//[e.RowIndex]
@@ -220,7 +220,7 @@ namespace Proyecto_SGSA
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
 
-
+            registroEncendido();
             buscandoportiempo();
             lblhoraprogr.Text = monthCalendar1.SelectionRange.Start.ToString("yyyy/MM/dd");
             string buscarFecha = "SELECT Fecha, CONVERT(varchar(10),getdate(),23) FROM Eventos WHERE Fecha ='" + lblhoraprogr.Text + "'";
@@ -245,7 +245,8 @@ namespace Proyecto_SGSA
 
                 if (dr.Read() == true)
                 {
-                    MessageBox.Show("Tiene citas pendientes este dia");
+
+                    MessageBox.Show("Tiene citas agendadas en este dia, pero puede agendar más", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     if (label6.Text == textBox3.Text)
                 {
                     
@@ -254,7 +255,7 @@ namespace Proyecto_SGSA
                 }
                 else
                 {
-                    MessageBox.Show("Día libre");
+                    MessageBox.Show("El día esta libre, puede agendar una cita");
                 }
             }
             catch

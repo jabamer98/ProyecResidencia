@@ -288,7 +288,7 @@
             // 
             // btnprogramar
             // 
-            this.btnprogramar.Location = new System.Drawing.Point(834, 500);
+            this.btnprogramar.Location = new System.Drawing.Point(876, 500);
             this.btnprogramar.Name = "btnprogramar";
             this.btnprogramar.Size = new System.Drawing.Size(123, 52);
             this.btnprogramar.TabIndex = 8;
@@ -500,17 +500,18 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(494, 510);
+            this.lblID.Location = new System.Drawing.Point(939, 520);
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(117, 13);
+            this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 38;
-            this.lblID.Text = "Identificador de Evento";
+            this.lblID.Text = "ID";
             // 
             // Agenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1090, 576);
+            this.Controls.Add(this.btnprogramar);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.cboxAMPM);
@@ -526,7 +527,6 @@
             this.Controls.Add(this.txtEvento);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnbuscar);
-            this.Controls.Add(this.btnprogramar);
             this.Controls.Add(this.dtasocios);
             this.Controls.Add(this.txtbuscar);
             this.Controls.Add(this.label3);
@@ -534,6 +534,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "Agenda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agenda";
             this.Load += new System.EventHandler(this.Agenda_Load);
             this.panel1.ResumeLayout(false);

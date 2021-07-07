@@ -33,23 +33,18 @@
             this.lblbusquedahora = new System.Windows.Forms.Label();
             this.dtahoranueva = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.button2 = new System.Windows.Forms.Button();
             this.dataeventos = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btneliminar = new System.Windows.Forms.Button();
             this.lblnombrecompleto = new System.Windows.Forms.Label();
             this.lblhora = new System.Windows.Forms.Label();
             this.lblfecha = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.btneditar = new System.Windows.Forms.Button();
-            this.btnactualizar = new System.Windows.Forms.Button();
             this.lblevento = new System.Windows.Forms.Label();
             this.lblubicacion = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -73,18 +68,26 @@
             this.lblbusquedafecha = new System.Windows.Forms.Label();
             this.lblfechacomprobacion = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
             this.lblIDEvento = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btneditar = new System.Windows.Forms.Button();
+            this.btnactualizar = new System.Windows.Forms.Button();
+            this.btneliminar = new System.Windows.Forms.Button();
+            this.lblNombreSocio = new System.Windows.Forms.Label();
+            this.label14Evento = new System.Windows.Forms.Label();
+            this.labelUbicacion = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtafechasnuevas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataeventos)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.layoutCalModificado.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,9 +95,9 @@
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.Controls.Add(this.dtafechasnuevas);
             this.panel1.Controls.Add(this.lblbusquedahora);
-            this.panel1.Controls.Add(this.dtahoranueva);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.dtahoranueva);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 64);
             this.panel1.Name = "panel1";
@@ -108,6 +111,7 @@
             this.dtafechasnuevas.Name = "dtafechasnuevas";
             this.dtafechasnuevas.Size = new System.Drawing.Size(141, 78);
             this.dtafechasnuevas.TabIndex = 5;
+            this.dtafechasnuevas.Visible = false;
             // 
             // lblbusquedahora
             // 
@@ -117,6 +121,7 @@
             this.lblbusquedahora.Size = new System.Drawing.Size(41, 13);
             this.lblbusquedahora.TabIndex = 4;
             this.lblbusquedahora.Text = "label13";
+            this.lblbusquedahora.Visible = false;
             // 
             // dtahoranueva
             // 
@@ -125,6 +130,7 @@
             this.dtahoranueva.Name = "dtahoranueva";
             this.dtahoranueva.Size = new System.Drawing.Size(141, 81);
             this.dtahoranueva.TabIndex = 3;
+            this.dtahoranueva.Visible = false;
             // 
             // panel3
             // 
@@ -135,24 +141,6 @@
             this.panel3.Size = new System.Drawing.Size(200, 67);
             this.panel3.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SteelBlue;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Proyecto_SGSA.Properties.Resources.casa;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 63);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Regresar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
@@ -162,16 +150,6 @@
             this.panel2.Size = new System.Drawing.Size(200, 84);
             this.panel2.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = global::Proyecto_SGSA.Properties.Resources.logocactusrpueba;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 83);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -180,6 +158,7 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "label1";
+            this.label1.Visible = false;
             // 
             // monthCalendar1
             // 
@@ -205,9 +184,9 @@
             // 
             this.dataeventos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataeventos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataeventos.Location = new System.Drawing.Point(253, 30);
+            this.dataeventos.Location = new System.Drawing.Point(252, 30);
             this.dataeventos.Name = "dataeventos";
-            this.dataeventos.Size = new System.Drawing.Size(724, 202);
+            this.dataeventos.Size = new System.Drawing.Size(725, 202);
             this.dataeventos.TabIndex = 4;
             this.dataeventos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataeventos_CellContentClick);
             // 
@@ -232,16 +211,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Seleccione la fecha en el calendario para ver sus citas agendadas";
             this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // btneliminar
-            // 
-            this.btneliminar.Location = new System.Drawing.Point(612, 103);
-            this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(110, 34);
-            this.btneliminar.TabIndex = 7;
-            this.btneliminar.Text = "Eliminar";
-            this.btneliminar.UseVisualStyleBackColor = true;
-            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
             // 
             // lblnombrecompleto
             // 
@@ -290,31 +259,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(253, 0);
+            this.label4.Location = new System.Drawing.Point(252, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(285, 12);
             this.label4.TabIndex = 7;
             this.label4.Text = "Seleccione El Nombre del Socio Para Ver a Detalle";
-            // 
-            // btneditar
-            // 
-            this.btneditar.Location = new System.Drawing.Point(606, 23);
-            this.btneditar.Name = "btneditar";
-            this.btneditar.Size = new System.Drawing.Size(113, 34);
-            this.btneditar.TabIndex = 11;
-            this.btneditar.Text = "Editar";
-            this.btneditar.UseVisualStyleBackColor = true;
-            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
-            // 
-            // btnactualizar
-            // 
-            this.btnactualizar.Location = new System.Drawing.Point(609, 63);
-            this.btnactualizar.Name = "btnactualizar";
-            this.btnactualizar.Size = new System.Drawing.Size(113, 34);
-            this.btnactualizar.TabIndex = 12;
-            this.btnactualizar.Text = "Actualizar";
-            this.btnactualizar.UseVisualStyleBackColor = true;
-            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
             // 
             // lblevento
             // 
@@ -355,7 +304,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(267, 89);
+            this.label7.Location = new System.Drawing.Point(269, 89);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(58, 13);
             this.label7.TabIndex = 17;
@@ -414,23 +363,23 @@
             // 
             // txtevento
             // 
-            this.txtevento.Location = new System.Drawing.Point(335, 31);
+            this.txtevento.Location = new System.Drawing.Point(862, 25);
             this.txtevento.Name = "txtevento";
-            this.txtevento.Size = new System.Drawing.Size(158, 20);
+            this.txtevento.Size = new System.Drawing.Size(16, 20);
             this.txtevento.TabIndex = 21;
             // 
             // txtnombresocio
             // 
-            this.txtnombresocio.Location = new System.Drawing.Point(544, 417);
+            this.txtnombresocio.Location = new System.Drawing.Point(862, 60);
             this.txtnombresocio.Name = "txtnombresocio";
-            this.txtnombresocio.Size = new System.Drawing.Size(158, 20);
+            this.txtnombresocio.Size = new System.Drawing.Size(16, 20);
             this.txtnombresocio.TabIndex = 22;
             // 
             // txtubicacion
             // 
-            this.txtubicacion.Location = new System.Drawing.Point(338, 86);
+            this.txtubicacion.Location = new System.Drawing.Point(862, 105);
             this.txtubicacion.Name = "txtubicacion";
-            this.txtubicacion.Size = new System.Drawing.Size(158, 20);
+            this.txtubicacion.Size = new System.Drawing.Size(16, 20);
             this.txtubicacion.TabIndex = 23;
             // 
             // cmboxhora
@@ -600,45 +549,146 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel4.Controls.Add(this.btneditar);
+            this.panel4.Controls.Add(this.btnactualizar);
+            this.panel4.Controls.Add(this.btneliminar);
+            this.panel4.Controls.Add(this.labelUbicacion);
+            this.panel4.Controls.Add(this.label14Evento);
+            this.panel4.Controls.Add(this.lblNombreSocio);
             this.panel4.Controls.Add(this.lblIDEvento);
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.label5);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.txtubicacion);
-            this.panel4.Controls.Add(this.btneditar);
-            this.panel4.Controls.Add(this.btnactualizar);
-            this.panel4.Controls.Add(this.btneliminar);
+            this.panel4.Controls.Add(this.txtnombresocio);
             this.panel4.Controls.Add(this.txtevento);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Location = new System.Drawing.Point(206, 357);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(722, 209);
+            this.panel4.Size = new System.Drawing.Size(977, 209);
             this.panel4.TabIndex = 35;
+            // 
+            // lblIDEvento
+            // 
+            this.lblIDEvento.AutoSize = true;
+            this.lblIDEvento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDEvento.Location = new System.Drawing.Point(335, 10);
+            this.lblIDEvento.Name = "lblIDEvento";
+            this.lblIDEvento.Size = new System.Drawing.Size(23, 18);
+            this.lblIDEvento.TabIndex = 25;
+            this.lblIDEvento.Text = "---";
+            this.lblIDEvento.Click += new System.EventHandler(this.lblIDEvento_Click);
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(272, 10);
+            this.label13.Location = new System.Drawing.Point(269, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 13);
             this.label13.TabIndex = 24;
             this.label13.Text = "ID Evento:";
             // 
-            // lblIDEvento
+            // button1
             // 
-            this.lblIDEvento.AutoSize = true;
-            this.lblIDEvento.Location = new System.Drawing.Point(334, 9);
-            this.lblIDEvento.Name = "lblIDEvento";
-            this.lblIDEvento.Size = new System.Drawing.Size(16, 13);
-            this.lblIDEvento.TabIndex = 25;
-            this.lblIDEvento.Text = "---";
+            this.button1.BackColor = System.Drawing.Color.SteelBlue;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Proyecto_SGSA.Properties.Resources.casa;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 63);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Regresar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button1_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pictureBox1.Image = global::Proyecto_SGSA.Properties.Resources.logocactusrpueba;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(200, 83);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btneditar
+            // 
+            this.btneditar.Image = global::Proyecto_SGSA.Properties.Resources.lapiz_modificar1;
+            this.btneditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneditar.Location = new System.Drawing.Point(814, 17);
+            this.btneditar.Name = "btneditar";
+            this.btneditar.Size = new System.Drawing.Size(113, 34);
+            this.btneditar.TabIndex = 11;
+            this.btneditar.Text = "     Editar";
+            this.btneditar.UseVisualStyleBackColor = true;
+            this.btneditar.Click += new System.EventHandler(this.btneditar_Click);
+            // 
+            // btnactualizar
+            // 
+            this.btnactualizar.Image = global::Proyecto_SGSA.Properties.Resources.actualizar_icono;
+            this.btnactualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnactualizar.Location = new System.Drawing.Point(814, 57);
+            this.btnactualizar.Name = "btnactualizar";
+            this.btnactualizar.Size = new System.Drawing.Size(113, 34);
+            this.btnactualizar.TabIndex = 12;
+            this.btnactualizar.Text = "     Actualizar";
+            this.btnactualizar.UseVisualStyleBackColor = true;
+            this.btnactualizar.Click += new System.EventHandler(this.btnactualizar_Click);
+            // 
+            // btneliminar
+            // 
+            this.btneliminar.Image = global::Proyecto_SGSA.Properties.Resources.Eliminar_icono;
+            this.btneliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btneliminar.Location = new System.Drawing.Point(814, 97);
+            this.btneliminar.Name = "btneliminar";
+            this.btneliminar.Size = new System.Drawing.Size(113, 34);
+            this.btneliminar.TabIndex = 7;
+            this.btneliminar.Text = "     Eliminar";
+            this.btneliminar.UseVisualStyleBackColor = true;
+            this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
+            // 
+            // lblNombreSocio
+            // 
+            this.lblNombreSocio.AutoSize = true;
+            this.lblNombreSocio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.lblNombreSocio.Location = new System.Drawing.Point(335, 63);
+            this.lblNombreSocio.Name = "lblNombreSocio";
+            this.lblNombreSocio.Size = new System.Drawing.Size(23, 18);
+            this.lblNombreSocio.TabIndex = 26;
+            this.lblNombreSocio.Text = "---";
+            // 
+            // label14Evento
+            // 
+            this.label14Evento.AutoSize = true;
+            this.label14Evento.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label14Evento.Location = new System.Drawing.Point(335, 34);
+            this.label14Evento.Name = "label14Evento";
+            this.label14Evento.Size = new System.Drawing.Size(23, 18);
+            this.label14Evento.TabIndex = 27;
+            this.label14Evento.Text = "---";
+            // 
+            // labelUbicacion
+            // 
+            this.labelUbicacion.AutoSize = true;
+            this.labelUbicacion.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.labelUbicacion.Location = new System.Drawing.Point(335, 91);
+            this.labelUbicacion.Name = "labelUbicacion";
+            this.labelUbicacion.Size = new System.Drawing.Size(23, 18);
+            this.labelUbicacion.TabIndex = 28;
+            this.labelUbicacion.Text = "---";
             // 
             // HistorialAgenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1198, 625);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblfechacomprobacion);
             this.Controls.Add(this.lblbusquedafecha);
             this.Controls.Add(this.label12);
@@ -648,7 +698,6 @@
             this.Controls.Add(this.cmboxampm);
             this.Controls.Add(this.cmboxminutos);
             this.Controls.Add(this.cmboxhora);
-            this.Controls.Add(this.txtnombresocio);
             this.Controls.Add(this.layoutCalModificado);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblubicacion);
@@ -659,7 +708,6 @@
             this.Controls.Add(this.lblnombrecompleto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel4);
             this.Name = "HistorialAgenda";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -670,7 +718,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtahoranueva)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataeventos)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -678,6 +725,7 @@
             this.layoutCalModificado.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -732,5 +780,8 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lblIDEvento;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelUbicacion;
+        private System.Windows.Forms.Label label14Evento;
+        private System.Windows.Forms.Label lblNombreSocio;
     }
 }

@@ -73,6 +73,7 @@ namespace Proyecto_SGSA
             lblhora.Enabled = false;
             lblnombrecompleto.Visible = false;
             lblubicacion.Visible = false;
+            
         }
         private void encenderetiquetas()
         {
@@ -83,9 +84,9 @@ namespace Proyecto_SGSA
         }
         private void apagartxt()
         {
-            txtevento.Visible = false;
-            txtnombresocio.Visible = false;
-            txtubicacion.Visible = false;
+            label14Evento.Visible = false;
+            lblNombreSocio.Visible = false;
+            labelUbicacion.Visible = false;
             cmboxhora.Visible = false;
             cmboxminutos.Visible = false;
             cmboxampm.Visible = false;
@@ -93,12 +94,13 @@ namespace Proyecto_SGSA
             lblhoranueva.Visible = false;
             label12.Visible = false;
             lblfechanueva.Visible = false;
+            lblIDEvento.Visible = false;
         }
         private void encendertxt()
         {
-            txtevento.Visible = true;
-            txtnombresocio.Visible = true;
-            txtubicacion.Visible = true;
+            label14Evento.Visible = true;
+            lblNombreSocio.Visible = true;
+            labelUbicacion.Visible = true;
             cmboxhora.Visible = true;
             cmboxminutos.Visible = true;
             cmboxampm.Visible = true;
@@ -106,6 +108,7 @@ namespace Proyecto_SGSA
             lblhoranueva.Visible = true;
             label12.Visible = true;
             lblfechanueva.Visible = true;
+            lblIDEvento.Visible = true;
         }
         private void calendarioMODapagado()
         {
@@ -200,7 +203,7 @@ namespace Proyecto_SGSA
                 }
                 else
                 {
-                    MessageBox.Show("No se encontro a la persona");
+                    MessageBox.Show("No se encontro a la persona", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                 dataeventos.DataSource = bd.SelectDataTable("SELECT ID,NombreSocio,Evento,Hora,Ubicacion,Estatus,Fecha FROM Eventos WHERE Fecha ='" + label1.Text + "'");
             }
@@ -225,9 +228,9 @@ namespace Proyecto_SGSA
                 lblevento.Text = Convert.ToString(fila.Cells[2].Value);
                 lblubicacion.Text = Convert.ToString(fila.Cells[4].Value);
 
-                txtnombresocio.Text = Convert.ToString(fila.Cells[1].Value);
-                txtevento.Text = Convert.ToString(fila.Cells[2].Value);
-                txtubicacion.Text = Convert.ToString(fila.Cells[4].Value);
+                lblNombreSocio.Text = Convert.ToString(fila.Cells[1].Value);
+                label14Evento.Text = Convert.ToString(fila.Cells[2].Value);
+                labelUbicacion.Text = Convert.ToString(fila.Cells[4].Value);
 
                 //lblfechanueva.Text = Convert.ToString(fila.Cells[5].Value);
                 lblhoranueva.Text = Convert.ToString(fila.Cells[3].Value);
@@ -326,7 +329,7 @@ namespace Proyecto_SGSA
 
                 if (dr.Read()==true)
                 {
-                    MessageBox.Show("Tiene citas pendientes este dia");
+                    MessageBox.Show("Tiene citas agendadas en este dia, pero puede agendar más", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     if (lblbusquedafecha.Text == lblfechacomprobacion.Text)
                     {
 
@@ -336,7 +339,7 @@ namespace Proyecto_SGSA
                 }
                 else
                 {
-                    MessageBox.Show("Dia libre");
+                    MessageBox.Show("El día esta libre, puede agendar una cita");
                 }
             }
             catch
@@ -353,7 +356,7 @@ namespace Proyecto_SGSA
                 
                 if(label1.Text==lblfechanueva.Text && lblbusquedahora.Text == lblhoranueva.Text)
                 {
-                    MessageBox.Show("Esta fecha ya está programada");
+                    MessageBox.Show("Hay una cita programada en esta fecha y en esta hora", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
@@ -365,11 +368,11 @@ namespace Proyecto_SGSA
                         con.Open();
                         SqlCommand comando = new SqlCommand(actualizar, con);
                         comando.Parameters.AddWithValue("@id", lblIDEvento.Text);
-                        comando.Parameters.AddWithValue("@nombresocio", txtnombresocio.Text);
-                        comando.Parameters.AddWithValue("@evento", txtevento.Text);
+                        comando.Parameters.AddWithValue("@nombresocio", lblNombreSocio.Text);
+                        comando.Parameters.AddWithValue("@evento", label14Evento.Text);
                         comando.Parameters.AddWithValue("@fecha", Convert.ToDateTime(lblfechanueva.Text));
                         comando.Parameters.AddWithValue("@hora", lblhoranueva.Text);
-                        comando.Parameters.AddWithValue("@ubicacion", txtubicacion.Text);
+                        comando.Parameters.AddWithValue("@ubicacion", labelUbicacion.Text);
                         comando.Parameters.AddWithValue("@estatus", "Programado");
                         comando.ExecuteNonQuery();
                         con.Close();
@@ -380,7 +383,8 @@ namespace Proyecto_SGSA
                     }
                     catch
                     {
-                        MessageBox.Show("Error al actualizar, Revise su fecha y hora nuevas o seleccione la misma hora y fecha anteriores");
+                        MessageBox.Show("Error al actualizar, Revise su fecha y hora nuevas o seleccione la misma hora y fecha anteriores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        
                     }
                 }
 
@@ -391,6 +395,11 @@ namespace Proyecto_SGSA
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblIDEvento_Click(object sender, EventArgs e)
         {
 
         }

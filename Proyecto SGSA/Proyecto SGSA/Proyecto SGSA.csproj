@@ -414,5 +414,14 @@
   <ItemGroup>
     <None Include="Resources\eliminar persona.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lapiz modificar1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eliminar icono.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actualizar icono.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
