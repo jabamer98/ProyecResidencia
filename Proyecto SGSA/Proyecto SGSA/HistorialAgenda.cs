@@ -403,5 +403,24 @@ namespace Proyecto_SGSA
         {
 
         }
+
+        private void HistorialAgenda_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HistorialAgenda_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           if(MessageBox.Show("¿Desea cerra la ventana actual?", "Cerrar", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)==DialogResult.OK)
+            {
+                Application.Exit();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+
+            
+        }
     }
 }
